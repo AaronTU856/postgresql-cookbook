@@ -1,0 +1,56 @@
+name: Validate
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  validate-sql:
+    name: Validate SQL files
+    runs-on: ubuntu-latest
+
+    services:
+      postgres:
+        image: postgres:16
+        env:
+          POSTGRES_DB: postgresql_cookbook
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U postgres -d postgresql_cookbook"
+          --health-interval 5s
+          --health-timeout 5s
+          --health-retries 5
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Install PostgreSQL client
+        run: |
+          sudo apt-get update
+          sudo apt-get install --yes postgresql-client
+
+      - name: Check required SQL files exist
+        run: |
+          test -f database/init.sql
+          test -f database/schema.sql
+          test -f database/seed.sql
+
+      - name: Validate schema and seed data
+        env:
+          PGPASSWORD: postgres
+        run: |
+          psql -h localhost -U postgres -d postgresql_cookbook -v ON_ERROR_STOP=1 -f database/schema.sql
+          psql -h localhost -U postgres -d postgresql_cookbook -v ON_ERROR_STOP=1 -f database/seed.sql
+
+      - name: Optionally lint SQL files
+        run: |
+          if command -v sqlfluff >/dev/null 2>&1; then
+            sqlfluff lint database examples
+          else
+            echo "sqlfluff is not installed; skipping optional SQL lint."
+          fi

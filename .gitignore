@@ -1,0 +1,30 @@
+# Environment
+.env
+.env.*
+!.env.example
+
+# PostgreSQL and local data
+postgres-data/
+*.dump
+*.sql.gz
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Python cache, useful for future helper scripts
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Node cache, useful if docs tooling is added later
+node_modules/
