@@ -94,7 +94,7 @@ Start with the docs, then work through examples in order:
 
 1. Read [Getting Started](docs/getting-started.md)
 2. Review the [Learning Path](docs/learning-path.md)
-3. Open the first example in [Basic Queries](examples/01_basic_queries/select_users.sql)
+3. Work through the [Basic Queries chapter](examples/01_basic_queries/README.md)
 4. Use the [SQL Style Guide](docs/sql-style-guide.md) when writing your own queries
 5. Refer to the [PostgreSQL Cheatsheet](cheatsheets/postgresql-cheatsheet.md)
 

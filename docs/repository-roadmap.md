@@ -4,9 +4,11 @@ This checklist tracks the planned growth of the PostgreSQL Cookbook.
 
 ## Core Examples
 
-- [ ] Expand basic `SELECT` examples
-- [ ] Add filtering with `WHERE`, `IN`, `BETWEEN`, and `LIKE`
-- [ ] Add sorting with `ORDER BY`, `NULLS FIRST`, and `NULLS LAST`
+- [x] Stage 2: Expand basic query examples
+- [x] Expand basic `SELECT` examples
+- [x] Add filtering with `WHERE`, `IN`, `BETWEEN`, and `LIKE`
+- [x] Add sorting with `ORDER BY`
+- [ ] Add sorting with `NULLS FIRST` and `NULLS LAST`
 - [ ] Add inner join examples
 - [ ] Add left join examples
 - [ ] Add aggregate examples with `COUNT`, `SUM`, `AVG`, `MIN`, and `MAX`

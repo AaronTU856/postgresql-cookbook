@@ -8,6 +8,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ### Added
 
+- Stage 2 basic query chapter with examples for `SELECT`, specific columns, `DISTINCT`, `WHERE`, `ORDER BY`, `LIMIT`, aliases, `LIKE`, `BETWEEN`, `IN`, and `NULL` checks.
+- Basic Queries chapter README with prerequisites, learning outcomes, recommended order, and related links.
 - Initial repository scaffold.
 - Docker Compose setup for local PostgreSQL.
 - Online store sample schema and seed data.
