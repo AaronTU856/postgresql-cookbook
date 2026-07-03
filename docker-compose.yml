@@ -4,13 +4,16 @@ services:
     container_name: postgresql-cookbook-db
     restart: unless-stopped
     environment:
+      # Values can be overridden in a local .env file.
       POSTGRES_DB: ${POSTGRES_DB:-postgresql_cookbook}
       POSTGRES_USER: ${POSTGRES_USER:-postgres}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-postgres}
     ports:
       - "${POSTGRES_PORT:-5432}:5432"
     volumes:
+      # Keep database data between container restarts.
       - postgres-data:/var/lib/postgresql/data
+      # Load schema and seed data automatically when the volume is first created.
       - ./database/init.sql:/docker-entrypoint-initdb.d/01_init.sql:ro
       - ./database:/database:ro
     healthcheck:

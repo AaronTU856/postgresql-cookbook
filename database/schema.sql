@@ -1,3 +1,7 @@
+-- PostgreSQL Cookbook sample schema.
+-- The model represents a small online store with customers, products, orders,
+-- order line items, and one payment record per order.
+
 DROP TABLE IF EXISTS payments;
 DROP TABLE IF EXISTS order_items;
 DROP TABLE IF EXISTS orders;
@@ -33,6 +37,7 @@ CREATE TABLE products (
     created_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
 );
 
+-- Orders store customer-facing status and shipping destination details.
 CREATE TABLE orders (
     id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     user_id BIGINT NOT NULL REFERENCES users(id),
@@ -44,6 +49,8 @@ CREATE TABLE orders (
     shipping_country VARCHAR(100) NOT NULL DEFAULT 'United Kingdom'
 );
 
+-- Order items capture the product price at the time of purchase.
+-- This keeps historical orders stable if a product price changes later.
 CREATE TABLE order_items (
     id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     order_id BIGINT NOT NULL REFERENCES orders(id) ON DELETE CASCADE,
@@ -53,6 +60,7 @@ CREATE TABLE order_items (
     UNIQUE (order_id, product_id)
 );
 
+-- The current learning model allows one payment per order.
 CREATE TABLE payments (
     id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     order_id BIGINT NOT NULL UNIQUE REFERENCES orders(id) ON DELETE CASCADE,
@@ -66,6 +74,7 @@ CREATE TABLE payments (
     paid_at TIMESTAMPTZ
 );
 
+-- Foreign-key and date indexes support later examples on joins and ordering.
 CREATE INDEX idx_products_category_id ON products(category_id);
 CREATE INDEX idx_orders_user_id ON orders(user_id);
 CREATE INDEX idx_orders_order_date ON orders(order_date);

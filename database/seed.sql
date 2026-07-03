@@ -1,3 +1,6 @@
+-- Seed data for the PostgreSQL Cookbook online store.
+-- The dataset is intentionally small enough for beginners to inspect manually.
+
 INSERT INTO users (first_name, last_name, email, city, country, created_at)
 VALUES
     ('Amelia', 'Clark', 'amelia.clark@example.com', 'Manchester', 'United Kingdom', '2026-01-05 09:15:00+00'),

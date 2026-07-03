@@ -81,3 +81,25 @@ LIMIT
 ## Comments
 
 Use comments to explain learning intent or non-obvious decisions. Avoid comments that simply repeat the SQL.
+
+## Example File Headers
+
+Beginner example files should use a consistent teaching header inside a SQL block comment:
+
+```sql
+/*
+Title: Short Example Title
+Difficulty: Beginner
+
+Learning objectives:
+- First objective.
+- Second objective.
+
+Problem statement:
+Describe the realistic problem the query solves.
+
+SQL solution:
+*/
+```
+
+After the query, include the expected result description, explanation, real-world example, common mistakes, challenge exercise, challenge solution, and related examples.

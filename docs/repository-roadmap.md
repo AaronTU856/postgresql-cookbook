@@ -1,46 +1,50 @@
 # Repository Roadmap
 
-This checklist tracks the planned growth of the PostgreSQL Cookbook.
+This roadmap tracks the planned book-style progression for PostgreSQL Cookbook. Completed chapters should include runnable SQL examples, learner-facing explanations, challenge exercises, and validation against the sample database.
 
-## Core Examples
+## Current Release State
 
-- [x] Stage 2: Expand basic query examples
-- [x] Expand basic `SELECT` examples
-- [x] Add filtering with `WHERE`, `IN`, `BETWEEN`, and `LIKE`
-- [x] Add sorting with `ORDER BY`
-- [ ] Add sorting with `NULLS FIRST` and `NULLS LAST`
-- [ ] Add inner join examples
-- [ ] Add left join examples
-- [ ] Add aggregate examples with `COUNT`, `SUM`, `AVG`, `MIN`, and `MAX`
-- [ ] Add `GROUP BY` and `HAVING` examples
-- [ ] Add common table expression examples
-- [ ] Add window function examples
+- [x] Initial repository scaffold
+- [x] Stage 2: Chapter 1 basic query examples
+- [x] Docker-based PostgreSQL setup
+- [x] Sample online store schema and seed data
+- [x] Open-source templates and validation workflow
 
-## Data Management
+## Planned Chapters
 
-- [ ] Add transaction examples
-- [ ] Add insert, update, and delete examples
-- [ ] Add constraint examples
-- [ ] Add views
-- [ ] Add SQL functions
-- [ ] Add triggers
+- [x] Chapter 1: Basic Queries
+- [ ] Chapter 2: Filtering & Sorting
+- [ ] Chapter 3: Joins
+- [ ] Chapter 4: Aggregation
+- [ ] Chapter 5: Subqueries
+- [ ] Chapter 6: Common Table Expressions (CTEs)
+- [ ] Chapter 7: Window Functions
+- [ ] Chapter 8: Transactions
+- [ ] Chapter 9: Views
+- [ ] Chapter 10: Functions
+- [ ] Chapter 11: Triggers
+- [ ] Chapter 12: Indexes
+- [ ] Chapter 13: Performance
+- [ ] Chapter 14: JSONB
+- [ ] Chapter 15: Full Text Search
+- [ ] Chapter 16: PostgreSQL Administration
+- [ ] Chapter 17: Docker & PostgreSQL
+- [ ] Chapter 18: Django Integration
+- [ ] Chapter 19: PostGIS
+- [ ] Chapter 20: Real World Projects
 
-## PostgreSQL Features
+## Chapter Quality Checklist
 
-- [ ] Add JSONB examples
-- [ ] Add index examples
-- [ ] Add query planning examples with `EXPLAIN`
-- [ ] Add performance troubleshooting notes
+- [ ] Chapter README explains prerequisites and learning outcomes.
+- [ ] Examples follow the repository SQL style guide.
+- [ ] Every SQL file runs against `database/schema.sql` and `database/seed.sql`.
+- [ ] Each example includes a problem statement, solution, explanation, common mistakes, and challenge exercise.
+- [ ] Related examples and chapter navigation are updated.
 
-## Framework Integration
+## Repository Quality Backlog
 
-- [ ] Add Django model-to-table examples
-- [ ] Add Django query comparison examples
-- [ ] Add raw SQL usage guidance for Django projects
-
-## Repository Quality
-
-- [ ] Add SQL linting configuration
-- [ ] Add more validation checks in CI
-- [ ] Add screenshots or terminal output examples
-- [ ] Add issue templates for example requests and documentation improvements
+- [ ] Add SQL linting configuration.
+- [ ] Expand GitHub Actions checks for all example files.
+- [ ] Add screenshots or terminal output examples.
+- [ ] Add release notes for each tagged milestone.
+- [ ] Review chapter folder names before each major release.

@@ -21,3 +21,5 @@ We are committed to making this project a welcoming, respectful, and useful lear
 ## Enforcement
 
 Project maintainers may remove comments, issues, or pull requests that do not meet these standards. Repeated or serious violations may result in being blocked from participating in the project.
+
+If you notice behaviour that makes the project less welcoming or less useful, open a maintainer-facing issue with the relevant context. Reports should be handled respectfully and with appropriate privacy.

@@ -8,6 +8,8 @@ This guide helps you run the sample PostgreSQL database locally and execute your
 - Docker Compose
 - A terminal
 
+For detailed Docker setup and troubleshooting, see [Docker Guide](docker-guide.md).
+
 ## Start PostgreSQL
 
 From the repository root:

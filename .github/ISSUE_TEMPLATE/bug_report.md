@@ -20,8 +20,13 @@ Describe what went wrong.
 
 Describe what you expected to happen.
 
+## Actual Behaviour
+
+Describe what actually happened, including any error output.
+
 ## Environment
 
 - Operating system:
 - Docker version:
 - PostgreSQL client version, if relevant:
+- Repository version or commit:

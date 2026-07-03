@@ -16,11 +16,19 @@ This repository is intended to stay practical, clear, and beginner-friendly. Con
 
 Each example should include:
 
+- Title
+- Difficulty
+- Learning objectives
+- Problem statement
 - SQL query
+- Expected result description
 - Explanation
 - Real-world use case
-- Common mistake
+- Performance considerations, where useful
+- Common mistakes
 - Challenge exercise
+- Challenge solution
+- Related examples
 
 ## Local Validation
 
@@ -38,6 +46,14 @@ docker compose exec postgres psql -U postgres -d postgresql_cookbook
 
 Run any SQL you add against the sample database before opening a pull request.
 
+If Docker is unavailable, you may use a local PostgreSQL database:
+
+```bash
+createdb postgresql_cookbook
+psql -d postgresql_cookbook -v ON_ERROR_STOP=1 -f database/schema.sql
+psql -d postgresql_cookbook -v ON_ERROR_STOP=1 -f database/seed.sql
+```
+
 ## Pull Requests
 
 Pull requests should be focused and easy to review. A good pull request usually adds one topic, one example format improvement, or one documentation improvement.
@@ -48,3 +64,4 @@ Before submitting:
 - Confirm any new SQL runs successfully.
 - Update documentation when you add or change learning material.
 - Keep unrelated changes out of the pull request.
+- Link related examples when adding or renaming chapter files.

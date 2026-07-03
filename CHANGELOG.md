@@ -6,10 +6,31 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ## [Unreleased]
 
+No unreleased changes.
+
+## [0.2.0] - 2026-07-03
+
+### Release Notes
+
+`v0.2 Basic Queries` turns the initial scaffold into a usable beginner chapter. The release focuses on fundamental read queries and repository polish before moving into more advanced SQL topics.
+
 ### Added
 
 - Stage 2 basic query chapter with examples for `SELECT`, specific columns, `DISTINCT`, `WHERE`, `ORDER BY`, `LIMIT`, aliases, `LIKE`, `BETWEEN`, `IN`, and `NULL` checks.
 - Basic Queries chapter README with prerequisites, learning outcomes, recommended order, and related links.
+- Docker guide with startup, reset, `psql`, DBeaver, and troubleshooting notes.
+- Project philosophy documentation for learning goals and repository standards.
+- Release checklist for public release preparation.
+
+### Changed
+
+- Updated the original starter user query to match the full chapter example format.
+- Polished README navigation, Docker instructions, roadmap, contribution guidance, issue templates, pull request template, and validation workflow.
+
+## [0.1.0] - 2026-07-02
+
+### Added
+
 - Initial repository scaffold.
 - Docker Compose setup for local PostgreSQL.
 - Online store sample schema and seed data.
