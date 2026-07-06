@@ -22,6 +22,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 - Chapter 13: Performance, with examples for `EXPLAIN`, `EXPLAIN ANALYZE`, avoiding `SELECT *`, avoiding N+1 queries, keyset pagination, report measurement, and interview preparation.
 - Chapter 14: JSONB, with examples for JSONB payloads, field extraction, containment queries, JSON response building, GIN indexing, and interview preparation.
 - Chapter 15: Full Text Search, with examples for `tsvector`, `tsquery`, ranking, headlines, GIN indexes, catalogue search, and interview preparation.
+- Chapter 16: PostgreSQL Administration, with examples for health checks, size monitoring, activity monitoring, permission checks, safe maintenance, and interview preparation.
+- Chapter 17: Docker & PostgreSQL, with examples for connection verification, health checks, initialization checks, persistence checks, troubleshooting queries, and interview preparation.
+- Chapter 18: Django Integration, with examples for QuerySet SQL shapes, `select_related`, avoiding N+1 queries, annotations, transaction patterns, indexes for Django filters, and interview preparation.
 
 ### Changed
 
@@ -29,6 +32,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 - Updated README, learning path, roadmap, and validation workflow for Chapter 9.
 - Updated README, learning path, and roadmap for Chapter 10.
 - Updated README, learning path, roadmap, and validation workflow for Chapters 10, 11, 12, 13, 14, and 15.
+- Updated README, learning path, roadmap, and validation workflow for Chapters 16, 17, and 18.
 - Normalised chapter folder numbering to one folder per planned chapter and aligned future placeholder folders with the roadmap.
 
 ## [0.2.0] - 2026-07-03

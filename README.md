@@ -135,9 +135,12 @@ Start with the docs, then work through examples in order:
 16. Measure and tune queries with [Chapter 13: Performance](examples/13_performance/README.md)
 17. Work with flexible data in [Chapter 14: JSONB](examples/14_jsonb/README.md)
 18. Search natural language with [Chapter 15: Full Text Search](examples/15_full_text_search/README.md)
-19. Use the [SQL Style Guide](docs/sql-style-guide.md) when writing your own queries
-20. Read the [Project Philosophy](docs/project-philosophy.md) if you plan to contribute
-21. Refer to the [PostgreSQL Cheatsheet](cheatsheets/postgresql-cheatsheet.md)
+19. Operate PostgreSQL with [Chapter 16: PostgreSQL Administration](examples/16_administration/README.md)
+20. Run local PostgreSQL with [Chapter 17: Docker & PostgreSQL](examples/17_docker_postgresql/README.md)
+21. Connect SQL to Django with [Chapter 18: Django Integration](examples/18_django_examples/README.md)
+22. Use the [SQL Style Guide](docs/sql-style-guide.md) when writing your own queries
+23. Read the [Project Philosophy](docs/project-philosophy.md) if you plan to contribute
+24. Refer to the [PostgreSQL Cheatsheet](cheatsheets/postgresql-cheatsheet.md)
 
 The full planned book-style roadmap is tracked in [Repository Roadmap](docs/repository-roadmap.md).
 

@@ -20,6 +20,9 @@ This roadmap tracks the planned book-style progression for PostgreSQL Cookbook. 
 - [x] Chapter 13 performance examples
 - [x] Chapter 14 JSONB examples
 - [x] Chapter 15 full text search examples
+- [x] Chapter 16 administration examples
+- [x] Chapter 17 Docker and PostgreSQL examples
+- [x] Chapter 18 Django integration examples
 - [x] Docker-based PostgreSQL setup
 - [x] Sample online store schema and seed data
 - [x] Open-source templates and validation workflow
@@ -41,9 +44,9 @@ This roadmap tracks the planned book-style progression for PostgreSQL Cookbook. 
 - [x] Chapter 13: Performance
 - [x] Chapter 14: JSONB
 - [x] Chapter 15: Full Text Search
-- [ ] Chapter 16: PostgreSQL Administration
-- [ ] Chapter 17: Docker & PostgreSQL
-- [ ] Chapter 18: Django Integration
+- [x] Chapter 16: PostgreSQL Administration
+- [x] Chapter 17: Docker & PostgreSQL
+- [x] Chapter 18: Django Integration
 - [ ] Chapter 19: PostGIS
 - [ ] Chapter 20: Real World Projects
 

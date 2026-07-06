@@ -49,8 +49,17 @@ The examples are ordered so learners can build confidence step by step. Start wi
 15. **Chapter 15: Full Text Search**
     Learn how to build PostgreSQL-native catalogue search with `tsvector`, `tsquery`, ranking, snippets, and GIN indexes.
 
-16. **Chapters 16-20: Applied PostgreSQL**
-    Learn administration, Docker workflows, Django integration, PostGIS, and real-world projects.
+16. **Chapter 16: PostgreSQL Administration**
+    Learn safe health checks, size monitoring, activity inspection, permission checks, and maintenance basics.
+
+17. **Chapter 17: Docker & PostgreSQL**
+    Learn how to verify containerized PostgreSQL connections, initialization, persistence, health, and troubleshooting signals.
+
+18. **Chapter 18: Django Integration**
+    Learn how Django QuerySets map to joins, aggregates, transactions, indexes, and production PostgreSQL habits.
+
+19. **Chapters 19-20: Applied PostgreSQL**
+    Learn PostGIS and real-world project patterns.
 
 ## Suggested Practice Routine
 
