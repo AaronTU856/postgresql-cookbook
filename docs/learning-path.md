@@ -14,7 +14,7 @@ The examples are ordered so learners can build confidence step by step. Start wi
    Learn how related tables work together with inner joins, outer joins, self joins, multi-table joins, and reporting joins.
 
 4. **Chapter 4: Aggregation**
-   Learn how to answer reporting questions such as total revenue, order counts, and average prices.
+   Learn how to answer reporting questions with `COUNT`, `SUM`, `AVG`, `MIN`, `MAX`, `GROUP BY`, and `HAVING`.
 
 5. **Chapter 5: Subqueries**
    Learn how to use one query inside another while keeping the intent readable.

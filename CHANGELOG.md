@@ -10,10 +10,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 - Chapter 2: Filtering & Sorting, with examples for `AND`, `OR`, `NOT`, comparison operators, `LIKE`, `ILIKE`, `BETWEEN`, `IN`, `NOT IN`, `NULL` handling, multi-column sorting, `NULLS FIRST`, `NULLS LAST`, `LIMIT`, `OFFSET`, and simple pagination.
 - Chapter 3: Joins, with examples for `INNER JOIN`, `LEFT JOIN`, `RIGHT JOIN`, `FULL OUTER JOIN`, `CROSS JOIN`, self joins, multi-table joins, joins with aggregation, join filtering, join best practices, common join mistakes, and real-world reporting.
+- Chapter 4: Aggregation, with examples for `COUNT`, `SUM`, `AVG`, `MIN`, `MAX`, `GROUP BY`, `HAVING`, distinct aggregates, joins with aggregates, and business reporting queries.
 
 ### Changed
 
-- Updated README, learning path, roadmap, and validation workflow for Chapters 2 and 3.
+- Updated README, learning path, roadmap, and validation workflow for Chapters 2, 3, and 4.
 
 ## [0.2.0] - 2026-07-03
 
