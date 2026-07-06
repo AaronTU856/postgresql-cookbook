@@ -91,6 +91,10 @@ Beginner example files should use a consistent teaching header inside a SQL bloc
 Title: Short Example Title
 Difficulty: Beginner
 
+Concepts:
+- First concept.
+- Second concept.
+
 Learning objectives:
 - First objective.
 - Second objective.
@@ -102,4 +106,4 @@ SQL solution:
 */
 ```
 
-After the query, include the expected result description, explanation, real-world example, common mistakes, challenge exercise, challenge solution, and related examples.
+After the query, include the expected result description, explanation, real-world example, performance notes, common mistakes, challenge exercise, challenge solution, and related examples.

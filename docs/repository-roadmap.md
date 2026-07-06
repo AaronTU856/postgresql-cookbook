@@ -6,6 +6,7 @@ This roadmap tracks the planned book-style progression for PostgreSQL Cookbook. 
 
 - [x] Initial repository scaffold
 - [x] Stage 2: Chapter 1 basic query examples
+- [x] Chapter 2 filtering and sorting examples
 - [x] Docker-based PostgreSQL setup
 - [x] Sample online store schema and seed data
 - [x] Open-source templates and validation workflow
@@ -13,7 +14,7 @@ This roadmap tracks the planned book-style progression for PostgreSQL Cookbook. 
 ## Planned Chapters
 
 - [x] Chapter 1: Basic Queries
-- [ ] Chapter 2: Filtering & Sorting
+- [x] Chapter 2: Filtering & Sorting
 - [ ] Chapter 3: Joins
 - [ ] Chapter 4: Aggregation
 - [ ] Chapter 5: Subqueries

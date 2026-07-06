@@ -8,7 +8,7 @@ The examples are ordered so learners can build confidence step by step. Start wi
    Learn how to select columns, limit result sets, and read from a single table.
 
 2. **Chapter 2: Filtering & Sorting**
-   Learn how to find specific records and order results for reports or application screens.
+   Learn how to find specific records, combine conditions, handle NULL values, and order results for reports or application screens.
 
 3. **Chapter 3: Joins**
    Learn how related tables work together. This is essential for backend development and Django work.
