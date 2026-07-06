@@ -26,7 +26,7 @@ The examples are ordered so learners can build confidence step by step. Start wi
    Learn how to rank rows, compare previous and next values, calculate running totals, build moving averages, and report across rows without losing row-level detail.
 
 8. **Chapter 8: Transactions**
-   Learn how to keep data consistent when multiple changes must succeed or fail together.
+   Learn how `BEGIN`, `COMMIT`, `ROLLBACK`, savepoints, isolation levels, locks, and ACID properties keep multi-step business changes consistent.
 
 9. **Chapters 9-14: PostgreSQL Features**
    Learn views, functions, triggers, indexes, performance basics, and JSONB.

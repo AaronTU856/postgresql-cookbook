@@ -14,10 +14,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 - Chapter 5: Subqueries, with examples for scalar subqueries, single-row and multiple-row subqueries, correlated subqueries, `EXISTS`, `NOT EXISTS`, `ANY`, `ALL`, subqueries in `SELECT`, subqueries in `FROM`, and subquery versus join tradeoffs.
 - Chapter 6: Common Table Expressions, with examples for basic `WITH` clauses, multiple CTEs, joins, aggregation, recursive CTEs, hierarchy traversal, reporting queries, best practices, and CTE performance considerations.
 - Chapter 7: Window Functions, with examples for `ROW_NUMBER`, `RANK`, `DENSE_RANK`, `NTILE`, `LAG`, `LEAD`, `FIRST_VALUE`, `LAST_VALUE`, running totals, moving averages, partitioned calculations, best practices, and business reporting.
+- Chapter 8: Transactions & ACID, with examples for `BEGIN`, `COMMIT`, `ROLLBACK`, savepoints, isolation levels, row locks, deadlock avoidance, ACID properties, and e-commerce transaction workflows.
 
 ### Changed
 
-- Updated README, learning path, roadmap, and validation workflow for Chapters 2, 3, 4, 5, 6, and 7.
+- Updated README, learning path, roadmap, and validation workflow for Chapters 2, 3, 4, 5, 6, 7, and 8.
 
 ## [0.2.0] - 2026-07-03
 

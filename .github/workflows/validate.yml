@@ -51,7 +51,7 @@ jobs:
         env:
           PGPASSWORD: postgres
         run: |
-          for file in examples/01_basic_queries/*.sql examples/02_filtering_sorting/*.sql examples/03_joins/*.sql examples/04_aggregates/*.sql examples/05_subqueries/*.sql examples/06_ctes/*.sql examples/07_window_functions/*.sql; do
+          for file in examples/01_basic_queries/*.sql examples/02_filtering_sorting/*.sql examples/03_joins/*.sql examples/04_aggregates/*.sql examples/05_subqueries/*.sql examples/06_ctes/*.sql examples/07_window_functions/*.sql examples/08_transactions/*.sql; do
             echo "Validating ${file}"
             psql -h localhost -U postgres -d postgresql_cookbook -v ON_ERROR_STOP=1 -f "${file}"
           done
