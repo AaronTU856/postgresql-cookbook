@@ -119,9 +119,10 @@ Start with the docs, then work through examples in order:
 5. Continue with [Chapter 2: Filtering & Sorting](examples/02_filtering_sorting/README.md)
 6. Learn relationship queries in [Chapter 3: Joins](examples/03_joins/README.md)
 7. Build summary reports in [Chapter 4: Aggregation](examples/04_aggregates/README.md)
-8. Use the [SQL Style Guide](docs/sql-style-guide.md) when writing your own queries
-9. Read the [Project Philosophy](docs/project-philosophy.md) if you plan to contribute
-10. Refer to the [PostgreSQL Cheatsheet](cheatsheets/postgresql-cheatsheet.md)
+8. Compose nested queries in [Chapter 5: Subqueries](examples/05_subqueries/README.md)
+9. Use the [SQL Style Guide](docs/sql-style-guide.md) when writing your own queries
+10. Read the [Project Philosophy](docs/project-philosophy.md) if you plan to contribute
+11. Refer to the [PostgreSQL Cheatsheet](cheatsheets/postgresql-cheatsheet.md)
 
 The full planned book-style roadmap is tracked in [Repository Roadmap](docs/repository-roadmap.md).
 

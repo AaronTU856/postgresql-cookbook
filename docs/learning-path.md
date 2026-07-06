@@ -17,7 +17,7 @@ The examples are ordered so learners can build confidence step by step. Start wi
    Learn how to answer reporting questions with `COUNT`, `SUM`, `AVG`, `MIN`, `MAX`, `GROUP BY`, and `HAVING`.
 
 5. **Chapter 5: Subqueries**
-   Learn how to use one query inside another while keeping the intent readable.
+   Learn how to use scalar, multiple-row, correlated, and derived-table subqueries while keeping the intent readable.
 
 6. **Chapter 6: Common Table Expressions**
    Learn how to break complex queries into readable steps.

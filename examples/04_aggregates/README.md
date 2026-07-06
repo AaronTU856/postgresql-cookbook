@@ -81,7 +81,7 @@ Use `HAVING` when the condition depends on an aggregate result, such as categori
 
 - [Chapter 2: Filtering & Sorting](../02_filtering_sorting/README.md)
 - [Chapter 3: Joins](../03_joins/README.md)
-- [Repository Roadmap](../../docs/repository-roadmap.md)
+- [Chapter 5: Subqueries](../05_subqueries/README.md)
 
 ## Difficulty
 
