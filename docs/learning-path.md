@@ -20,7 +20,7 @@ The examples are ordered so learners can build confidence step by step. Start wi
    Learn how to use scalar, multiple-row, correlated, and derived-table subqueries while keeping the intent readable.
 
 6. **Chapter 6: Common Table Expressions**
-   Learn how to break complex queries into readable steps.
+   Learn how to break complex queries into readable steps with `WITH`, multiple CTEs, and recursive CTEs.
 
 7. **Chapter 7: Window Functions**
    Learn how to rank, compare, and calculate values across rows without losing row-level detail.
