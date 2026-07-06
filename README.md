@@ -26,13 +26,18 @@ This project is designed as a professional starter cookbook for learning SQL wit
 - Common table expressions
 - Window functions
 - Transactions
-- Indexes
 - Views
 - SQL functions
 - Triggers
-- JSONB
+- Indexes
 - Query performance basics
+- JSONB
+- Full text search
+- PostgreSQL administration
+- Docker and PostgreSQL workflows
 - Django-oriented SQL examples
+- PostGIS
+- Real-world project patterns
 
 ## Quick Start With Docker
 
@@ -123,9 +128,10 @@ Start with the docs, then work through examples in order:
 9. Structure multi-step queries in [Chapter 6: Common Table Expressions](examples/06_ctes/README.md)
 10. Analyse rows with [Chapter 7: Window Functions](examples/07_window_functions/README.md)
 11. Keep data consistent with [Chapter 8: Transactions & ACID](examples/08_transactions/README.md)
-12. Use the [SQL Style Guide](docs/sql-style-guide.md) when writing your own queries
-13. Read the [Project Philosophy](docs/project-philosophy.md) if you plan to contribute
-14. Refer to the [PostgreSQL Cheatsheet](cheatsheets/postgresql-cheatsheet.md)
+12. Reuse named queries with [Chapter 9: Views](examples/09_views/README.md)
+13. Use the [SQL Style Guide](docs/sql-style-guide.md) when writing your own queries
+14. Read the [Project Philosophy](docs/project-philosophy.md) if you plan to contribute
+15. Refer to the [PostgreSQL Cheatsheet](cheatsheets/postgresql-cheatsheet.md)
 
 The full planned book-style roadmap is tracked in [Repository Roadmap](docs/repository-roadmap.md).
 

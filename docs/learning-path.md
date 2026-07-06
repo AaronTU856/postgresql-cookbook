@@ -28,10 +28,13 @@ The examples are ordered so learners can build confidence step by step. Start wi
 8. **Chapter 8: Transactions**
    Learn how `BEGIN`, `COMMIT`, `ROLLBACK`, savepoints, isolation levels, locks, and ACID properties keep multi-step business changes consistent.
 
-9. **Chapters 9-14: PostgreSQL Features**
-   Learn views, functions, triggers, indexes, performance basics, and JSONB.
+9. **Chapter 9: Views**
+   Learn how regular views, updatable views, security-focused views, and materialized views make repeated business queries easier to reuse.
 
-10. **Chapters 15-20: Applied PostgreSQL**
+10. **Chapters 10-14: PostgreSQL Features**
+    Learn functions, triggers, indexes, performance basics, and JSONB.
+
+11. **Chapters 15-20: Applied PostgreSQL**
     Learn full text search, administration, Docker workflows, Django integration, PostGIS, and real-world projects.
 
 ## Suggested Practice Routine
