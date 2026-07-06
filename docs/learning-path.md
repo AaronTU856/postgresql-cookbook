@@ -11,7 +11,7 @@ The examples are ordered so learners can build confidence step by step. Start wi
    Learn how to find specific records, combine conditions, handle NULL values, and order results for reports or application screens.
 
 3. **Chapter 3: Joins**
-   Learn how related tables work together. This is essential for backend development and Django work.
+   Learn how related tables work together with inner joins, outer joins, self joins, multi-table joins, and reporting joins.
 
 4. **Chapter 4: Aggregation**
    Learn how to answer reporting questions such as total revenue, order counts, and average prices.
