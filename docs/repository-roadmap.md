@@ -14,6 +14,7 @@ This roadmap tracks the planned book-style progression for PostgreSQL Cookbook. 
 - [x] Chapter 7 window functions examples
 - [x] Chapter 8 transactions and ACID examples
 - [x] Chapter 9 views examples
+- [x] Chapter 10 functions examples
 - [x] Docker-based PostgreSQL setup
 - [x] Sample online store schema and seed data
 - [x] Open-source templates and validation workflow
@@ -29,7 +30,7 @@ This roadmap tracks the planned book-style progression for PostgreSQL Cookbook. 
 - [x] Chapter 7: Window Functions
 - [x] Chapter 8: Transactions & ACID
 - [x] Chapter 9: Views
-- [ ] Chapter 10: Functions
+- [x] Chapter 10: Functions
 - [ ] Chapter 11: Triggers
 - [ ] Chapter 12: Indexes
 - [ ] Chapter 13: Performance

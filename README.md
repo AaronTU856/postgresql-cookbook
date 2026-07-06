@@ -129,9 +129,10 @@ Start with the docs, then work through examples in order:
 10. Analyse rows with [Chapter 7: Window Functions](examples/07_window_functions/README.md)
 11. Keep data consistent with [Chapter 8: Transactions & ACID](examples/08_transactions/README.md)
 12. Reuse named queries with [Chapter 9: Views](examples/09_views/README.md)
-13. Use the [SQL Style Guide](docs/sql-style-guide.md) when writing your own queries
-14. Read the [Project Philosophy](docs/project-philosophy.md) if you plan to contribute
-15. Refer to the [PostgreSQL Cheatsheet](cheatsheets/postgresql-cheatsheet.md)
+13. Package reusable logic with [Chapter 10: Functions](examples/10_functions/README.md)
+14. Use the [SQL Style Guide](docs/sql-style-guide.md) when writing your own queries
+15. Read the [Project Philosophy](docs/project-philosophy.md) if you plan to contribute
+16. Refer to the [PostgreSQL Cheatsheet](cheatsheets/postgresql-cheatsheet.md)
 
 The full planned book-style roadmap is tracked in [Repository Roadmap](docs/repository-roadmap.md).
 

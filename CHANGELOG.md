@@ -16,11 +16,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 - Chapter 7: Window Functions, with examples for `ROW_NUMBER`, `RANK`, `DENSE_RANK`, `NTILE`, `LAG`, `LEAD`, `FIRST_VALUE`, `LAST_VALUE`, running totals, moving averages, partitioned calculations, best practices, and business reporting.
 - Chapter 8: Transactions & ACID, with examples for `BEGIN`, `COMMIT`, `ROLLBACK`, savepoints, isolation levels, row locks, deadlock avoidance, ACID properties, and e-commerce transaction workflows.
 - Chapter 9: Views, with examples for simple views, complex views, join views, aggregate views, updatable views, materialized views, refresh workflows, security-focused views, reporting views, and common view mistakes.
+- Chapter 10: Functions, with examples for SQL functions, PL/pgSQL functions, parameters, table-returning functions, volatility, error handling, business calculations, reporting functions, best practices, common mistakes, and interview preparation.
 
 ### Changed
 
 - Updated README, learning path, roadmap, and validation workflow for Chapters 2, 3, 4, 5, 6, 7, and 8.
 - Updated README, learning path, roadmap, and validation workflow for Chapter 9.
+- Updated README, learning path, and roadmap for Chapter 10.
 - Normalised chapter folder numbering to one folder per planned chapter and aligned future placeholder folders with the roadmap.
 
 ## [0.2.0] - 2026-07-03

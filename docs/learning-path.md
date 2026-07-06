@@ -31,10 +31,13 @@ The examples are ordered so learners can build confidence step by step. Start wi
 9. **Chapter 9: Views**
    Learn how regular views, updatable views, security-focused views, and materialized views make repeated business queries easier to reuse.
 
-10. **Chapters 10-14: PostgreSQL Features**
-    Learn functions, triggers, indexes, performance basics, and JSONB.
+10. **Chapter 10: Functions**
+    Learn how SQL functions, PL/pgSQL functions, parameters, table-returning functions, volatility, and error handling package reusable database logic.
 
-11. **Chapters 15-20: Applied PostgreSQL**
+11. **Chapters 11-14: PostgreSQL Features**
+    Learn triggers, indexes, performance basics, and JSONB.
+
+12. **Chapters 15-20: Applied PostgreSQL**
     Learn full text search, administration, Docker workflows, Django integration, PostGIS, and real-world projects.
 
 ## Suggested Practice Routine
