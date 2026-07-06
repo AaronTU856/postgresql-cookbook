@@ -23,7 +23,7 @@ The examples are ordered so learners can build confidence step by step. Start wi
    Learn how to break complex queries into readable steps with `WITH`, multiple CTEs, and recursive CTEs.
 
 7. **Chapter 7: Window Functions**
-   Learn how to rank, compare, and calculate values across rows without losing row-level detail.
+   Learn how to rank rows, compare previous and next values, calculate running totals, build moving averages, and report across rows without losing row-level detail.
 
 8. **Chapter 8: Transactions**
    Learn how to keep data consistent when multiple changes must succeed or fail together.

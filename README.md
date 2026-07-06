@@ -121,9 +121,10 @@ Start with the docs, then work through examples in order:
 7. Build summary reports in [Chapter 4: Aggregation](examples/04_aggregates/README.md)
 8. Compose nested queries in [Chapter 5: Subqueries](examples/05_subqueries/README.md)
 9. Structure multi-step queries in [Chapter 6: Common Table Expressions](examples/06_ctes/README.md)
-10. Use the [SQL Style Guide](docs/sql-style-guide.md) when writing your own queries
-11. Read the [Project Philosophy](docs/project-philosophy.md) if you plan to contribute
-12. Refer to the [PostgreSQL Cheatsheet](cheatsheets/postgresql-cheatsheet.md)
+10. Analyse rows with [Chapter 7: Window Functions](examples/07_window_functions/README.md)
+11. Use the [SQL Style Guide](docs/sql-style-guide.md) when writing your own queries
+12. Read the [Project Philosophy](docs/project-philosophy.md) if you plan to contribute
+13. Refer to the [PostgreSQL Cheatsheet](cheatsheets/postgresql-cheatsheet.md)
 
 The full planned book-style roadmap is tracked in [Repository Roadmap](docs/repository-roadmap.md).
 

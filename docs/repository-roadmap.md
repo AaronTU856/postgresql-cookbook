@@ -11,6 +11,7 @@ This roadmap tracks the planned book-style progression for PostgreSQL Cookbook. 
 - [x] Chapter 4 aggregation examples
 - [x] Chapter 5 subqueries examples
 - [x] Chapter 6 common table expression examples
+- [x] Chapter 7 window functions examples
 - [x] Docker-based PostgreSQL setup
 - [x] Sample online store schema and seed data
 - [x] Open-source templates and validation workflow
@@ -23,7 +24,7 @@ This roadmap tracks the planned book-style progression for PostgreSQL Cookbook. 
 - [x] Chapter 4: Aggregation
 - [x] Chapter 5: Subqueries
 - [x] Chapter 6: Common Table Expressions (CTEs)
-- [ ] Chapter 7: Window Functions
+- [x] Chapter 7: Window Functions
 - [ ] Chapter 8: Transactions
 - [ ] Chapter 9: Views
 - [ ] Chapter 10: Functions
