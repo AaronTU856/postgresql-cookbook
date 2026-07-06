@@ -130,9 +130,14 @@ Start with the docs, then work through examples in order:
 11. Keep data consistent with [Chapter 8: Transactions & ACID](examples/08_transactions/README.md)
 12. Reuse named queries with [Chapter 9: Views](examples/09_views/README.md)
 13. Package reusable logic with [Chapter 10: Functions](examples/10_functions/README.md)
-14. Use the [SQL Style Guide](docs/sql-style-guide.md) when writing your own queries
-15. Read the [Project Philosophy](docs/project-philosophy.md) if you plan to contribute
-16. Refer to the [PostgreSQL Cheatsheet](cheatsheets/postgresql-cheatsheet.md)
+14. Automate database-side rules with [Chapter 11: Triggers](examples/11_triggers/README.md)
+15. Design read paths with [Chapter 12: Indexes](examples/12_indexes/README.md)
+16. Measure and tune queries with [Chapter 13: Performance](examples/13_performance/README.md)
+17. Work with flexible data in [Chapter 14: JSONB](examples/14_jsonb/README.md)
+18. Search natural language with [Chapter 15: Full Text Search](examples/15_full_text_search/README.md)
+19. Use the [SQL Style Guide](docs/sql-style-guide.md) when writing your own queries
+20. Read the [Project Philosophy](docs/project-philosophy.md) if you plan to contribute
+21. Refer to the [PostgreSQL Cheatsheet](cheatsheets/postgresql-cheatsheet.md)
 
 The full planned book-style roadmap is tracked in [Repository Roadmap](docs/repository-roadmap.md).
 

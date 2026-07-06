@@ -15,6 +15,11 @@ This roadmap tracks the planned book-style progression for PostgreSQL Cookbook. 
 - [x] Chapter 8 transactions and ACID examples
 - [x] Chapter 9 views examples
 - [x] Chapter 10 functions examples
+- [x] Chapter 11 triggers examples
+- [x] Chapter 12 indexes examples
+- [x] Chapter 13 performance examples
+- [x] Chapter 14 JSONB examples
+- [x] Chapter 15 full text search examples
 - [x] Docker-based PostgreSQL setup
 - [x] Sample online store schema and seed data
 - [x] Open-source templates and validation workflow
@@ -31,11 +36,11 @@ This roadmap tracks the planned book-style progression for PostgreSQL Cookbook. 
 - [x] Chapter 8: Transactions & ACID
 - [x] Chapter 9: Views
 - [x] Chapter 10: Functions
-- [ ] Chapter 11: Triggers
-- [ ] Chapter 12: Indexes
-- [ ] Chapter 13: Performance
-- [ ] Chapter 14: JSONB
-- [ ] Chapter 15: Full Text Search
+- [x] Chapter 11: Triggers
+- [x] Chapter 12: Indexes
+- [x] Chapter 13: Performance
+- [x] Chapter 14: JSONB
+- [x] Chapter 15: Full Text Search
 - [ ] Chapter 16: PostgreSQL Administration
 - [ ] Chapter 17: Docker & PostgreSQL
 - [ ] Chapter 18: Django Integration

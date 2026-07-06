@@ -34,11 +34,23 @@ The examples are ordered so learners can build confidence step by step. Start wi
 10. **Chapter 10: Functions**
     Learn how SQL functions, PL/pgSQL functions, parameters, table-returning functions, volatility, and error handling package reusable database logic.
 
-11. **Chapters 11-14: PostgreSQL Features**
-    Learn triggers, indexes, performance basics, and JSONB.
+11. **Chapter 11: Triggers**
+    Learn how trigger functions automate audit trails, validation, status tracking, and database-side consistency rules.
 
-12. **Chapters 15-20: Applied PostgreSQL**
-    Learn full text search, administration, Docker workflows, Django integration, PostGIS, and real-world projects.
+12. **Chapter 12: Indexes**
+    Learn how B-tree, composite, partial, expression, covering, and GIN indexes support real query patterns.
+
+13. **Chapter 13: Performance**
+    Learn how to measure queries with `EXPLAIN`, avoid wasteful query shapes, and reason about production performance.
+
+14. **Chapter 14: JSONB**
+    Learn how to store, query, index, and report on flexible JSONB payloads without replacing relational design.
+
+15. **Chapter 15: Full Text Search**
+    Learn how to build PostgreSQL-native catalogue search with `tsvector`, `tsquery`, ranking, snippets, and GIN indexes.
+
+16. **Chapters 16-20: Applied PostgreSQL**
+    Learn administration, Docker workflows, Django integration, PostGIS, and real-world projects.
 
 ## Suggested Practice Routine
 
