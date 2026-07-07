@@ -2,15 +2,15 @@
 Title: Basic CTE
 Difficulty: Beginner
 
-Learning objectives:
+Learning Objectives:
 - Write a basic WITH clause.
 - Name an intermediate result set.
 - Filter products in a readable first step.
 
-Problem statement:
+Problem Statement:
 The merchandising team wants a simple report of active products with low stock.
 
-SQL solution:
+SQL Solution:
 */
 
 WITH low_stock_products AS (
@@ -36,27 +36,27 @@ Explanation:
 The CTE named low_stock_products stores the filtered product rows. The outer
 query then reads from that named result.
 
-Expected results:
+Expected Output:
 The query returns active products with fewer than 20 items in stock.
 
-Real-world example:
+Business Scenario:
 A stock dashboard may define a low-stock product set before applying final
 sorting or additional reporting logic.
 
-Performance notes:
+Performance Notes:
 For a simple query like this, the CTE is mainly for readability. It is not
 automatically faster than writing the filter directly in the outer query.
 
-Common mistakes:
+Common Mistakes:
 - Forgetting that a CTE only exists for the query that immediately follows it.
 - Giving the CTE a vague name such as data or temp.
 - Adding ORDER BY inside the CTE when the final output order matters.
 
-Challenge exercise:
+Challenge Exercise:
 Create a CTE for completed payments and return the payment ID, order ID, and
 amount.
 
-Challenge solution:
+Challenge Solution:
 */
 
 WITH completed_payments AS (
@@ -75,7 +75,7 @@ FROM completed_payments
 ORDER BY amount DESC;
 
 /*
-Related examples:
+Related Chapters:
 - ../02_filtering_sorting/01_where_and.sql
 - ../05_subqueries/09_subquery_in_from.sql
 - 02_multiple_ctes.sql

@@ -2,20 +2,20 @@
 Title: Function Volatility
 Difficulty: Intermediate
 
-Learning objectives:
+Learning Objectives:
 - Understand IMMUTABLE, STABLE, and VOLATILE.
 - Mark functions according to their behaviour.
 - Explain volatility in interview settings.
 
-Problem statement:
+Problem Statement:
 The team wants to classify functions correctly so PostgreSQL can plan queries
 safely.
 
-Business scenario:
+Business Scenario:
 Pricing calculations, database lookups, and report timestamps change at
 different rates and should not all use the same volatility category.
 
-SQL solution:
+SQL Solution:
 */
 
 DROP FUNCTION IF EXISTS cookbook_price_with_markup(NUMERIC, NUMERIC);
@@ -70,22 +70,22 @@ The markup calculation is IMMUTABLE because it depends only on inputs. The order
 count is STABLE because it reads database tables. The timestamp function is
 VOLATILE because it can change every time it is called.
 
-Expected output:
+Expected Output:
 Each user appears with an order count and a report timestamp.
 
-Performance considerations:
+Performance Notes:
 Incorrect volatility can produce wrong assumptions for the planner. Be honest
 about whether a function reads tables or changes between calls.
 
-Common mistakes:
+Common Mistakes:
 - Marking table-reading functions as IMMUTABLE.
 - Using VOLATILE for everything and reducing planner options.
 - Ignoring volatility because the function appears to work in small tests.
 
-Challenge:
+Challenge Exercise:
 Create a STABLE function that counts completed payments for a user.
 
-Challenge solution:
+Challenge Solution:
 */
 
 DROP FUNCTION IF EXISTS cookbook_user_completed_payment_count(BIGINT);
@@ -112,7 +112,7 @@ FROM users
 ORDER BY users.email ASC;
 
 /*
-Related chapters:
+Related Chapters:
 - ../04_aggregates/01_count.sql
 - ../07_window_functions/14_business_reporting.sql
 - 01_create_function.sql

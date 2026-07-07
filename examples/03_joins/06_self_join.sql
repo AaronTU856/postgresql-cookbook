@@ -2,20 +2,20 @@
 Title: SELF JOIN Customers in the Same Country
 Difficulty: Intermediate
 
-Learning objectives:
+Learning Objectives:
 - Join a table to itself using aliases.
 - Compare rows within the same table.
 - Avoid duplicate mirrored pairs.
 
-Problem statement:
+Problem Statement:
 Marketing wants to identify pairs of customers in the same country for regional
 campaign analysis.
 
-Business scenario:
+Business Scenario:
 Self joins are useful when records in one table need to be compared with other
 records in that same table, such as customers in the same region.
 
-SQL solution:
+SQL Solution:
 */
 
 SELECT
@@ -34,23 +34,23 @@ The users table appears twice with different aliases. The country condition
 matches customers in the same country. The id comparison prevents a customer
 from matching themselves and avoids duplicate mirrored pairs.
 
-Expected output:
+Expected Output:
 Because all sample users are in the United Kingdom, the query returns every
 unique pair of users.
 
-Performance notes:
+Performance Notes:
 Self joins can grow quickly because each row may be compared with many other
 rows. Add selective conditions when possible.
 
-Common mistakes:
+Common Mistakes:
 - Forgetting aliases when joining a table to itself.
 - Matching each row to itself.
 - Returning duplicate mirrored pairs such as A-B and B-A.
 
-Challenge exercise:
+Challenge Exercise:
 Find pairs of products in the same category.
 
-Challenge solution:
+Challenge Solution:
 */
 
 SELECT
@@ -64,7 +64,7 @@ INNER JOIN products AS second_product
 ORDER BY first_product.category_id ASC, first_product.name ASC;
 
 /*
-Related chapters:
+Related Chapters:
 - ../01_basic_queries/README.md
 - ../02_filtering_sorting/README.md
 - README.md

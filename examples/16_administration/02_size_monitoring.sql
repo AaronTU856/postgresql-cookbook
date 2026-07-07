@@ -2,18 +2,18 @@
 Title: Size Monitoring
 Difficulty: Beginner
 
-Learning objectives:
+Learning Objectives:
 - Check database size.
 - Check table size.
 - Identify larger relations in the sample schema.
 
-Problem statement:
+Problem Statement:
 The team wants a safe way to inspect database and table storage.
 
-Business scenario:
+Business Scenario:
 Storage growth affects backups, migrations, hosting cost, and operational risk.
 
-SQL solution:
+SQL Solution:
 */
 
 SELECT
@@ -31,22 +31,22 @@ Explanation:
 pg_database_size reports database size. pg_total_relation_size includes table
 data, indexes, and related storage.
 
-Expected output:
+Expected Output:
 The queries return readable sizes for the current database and user tables.
 
-Performance considerations:
+Performance Notes:
 Size checks are usually safe, but frequent monitoring should be handled by
 metrics tooling rather than ad hoc polling.
 
-Common mistakes:
+Common Mistakes:
 - Looking only at table data and ignoring index size.
 - Waiting until disk pressure before monitoring growth.
 - Comparing development sizes with production expectations.
 
-Challenge:
+Challenge Exercise:
 Show total size for the orders table only.
 
-Challenge solution:
+Challenge Solution:
 */
 
 SELECT
@@ -54,7 +54,7 @@ SELECT
     pg_size_pretty(pg_total_relation_size('orders')) AS total_size;
 
 /*
-Related chapters:
+Related Chapters:
 - ../12_indexes/chapter_summary.sql
 - ../13_performance/chapter_summary.sql
 - 05_safe_maintenance.sql

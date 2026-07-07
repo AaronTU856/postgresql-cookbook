@@ -2,18 +2,18 @@
 Title: Indexes For Django Filters
 Difficulty: Intermediate
 
-Learning objectives:
+Learning Objectives:
 - Match Django filters to PostgreSQL indexes.
 - Create indexes for common QuerySet patterns.
 - Use EXPLAIN for ORM-generated SQL.
 
-Problem statement:
+Problem Statement:
 The API frequently filters orders by status and customer, then orders by date.
 
-Business scenario:
+Business Scenario:
 Django model Meta.indexes should be based on real QuerySet filters and ordering.
 
-SQL solution:
+SQL Solution:
 */
 
 CREATE INDEX IF NOT EXISTS idx_cookbook_django_orders_user_status_date
@@ -35,22 +35,22 @@ Explanation:
 This index supports a common Django QuerySet shape:
 Order.objects.filter(user_id=1, status="paid").order_by("-order_date").
 
-Expected output:
+Expected Output:
 EXPLAIN returns a plan for the filtered and ordered order lookup.
 
-Performance considerations:
+Performance Notes:
 Do not add indexes for every possible QuerySet. Add them for frequent, important
 access patterns.
 
-Common mistakes:
+Common Mistakes:
 - Creating indexes that do not match actual ORM filters.
 - Forgetting ordering columns.
 - Adding duplicate indexes through migrations.
 
-Challenge:
+Challenge Exercise:
 Create an index for active products by category and name.
 
-Challenge solution:
+Challenge Solution:
 */
 
 CREATE INDEX IF NOT EXISTS idx_cookbook_django_products_category_active_name
@@ -67,7 +67,7 @@ WHERE category_id = 1
 ORDER BY name ASC;
 
 /*
-Related chapters:
+Related Chapters:
 - ../12_indexes/02_composite_index.sql
 - ../13_performance/01_explain_basics.sql
 - 01_django_model_query_shape.sql

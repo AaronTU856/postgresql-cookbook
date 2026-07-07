@@ -2,15 +2,15 @@
 Title: Moving Averages
 Difficulty: Intermediate
 
-Learning objectives:
+Learning Objectives:
 - Use AVG() as a window function.
 - Calculate a moving average over recent rows.
 - Define a rolling window frame.
 
-Problem statement:
+Problem Statement:
 Finance wants a three-payment moving average for completed payments.
 
-SQL solution:
+SQL Solution:
 */
 
 SELECT
@@ -33,26 +33,26 @@ Explanation:
 The moving average frame includes the current row and up to two previous rows.
 At the start of the result, fewer than three rows may be available.
 
-Expected results:
+Expected Output:
 Each completed payment row shows a rolling average based on the current and two
 previous completed payments.
 
-Real-world example:
+Business Scenario:
 Finance teams may smooth payment values over recent transactions to spot trends.
 
-Performance notes:
+Performance Notes:
 Moving averages require ordered data and frame calculations. Limit the time
 range when analysing large tables.
 
-Common mistakes:
+Common Mistakes:
 - Forgetting that early rows have a smaller frame.
 - Using a moving average without a meaningful order.
 - Rounding before later calculations.
 
-Challenge exercise:
+Challenge Exercise:
 Calculate a three-product moving average of product prices by creation date.
 
-Challenge solution:
+Challenge Solution:
 */
 
 SELECT
@@ -71,7 +71,7 @@ FROM products
 ORDER BY created_at ASC, id ASC;
 
 /*
-Related examples:
+Related Chapters:
 - ../04_aggregates/03_avg.sql
 - 09_running_totals.sql
 - 11_partition_by.sql

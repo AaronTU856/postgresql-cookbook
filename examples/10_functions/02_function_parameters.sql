@@ -2,20 +2,20 @@
 Title: Function Parameters
 Difficulty: Beginner
 
-Learning objectives:
+Learning Objectives:
 - Pass parameters into a function.
 - Use parameters to make business rules reusable.
 - Apply a function to product data.
 
-Problem statement:
+Problem Statement:
 Marketing wants to preview discounted prices without permanently changing the
 products table.
 
-Business scenario:
+Business Scenario:
 Promotional campaigns often need the same discount formula across product pages,
 emails, and reports.
 
-SQL solution:
+SQL Solution:
 */
 
 DROP FUNCTION IF EXISTS cookbook_discounted_price(NUMERIC, NUMERIC);
@@ -46,22 +46,22 @@ Explanation:
 Parameters make the function reusable for different prices and discount
 percentages. The products table is only read; no prices are changed.
 
-Expected output:
+Expected Output:
 Each active product appears with its original price and a discounted preview.
 
-Performance considerations:
+Performance Notes:
 This function is safe for small result sets. For very large reports, compare the
 function call with the inline expression in an execution plan.
 
-Common mistakes:
+Common Mistakes:
 - Hard-coding one discount value inside the function.
 - Forgetting that this function previews prices but does not update products.
 - Allowing invalid discount percentages without separate validation.
 
-Challenge:
+Challenge Exercise:
 Create a function that applies a fixed currency reduction to a product price.
 
-Challenge solution:
+Challenge Solution:
 */
 
 DROP FUNCTION IF EXISTS cookbook_price_after_reduction(NUMERIC, NUMERIC);
@@ -86,7 +86,7 @@ FROM products
 ORDER BY price ASC;
 
 /*
-Related chapters:
+Related Chapters:
 - ../02_filtering_sorting/04_comparison_operators.sql
 - ../04_aggregates/03_avg.sql
 - 01_create_function.sql

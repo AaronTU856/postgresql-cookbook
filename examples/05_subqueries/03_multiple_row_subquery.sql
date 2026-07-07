@@ -2,16 +2,16 @@
 Title: Multiple-Row Subquery
 Difficulty: Beginner
 
-Learning objectives:
+Learning Objectives:
 - Use IN with a subquery returning multiple rows.
 - Filter products by categories found in another query.
 - Recognise when a subquery returns a list.
 
-Problem statement:
+Problem Statement:
 The product team wants all products in categories whose names include office or
 electronics.
 
-SQL solution:
+SQL Solution:
 */
 
 SELECT
@@ -32,26 +32,26 @@ Explanation:
 The subquery returns the IDs of the Electronics and Home Office categories. The
 outer query returns products whose category_id appears in that list.
 
-Expected results:
+Expected Output:
 The query returns products from Electronics and Home Office.
 
-Real-world example:
+Business Scenario:
 Product filtering often starts with human-readable category names but needs
 category IDs to query product rows.
 
-Performance notes:
+Performance Notes:
 IN subqueries are common and readable. For larger datasets, compare the query
 plan with an equivalent join.
 
-Common mistakes:
+Common Mistakes:
 - Using = instead of IN when the subquery can return multiple rows.
 - Returning the wrong column from the subquery.
 - Forgetting that text values are case-sensitive unless handled explicitly.
 
-Challenge exercise:
+Challenge Exercise:
 Find orders placed by customers in Manchester or London.
 
-Challenge solution:
+Challenge Solution:
 */
 
 SELECT
@@ -69,7 +69,7 @@ WHERE user_id IN (
 ORDER BY order_date DESC;
 
 /*
-Related examples:
+Related Chapters:
 - ../02_filtering_sorting/07_in_and_not_in.sql
 - ../03_joins/10_join_best_practices.sql
 - 10_subquery_vs_join.sql

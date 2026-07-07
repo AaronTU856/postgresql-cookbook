@@ -2,16 +2,16 @@
 Title: Basic Recursive CTE
 Difficulty: Intermediate
 
-Learning objectives:
+Learning Objectives:
 - Write a simple recursive CTE.
 - Understand anchor and recursive query parts.
 - Generate a small sequence for reporting.
 
-Problem statement:
+Problem Statement:
 The reporting team wants a simple list of page numbers for a paginated products
 report.
 
-SQL solution:
+SQL Solution:
 */
 
 WITH RECURSIVE page_numbers AS (
@@ -33,26 +33,26 @@ Explanation:
 The anchor query starts with page_number 1. The recursive query adds one until
 the stop condition page_number < 4 is no longer true.
 
-Expected results:
+Expected Output:
 The query returns page numbers 1 through 4.
 
-Real-world example:
+Business Scenario:
 Recursive CTEs can generate small reporting sequences, calendars, or hierarchy
 levels without creating a permanent helper table.
 
-Performance notes:
+Performance Notes:
 Recursive CTEs must have a clear stop condition. Without one, a query may run
 far longer than intended.
 
-Common mistakes:
+Common Mistakes:
 - Forgetting WITH RECURSIVE.
 - Omitting the stop condition.
 - Using UNION when UNION ALL is intended.
 
-Challenge exercise:
+Challenge Exercise:
 Generate the numbers 1 through 6 for a six-step order review checklist.
 
-Challenge solution:
+Challenge Solution:
 */
 
 WITH RECURSIVE checklist_steps AS (
@@ -70,7 +70,7 @@ FROM checklist_steps
 ORDER BY step_number ASC;
 
 /*
-Related examples:
+Related Chapters:
 - ../02_filtering_sorting/12_simple_pagination.sql
 - 06_recursive_hierarchy.sql
 - 10_common_cte_mistakes.sql

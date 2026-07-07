@@ -2,15 +2,15 @@
 Title: Multiple CTEs
 Difficulty: Intermediate
 
-Learning objectives:
+Learning Objectives:
 - Define more than one CTE in a query.
 - Use one CTE as input to another CTE.
 - Build a report in readable steps.
 
-Problem statement:
+Problem Statement:
 Finance wants completed payments above the average completed payment amount.
 
-SQL solution:
+SQL Solution:
 */
 
 WITH completed_payments AS (
@@ -40,27 +40,27 @@ Explanation:
 The first CTE filters completed payments. The second CTE calculates their
 average amount. The final query returns completed payments above that average.
 
-Expected results:
+Expected Output:
 The query returns completed payments whose amount is higher than the completed
 payment average.
 
-Real-world example:
+Business Scenario:
 Finance reports often define a clean payment set first, then calculate summary
 thresholds from that set.
 
-Performance notes:
+Performance Notes:
 Multiple CTEs can make a report clearer, but each step should have a purpose.
 Avoid long chains of CTEs that hide simple logic.
 
-Common mistakes:
+Common Mistakes:
 - Forgetting the comma between CTE definitions.
 - Referencing a CTE before it is defined.
 - Selecting columns that were not exposed by the CTE.
 
-Challenge exercise:
+Challenge Exercise:
 Find active products priced above the average active product price.
 
-Challenge solution:
+Challenge Solution:
 */
 
 WITH active_products AS (
@@ -86,7 +86,7 @@ WHERE active_products.price > average_active_price.average_price
 ORDER BY active_products.price DESC;
 
 /*
-Related examples:
+Related Chapters:
 - ../04_aggregates/03_avg.sql
 - ../05_subqueries/01_scalar_subquery.sql
 - 01_basic_cte.sql

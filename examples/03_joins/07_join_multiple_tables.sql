@@ -2,21 +2,21 @@
 Title: Join Multiple Tables for Order Details
 Difficulty: Intermediate
 
-Learning objectives:
+Learning Objectives:
 - Join more than two tables in one query.
 - Follow relationships from orders to users, order items, products, and
   categories.
 - Produce readable order line item output.
 
-Problem statement:
+Problem Statement:
 The operations team needs detailed order lines with customer, product, category,
 quantity, and price information.
 
-Business scenario:
+Business Scenario:
 Order detail pages and fulfilment exports usually need data from several
 related tables, not just the orders table.
 
-SQL solution:
+SQL Solution:
 */
 
 SELECT
@@ -42,24 +42,24 @@ Explanation:
 Each join follows a foreign-key relationship. The query starts with orders,
 joins the customer, then joins line items, products, and product categories.
 
-Expected output:
+Expected Output:
 The query returns twelve order line rows, one for each row in order_items, with
 customer and product context added.
 
-Performance notes:
+Performance Notes:
 Multi-table joins depend heavily on indexes on foreign-key columns. This schema
 includes indexes on the main join columns used here.
 
-Common mistakes:
+Common Mistakes:
 - Joining tables in a way that skips the relationship table, such as orders
   directly to products.
 - Selecting ambiguous id columns without aliases.
 - Forgetting that one order can have multiple order items.
 
-Challenge exercise:
+Challenge Exercise:
 Add payment status to the order detail report.
 
-Challenge solution:
+Challenge Solution:
 */
 
 SELECT
@@ -81,7 +81,7 @@ INNER JOIN products
 ORDER BY orders.id ASC, products.name ASC;
 
 /*
-Related chapters:
+Related Chapters:
 - ../01_basic_queries/README.md
 - ../02_filtering_sorting/README.md
 - README.md

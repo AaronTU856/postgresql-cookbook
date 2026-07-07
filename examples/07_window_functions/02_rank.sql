@@ -2,15 +2,15 @@
 Title: RANK
 Difficulty: Beginner
 
-Learning objectives:
+Learning Objectives:
 - Use RANK() for ordered rankings.
 - Understand that tied rows share a rank.
 - Rank payments by amount.
 
-Problem statement:
+Problem Statement:
 Finance wants to rank payments from largest to smallest.
 
-SQL solution:
+SQL Solution:
 */
 
 SELECT
@@ -29,24 +29,24 @@ Explanation:
 RANK() assigns the same rank to tied values. If ties occur, later ranks leave a
 gap.
 
-Expected results:
+Expected Output:
 The query returns payments ranked by amount from highest to lowest.
 
-Real-world example:
+Business Scenario:
 Finance teams may rank payments or orders to review the largest transactions.
 
-Performance notes:
+Performance Notes:
 Ranking requires sorting. Add filters when only a subset of rows needs ranking.
 
-Common mistakes:
+Common Mistakes:
 - Using RANK() when a unique row number is required.
 - Forgetting that ties can create gaps in the ranking sequence.
 - Not adding a final ORDER BY for display.
 
-Challenge exercise:
+Challenge Exercise:
 Rank products by price from highest to lowest.
 
-Challenge solution:
+Challenge Solution:
 */
 
 SELECT
@@ -59,7 +59,7 @@ FROM products
 ORDER BY product_price_rank ASC, name ASC;
 
 /*
-Related examples:
+Related Chapters:
 - 01_row_number.sql
 - 03_dense_rank.sql
 - ../04_aggregates/04_min_max.sql

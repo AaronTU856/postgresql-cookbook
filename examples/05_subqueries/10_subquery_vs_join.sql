@@ -2,15 +2,15 @@
 Title: Subquery vs Join
 Difficulty: Intermediate
 
-Learning objectives:
+Learning Objectives:
 - Compare a subquery with an equivalent join.
 - Choose the clearer approach for a business question.
 - Recognise when both forms return the same result.
 
-Problem statement:
+Problem Statement:
 The product team wants products in the Books category.
 
-SQL solution:
+SQL Solution:
 */
 
 SELECT
@@ -31,26 +31,26 @@ The subquery finds the Books category ID, and the outer query returns products
 with that category_id. This is clear when only the category ID is needed for
 filtering.
 
-Expected results:
+Expected Output:
 The query returns the products in the Books category.
 
-Real-world example:
+Business Scenario:
 Application filters often receive a category name or slug and need the related
 products.
 
-Performance notes:
+Performance Notes:
 For simple filters, PostgreSQL can often optimise either form well. Prefer the
 version that is clearest, then check the query plan when performance matters.
 
-Common mistakes:
+Common Mistakes:
 - Assuming subqueries are always slower than joins.
 - Using a subquery when the output needs columns from both tables.
 - Using = when the subquery may return multiple category IDs.
 
-Challenge exercise:
+Challenge Exercise:
 Return the same Books products using a join.
 
-Challenge solution:
+Challenge Solution:
 */
 
 SELECT
@@ -63,7 +63,7 @@ WHERE categories.name = 'Books'
 ORDER BY products.name ASC;
 
 /*
-Related examples:
+Related Chapters:
 - ../03_joins/10_join_best_practices.sql
 - 03_multiple_row_subquery.sql
 - 09_subquery_in_from.sql

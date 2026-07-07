@@ -2,18 +2,18 @@
 Title: JSONB Chapter Summary
 Difficulty: Intermediate
 
-Learning objectives:
+Learning Objectives:
 - Review JSONB creation, querying, containment, and aggregation.
 - Keep relational and JSONB responsibilities clear.
 - Build practical event payload reports.
 
-Problem statement:
+Problem Statement:
 Summarise JSONB usage by building and querying order event payloads.
 
-Business scenario:
+Business Scenario:
 Operations wants a flexible event log for order lifecycle events.
 
-SQL solution:
+SQL Solution:
 */
 
 CREATE TEMP TABLE cookbook_order_events (
@@ -47,23 +47,23 @@ Explanation:
 The summary creates JSONB event payloads from relational rows, extracts fields,
 and filters with containment.
 
-Expected output:
+Expected Output:
 Manchester order events are returned with extracted order status and customer
 email.
 
-Performance considerations:
+Performance Notes:
 Use JSONB for flexible payloads, but keep frequently joined and constrained data
 in relational columns.
 
-Common mistakes:
+Common Mistakes:
 - Treating JSONB as a replacement for schema design.
 - Forgetting to cast extracted values when needed.
 - Indexing JSONB before measuring query needs.
 
-Challenge:
+Challenge Exercise:
 Return all order event payloads where order_status is paid.
 
-Challenge solution:
+Challenge Solution:
 */
 
 SELECT
@@ -74,7 +74,7 @@ WHERE payload @> '{"order_status": "paid"}'::JSONB
 ORDER BY order_id ASC;
 
 /*
-Related chapters:
+Related Chapters:
 - ../09_views/10_business_reporting_view.sql
 - ../12_indexes/04_expression_index.sql
 - ../13_performance/02_explain_analyze.sql

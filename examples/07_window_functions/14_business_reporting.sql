@@ -2,16 +2,16 @@
 Title: Business Reporting With Window Functions
 Difficulty: Intermediate
 
-Learning objectives:
+Learning Objectives:
 - Combine joins, aggregation, and window functions.
 - Rank customers by completed payment value.
 - Add total report context to each row.
 
-Problem statement:
+Problem Statement:
 Leadership wants customers ranked by completed payment value, with each
 customer's share of completed payment value.
 
-SQL solution:
+SQL Solution:
 */
 
 WITH customer_payments AS (
@@ -46,28 +46,28 @@ Explanation:
 The CTE calculates completed payment totals by customer. The outer query ranks
 customers and uses SUM(...) OVER () to calculate the total across the report.
 
-Expected results:
+Expected Output:
 The query returns customers with completed payments, ranked by completed payment
 total and showing their percentage of the report total.
 
-Real-world example:
+Business Scenario:
 Leadership reports often rank customers, products, or categories while keeping
 each row's contribution to the total visible.
 
-Performance notes:
+Performance Notes:
 Window functions are applied after the customer totals are aggregated, which
 keeps the window calculation smaller and clearer.
 
-Common mistakes:
+Common Mistakes:
 - Ranking raw payments instead of customer totals.
 - Dividing by an integer total in other SQL systems without checking numeric
   behaviour.
 - Forgetting that refunded or pending payments need separate business rules.
 
-Challenge exercise:
+Challenge Exercise:
 Rank categories by completed revenue using order item prices.
 
-Challenge solution:
+Challenge Solution:
 */
 
 WITH category_revenue AS (
@@ -96,7 +96,7 @@ FROM category_revenue
 ORDER BY revenue_rank ASC, category_name ASC;
 
 /*
-Related examples:
+Related Chapters:
 - ../03_joins/12_real_world_reporting.sql
 - ../04_aggregates/10_business_reports.sql
 - ../06_ctes/08_cte_for_reporting.sql

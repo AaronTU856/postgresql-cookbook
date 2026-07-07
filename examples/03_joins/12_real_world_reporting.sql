@@ -2,19 +2,19 @@
 Title: Real-World Category Revenue Report
 Difficulty: Intermediate
 
-Learning objectives:
+Learning Objectives:
 - Build a practical reporting query with several joins.
 - Calculate revenue by product category.
 - Filter report rows by payment status.
 
-Problem statement:
+Problem Statement:
 The business team wants completed revenue by product category.
 
-Business scenario:
+Business Scenario:
 Leadership needs a category-level revenue report that includes only completed
 payments and uses the price captured on each order item.
 
-SQL solution:
+SQL Solution:
 */
 
 SELECT
@@ -41,25 +41,25 @@ The query joins categories to products, products to order items, order items to
 orders, and orders to payments. It filters to completed payments before grouping
 revenue by category.
 
-Expected output:
+Expected Output:
 The query returns category-level completed revenue, order counts, and units
 sold. Electronics is the highest revenue category in the sample data.
 
-Performance notes:
+Performance Notes:
 Reports that join and aggregate several tables should be tested with realistic
 data volumes. Indexes on join keys are important, and frequent reports may later
 benefit from summary tables or materialized views.
 
-Common mistakes:
+Common Mistakes:
 - Calculating revenue from current product price instead of order item unit
   price.
 - Counting orders without DISTINCT after joining order items.
 - Including refunded or pending payments in completed revenue.
 
-Challenge exercise:
+Challenge Exercise:
 Create a customer revenue report for completed payments.
 
-Challenge solution:
+Challenge Solution:
 */
 
 SELECT
@@ -76,7 +76,7 @@ GROUP BY u.email
 ORDER BY completed_payment_total DESC;
 
 /*
-Related chapters:
+Related Chapters:
 - ../01_basic_queries/README.md
 - ../02_filtering_sorting/README.md
 - README.md

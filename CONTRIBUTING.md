@@ -18,17 +18,17 @@ Each example should include:
 
 - Title
 - Difficulty
-- Learning objectives
-- Problem statement
-- SQL query
-- Expected result description
+- Learning Objectives
+- Problem Statement
+- Business Scenario
+- SQL Solution
+- Expected Output
 - Explanation
-- Real-world use case
-- Performance considerations, where useful
-- Common mistakes
-- Challenge exercise
-- Challenge solution
-- Related examples
+- Performance Notes
+- Common Mistakes
+- Challenge Exercise
+- Challenge Solution
+- Related Chapters
 
 ## Local Validation
 
@@ -65,3 +65,4 @@ Before submitting:
 - Update documentation when you add or change learning material.
 - Keep unrelated changes out of the pull request.
 - Link related examples when adding or renaming chapter files.
+- Check Markdown links when you add or rename documentation.

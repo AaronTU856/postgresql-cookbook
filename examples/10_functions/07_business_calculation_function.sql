@@ -2,19 +2,19 @@
 Title: Business Calculation Function
 Difficulty: Intermediate
 
-Learning objectives:
+Learning Objectives:
 - Encapsulate an order-total calculation.
 - Handle missing rows safely.
 - Use a function in practical reporting queries.
 
-Problem statement:
+Problem Statement:
 Reports repeatedly need the total value of an order based on its order items.
 
-Business scenario:
+Business Scenario:
 Finance, support, and fulfilment teams all need the same definition of order
 value.
 
-SQL solution:
+SQL Solution:
 */
 
 DROP FUNCTION IF EXISTS cookbook_calculate_order_total(BIGINT);
@@ -46,22 +46,22 @@ Explanation:
 The function centralises the order-total calculation and returns zero when an
 order has no items.
 
-Expected output:
+Expected Output:
 Each order appears with its calculated order total.
 
-Performance considerations:
+Performance Notes:
 This is readable for small reports. For large reports, prefer one grouped query
 over calling a table-reading function once per order.
 
-Common mistakes:
+Common Mistakes:
 - Returning NULL for orders with no items when the business expects zero.
 - Calculating order totals differently in different reports.
 - Hiding a repeated aggregate inside row-by-row function calls at scale.
 
-Challenge:
+Challenge Exercise:
 Create a function that calculates completed payment total for a customer.
 
-Challenge solution:
+Challenge Solution:
 */
 
 DROP FUNCTION IF EXISTS cookbook_customer_completed_payment_total(BIGINT);
@@ -91,7 +91,7 @@ FROM users
 ORDER BY completed_payment_total DESC, users.email ASC;
 
 /*
-Related chapters:
+Related Chapters:
 - ../04_aggregates/10_business_reports.sql
 - ../09_views/10_business_reporting_view.sql
 - 08_reporting_function.sql

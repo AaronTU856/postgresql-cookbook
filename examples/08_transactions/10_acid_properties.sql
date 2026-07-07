@@ -2,16 +2,16 @@
 Title: ACID Properties
 Difficulty: Intermediate
 
-Learning objectives:
+Learning Objectives:
 - Connect transaction behaviour to ACID.
 - See atomicity and consistency in a practical update.
 - Use constraints as part of transaction safety.
 
-Problem statement:
+Problem Statement:
 The warehouse team wants to understand how PostgreSQL protects stock from
 invalid values during an order update.
 
-SQL solution:
+SQL Solution:
 */
 
 BEGIN;
@@ -39,28 +39,28 @@ by the CHECK constraint that prevents negative stock. Isolation protects the
 uncommitted change from unsafe concurrent access. Durability would apply if the
 transaction committed.
 
-Expected results:
+Expected Output:
 The product stock appears reduced inside the transaction, then ROLLBACK restores
 the original seed value.
 
-Real-world example:
+Business Scenario:
 Inventory systems rely on transactions and constraints to prevent invalid stock
 states.
 
-Performance notes:
+Performance Notes:
 Constraints are valuable safety nets, but they do not replace good transaction
 design and targeted row locking.
 
-Common mistakes:
+Common Mistakes:
 - Explaining ACID as theory without linking it to real business rules.
 - Depending only on application code for consistency.
 - Forgetting that durability starts after COMMIT.
 
-Challenge exercise:
+Challenge Exercise:
 Use a transaction to inspect how a payment refund status change would be rolled
 back safely.
 
-Challenge solution:
+Challenge Solution:
 */
 
 BEGIN;
@@ -75,7 +75,7 @@ RETURNING
 ROLLBACK;
 
 /*
-Related examples:
+Related Chapters:
 - 01_begin_commit.sql
 - 02_rollback.sql
 - 09_locking.sql

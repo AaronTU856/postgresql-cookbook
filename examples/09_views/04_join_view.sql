@@ -2,16 +2,16 @@
 Title: Join View
 Difficulty: Intermediate
 
-Learning objectives:
+Learning Objectives:
 - Create a view that joins related tables.
 - Simplify repeated order lookup queries.
 - Use clear aliases in view definitions.
 
-Problem statement:
+Problem Statement:
 Support frequently needs orders with customer names and payment status in one
 readable result.
 
-SQL solution:
+SQL Solution:
 */
 
 DROP VIEW IF EXISTS order_support_view;
@@ -45,27 +45,27 @@ Explanation:
 The view hides the join details behind a business-friendly name. Support users
 can query one view instead of joining orders, users, and payments each time.
 
-Expected results:
+Expected Output:
 The query returns each order with customer email, order status, payment status,
 and payment amount.
 
-Real-world example:
+Business Scenario:
 Support dashboards often use joined views to keep ticket investigation queries
 short and consistent.
 
-Performance notes:
+Performance Notes:
 The view still runs the joins at query time. Foreign-key indexes on the base
 tables help the joined query perform well.
 
-Common mistakes:
+Common Mistakes:
 - Using SELECT * in view definitions.
 - Reusing ambiguous column names such as status without aliases.
 - Assuming joins inside a view are automatically cached.
 
-Challenge exercise:
+Challenge Exercise:
 Create a view showing order item lines with product names and unit prices.
 
-Challenge solution:
+Challenge Solution:
 */
 
 DROP VIEW IF EXISTS order_item_product_view;
@@ -91,7 +91,7 @@ FROM order_item_product_view
 ORDER BY order_id ASC, product_name ASC;
 
 /*
-Related examples:
+Related Chapters:
 - 05_aggregate_view.sql
 - ../03_joins/07_join_multiple_tables.sql
 - ../08_transactions/11_real_world_transaction.sql

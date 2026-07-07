@@ -2,19 +2,19 @@
 Title: SQL vs PL/pgSQL Functions
 Difficulty: Intermediate
 
-Learning objectives:
+Learning Objectives:
 - Compare SQL and PL/pgSQL functions.
 - Use SQL functions for direct queries.
 - Use PL/pgSQL for branching logic.
 
-Problem statement:
+Problem Statement:
 The team wants reusable order totals and readable payment status labels.
 
-Business scenario:
+Business Scenario:
 Reports need numeric order totals, while support screens need friendly payment
 status labels.
 
-SQL solution:
+SQL Solution:
 */
 
 DROP FUNCTION IF EXISTS cookbook_order_total(BIGINT);
@@ -73,22 +73,22 @@ Explanation:
 The SQL function is a good fit for one query that calculates an order total.
 The PL/pgSQL function is a better fit for procedural branching with IF and ELSIF.
 
-Expected output:
+Expected Output:
 Each order appears with an order total and readable payment status label.
 
-Performance considerations:
+Performance Notes:
 Calling a table-reading function once per row can be expensive on large result
 sets. For large reports, a join with GROUP BY may be faster.
 
-Common mistakes:
+Common Mistakes:
 - Using PL/pgSQL for simple expressions that SQL handles clearly.
 - Hiding expensive per-row lookups inside functions.
 - Forgetting to handle unexpected input values.
 
-Challenge:
+Challenge Exercise:
 Create a PL/pgSQL function that labels order status values for support users.
 
-Challenge solution:
+Challenge Solution:
 */
 
 DROP FUNCTION IF EXISTS cookbook_order_status_label(VARCHAR);
@@ -126,7 +126,7 @@ FROM orders
 ORDER BY id ASC;
 
 /*
-Related chapters:
+Related Chapters:
 - ../04_aggregates/09_aggregate_with_join.sql
 - ../08_transactions/11_real_world_transaction.sql
 - 03_return_table.sql

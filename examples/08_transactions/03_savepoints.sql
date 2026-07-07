@@ -2,16 +2,16 @@
 Title: SAVEPOINTS
 Difficulty: Intermediate
 
-Learning objectives:
+Learning Objectives:
 - Create savepoints inside a transaction.
 - Roll back only part of a transaction.
 - Continue safely after an optional step is discarded.
 
-Problem statement:
+Problem Statement:
 Support wants to test an order status change, then try an optional payment note
 step that can be rolled back without discarding the whole transaction.
 
-SQL solution:
+SQL Solution:
 */
 
 BEGIN;
@@ -49,28 +49,28 @@ The savepoint marks a position inside the transaction. ROLLBACK TO SAVEPOINT
 undoes only the temporary note step. The order status change remains visible
 inside the transaction until the final ROLLBACK discards everything.
 
-Expected results:
+Expected Output:
 The order appears as paid inside the transaction, but no permanent data changes
 remain after the final rollback.
 
-Real-world example:
+Business Scenario:
 Checkout flows may reserve stock first, then roll back only optional loyalty or
 audit steps if they fail.
 
-Performance notes:
+Performance Notes:
 Savepoints add overhead. Use them for meaningful partial recovery rather than
 wrapping every statement.
 
-Common mistakes:
+Common Mistakes:
 - Treating a savepoint as a commit.
 - Forgetting the outer transaction is still open.
 - Creating too many savepoints in high-volume workflows.
 
-Challenge exercise:
+Challenge Exercise:
 Create a savepoint after changing a payment status, insert a temporary note,
 roll back to the savepoint, and then roll back the full transaction.
 
-Challenge solution:
+Challenge Solution:
 */
 
 BEGIN;
@@ -103,7 +103,7 @@ WHERE id = 4;
 ROLLBACK;
 
 /*
-Related examples:
+Related Chapters:
 - 02_rollback.sql
 - 11_real_world_transaction.sql
 - 12_common_transaction_mistakes.sql

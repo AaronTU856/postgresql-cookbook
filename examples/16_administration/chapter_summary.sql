@@ -2,19 +2,19 @@
 Title: PostgreSQL Administration Chapter Summary
 Difficulty: Intermediate
 
-Learning objectives:
+Learning Objectives:
 - Review safe administration checks.
 - Inspect health, size, activity, and permissions.
 - Practise production-minded database diagnostics.
 
-Problem statement:
+Problem Statement:
 Summarise common first-response checks for a PostgreSQL-backed application.
 
-Business scenario:
+Business Scenario:
 During an incident, backend engineers need quick, safe database facts before
 making changes.
 
-SQL solution:
+SQL Solution:
 */
 
 SELECT
@@ -39,23 +39,23 @@ Explanation:
 The summary combines health, storage, activity, and permission checks without
 changing application data.
 
-Expected output:
+Expected Output:
 The queries return database identity, session counts, and a table privilege
 check.
 
-Performance considerations:
+Performance Notes:
 These checks are safe for normal troubleshooting, but production monitoring
 should use proper observability tooling.
 
-Common mistakes:
+Common Mistakes:
 - Starting with risky fixes before gathering facts.
 - Ignoring permissions and connection context.
 - Treating a single point-in-time check as a trend.
 
-Challenge:
+Challenge Exercise:
 Add a table-size check for products.
 
-Challenge solution:
+Challenge Solution:
 */
 
 SELECT
@@ -63,7 +63,7 @@ SELECT
     pg_size_pretty(pg_total_relation_size('products')) AS total_size;
 
 /*
-Related chapters:
+Related Chapters:
 - ../12_indexes/chapter_summary.sql
 - ../13_performance/chapter_summary.sql
 - ../17_docker_postgresql/01_connection_check.sql

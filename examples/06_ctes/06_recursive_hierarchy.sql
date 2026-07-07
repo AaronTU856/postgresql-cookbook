@@ -2,15 +2,15 @@
 Title: Recursive Hierarchy
 Difficulty: Intermediate
 
-Learning objectives:
+Learning Objectives:
 - Model hierarchy traversal with a recursive CTE.
 - Build readable category paths.
 - Understand parent-child recursion.
 
-Problem statement:
+Problem Statement:
 The merchandising team wants a category navigation tree for store reporting.
 
-SQL solution:
+SQL Solution:
 */
 
 WITH RECURSIVE category_tree AS (
@@ -60,29 +60,29 @@ Explanation:
 The anchor query starts at the root Store node. The recursive query finds child
 nodes and appends their names to the category path.
 
-Expected results:
+Expected Output:
 The query returns a small category hierarchy with Store as the root and the
 sample product categories underneath it.
 
-Real-world example:
+Business Scenario:
 Recursive CTEs are commonly used for category trees, menu structures, reporting
 rollups, and organisation charts.
 
-Performance notes:
+Performance Notes:
 Recursive hierarchy queries need indexes on parent identifiers in real tables.
 This example uses inline values to demonstrate the pattern without changing the
 sample schema.
 
-Common mistakes:
+Common Mistakes:
 - Forgetting to define the root rows.
 - Recursing without a parent-child join.
 - Building paths without a stable ordering rule.
 
-Challenge exercise:
+Challenge Exercise:
 Create a simple order workflow hierarchy from Order Lifecycle to Paid and
 Delivered statuses.
 
-Challenge solution:
+Challenge Solution:
 */
 
 WITH RECURSIVE workflow_tree AS (
@@ -126,7 +126,7 @@ FROM workflow_tree
 ORDER BY depth ASC;
 
 /*
-Related examples:
+Related Chapters:
 - 05_recursive_cte.sql
 - ../03_joins/06_self_join.sql
 - 10_common_cte_mistakes.sql

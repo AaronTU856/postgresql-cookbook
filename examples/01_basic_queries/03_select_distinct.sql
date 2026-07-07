@@ -2,16 +2,16 @@
 Title: Select Distinct Values
 Difficulty: Beginner
 
-Learning objectives:
+Learning Objectives:
 - Use DISTINCT to remove duplicate values.
 - Discover the set of values stored in a column.
 - Sort distinct values for easier reading.
 
-Problem statement:
+Problem Statement:
 The operations team wants to know which order statuses currently exist in the
 orders table.
 
-SQL solution:
+SQL Solution:
 */
 
 SELECT DISTINCT
@@ -20,7 +20,7 @@ FROM orders
 ORDER BY status;
 
 /*
-Expected result description:
+Expected Output:
 The query returns each order status once, such as cancelled, delivered, paid,
 pending, and shipped.
 
@@ -28,23 +28,23 @@ Explanation:
 DISTINCT removes duplicate rows from the result. Because only status is
 selected, PostgreSQL returns one row per unique status value.
 
-Real-world example:
+Business Scenario:
 Before building a status filter in an admin dashboard, a developer may inspect
 the existing status values in the database.
 
-Performance considerations:
+Performance Notes:
 DISTINCT may require PostgreSQL to sort or hash results. It is fine for small
 tables, but on large datasets it can be more expensive than a simple SELECT.
 
-Common mistakes:
+Common Mistakes:
 - Expecting DISTINCT to apply to only one column when multiple columns are
   selected. DISTINCT applies to the whole selected row.
 - Using DISTINCT to hide duplicate data problems instead of fixing the source.
 
-Challenge exercise:
+Challenge Exercise:
 Return each payment method used in the payments table.
 
-Challenge solution:
+Challenge Solution:
 */
 
 SELECT DISTINCT
@@ -53,7 +53,7 @@ FROM payments
 ORDER BY payment_method;
 
 /*
-Related examples:
+Related Chapters:
 - 04_where_clause.sql
 - 10_in.sql
 */

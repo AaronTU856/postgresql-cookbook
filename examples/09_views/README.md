@@ -1,5 +1,7 @@
 # Chapter 9: Views
 
+## Overview
+
 ## What Are Views?
 
 A view is a saved SQL query that can be read like a table. It does not store

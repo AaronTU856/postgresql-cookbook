@@ -2,15 +2,15 @@
 Title: EXISTS Subquery
 Difficulty: Intermediate
 
-Learning objectives:
+Learning Objectives:
 - Use EXISTS to test whether related rows exist.
 - Find customers with at least one order.
 - Prefer existence checks over unnecessary counting.
 
-Problem statement:
+Problem Statement:
 Customer success wants users who have placed at least one order.
 
-SQL solution:
+SQL Solution:
 */
 
 SELECT
@@ -31,27 +31,27 @@ Explanation:
 EXISTS returns true when the subquery returns at least one row. The subquery is
 correlated because it checks orders for the current user from the outer query.
 
-Expected results:
+Expected Output:
 The query returns all six sample users because every sample user has at least
 one order.
 
-Real-world example:
+Business Scenario:
 Marketing teams may segment registered users into customers with purchase
 activity and users without purchase activity.
 
-Performance notes:
+Performance Notes:
 EXISTS can stop checking after it finds the first matching row. It is usually a
 good fit for relationship existence checks.
 
-Common mistakes:
+Common Mistakes:
 - Using COUNT(*) when EXISTS would express the question more directly.
 - Selecting unnecessary columns inside the EXISTS subquery.
 - Forgetting the correlation condition.
 
-Challenge exercise:
+Challenge Exercise:
 Find products that have appeared in at least one order item.
 
-Challenge solution:
+Challenge Solution:
 */
 
 SELECT
@@ -67,7 +67,7 @@ WHERE EXISTS (
 ORDER BY products.name ASC;
 
 /*
-Related examples:
+Related Chapters:
 - ../03_joins/02_left_join.sql
 - 06_not_exists.sql
 - 11_common_subquery_mistakes.sql

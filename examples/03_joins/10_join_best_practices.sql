@@ -2,19 +2,19 @@
 Title: Join Best Practices
 Difficulty: Beginner
 
-Learning objectives:
+Learning Objectives:
 - Use explicit JOIN syntax.
 - Use readable table aliases.
 - Qualify selected columns in joined queries.
 
-Problem statement:
+Problem Statement:
 The product team wants a clear product list with category names.
 
-Business scenario:
+Business Scenario:
 Product APIs and admin exports often need category labels, but the products
 table stores only category_id.
 
-SQL solution:
+SQL Solution:
 */
 
 SELECT
@@ -33,22 +33,22 @@ Explanation:
 This query uses explicit INNER JOIN syntax, short aliases, qualified columns,
 and clear output aliases. That keeps the relationship easy to review.
 
-Expected output:
+Expected Output:
 The query returns all eight products with their category names.
 
-Performance notes:
+Performance Notes:
 Clear SQL is easier to tune. PostgreSQL can use the products.category_id index
 for joins as the table grows.
 
-Common mistakes:
+Common Mistakes:
 - Using old comma join syntax.
 - Using aliases that are too short to understand in larger queries.
 - Selecting unqualified id or name columns after joining tables.
 
-Challenge exercise:
+Challenge Exercise:
 Write a best-practice join that lists order IDs with customer email.
 
-Challenge solution:
+Challenge Solution:
 */
 
 SELECT
@@ -62,7 +62,7 @@ INNER JOIN users AS u
 ORDER BY o.order_date DESC;
 
 /*
-Related chapters:
+Related Chapters:
 - ../01_basic_queries/README.md
 - ../02_filtering_sorting/README.md
 - README.md

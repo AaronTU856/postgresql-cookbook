@@ -2,19 +2,19 @@
 Title: Return Table
 Difficulty: Intermediate
 
-Learning objectives:
+Learning Objectives:
 - Create a table-returning function.
 - Return a reusable customer order history.
 - Use RETURNS TABLE with clear output columns.
 
-Problem statement:
+Problem Statement:
 Support needs a reusable way to fetch one customer's order history.
 
-Business scenario:
+Business Scenario:
 Customer support screens often show order id, status, date, and payment amount
 for the customer currently being reviewed.
 
-SQL solution:
+SQL Solution:
 */
 
 DROP FUNCTION IF EXISTS cookbook_customer_order_history(BIGINT);
@@ -58,22 +58,22 @@ Explanation:
 RETURNS TABLE defines the columns returned by the function. STABLE is appropriate
 because the function reads database tables but does not modify data.
 
-Expected output:
+Expected Output:
 The query returns the seeded order history for user 1.
 
-Performance considerations:
+Performance Notes:
 Table-returning functions can hide joins. Make sure the underlying columns used
 for filtering and joining are indexed in larger systems.
 
-Common mistakes:
+Common Mistakes:
 - Returning unclear column names.
 - Forgetting to filter by the function parameter.
 - Using a table-returning function when a simple view would be clearer.
 
-Challenge:
+Challenge Exercise:
 Create a table-returning function that lists order items for a given order id.
 
-Challenge solution:
+Challenge Solution:
 */
 
 DROP FUNCTION IF EXISTS cookbook_order_items_for_order(BIGINT);
@@ -110,7 +110,7 @@ SELECT
 FROM cookbook_order_items_for_order(1);
 
 /*
-Related chapters:
+Related Chapters:
 - ../03_joins/04_full_outer_join.sql
 - ../09_views/04_join_view.sql
 - 08_reporting_function.sql

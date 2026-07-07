@@ -2,19 +2,19 @@
 Title: Django Integration Chapter Summary
 Difficulty: Intermediate
 
-Learning objectives:
+Learning Objectives:
 - Review SQL behind common Django ORM patterns.
 - Connect QuerySets to joins, aggregates, transactions, and indexes.
 - Build production-minded Django/PostgreSQL habits.
 
-Problem statement:
+Problem Statement:
 Summarise the Django integration chapter with a customer order report query.
 
-Business scenario:
+Business Scenario:
 A Django API endpoint needs customer details, order counts, and completed payment
 totals without N+1 queries.
 
-SQL solution:
+SQL Solution:
 */
 
 SELECT
@@ -40,22 +40,22 @@ Explanation:
 The summary query shows the SQL shape behind a Django list endpoint using joins
 and annotations instead of row-by-row lookups.
 
-Expected output:
+Expected Output:
 Each customer appears with order count and completed payment total.
 
-Performance considerations:
+Performance Notes:
 Use Django debug tooling to inspect SQL and query counts, then use PostgreSQL
 EXPLAIN for important queries.
 
-Common mistakes:
+Common Mistakes:
 - Assuming ORM code is efficient because it is concise.
 - Ignoring generated SQL in code review.
 - Missing indexes for frequent API filters.
 
-Challenge:
+Challenge Exercise:
 Write the SQL shape for a Django product catalogue filtered by active products.
 
-Challenge solution:
+Challenge Solution:
 */
 
 SELECT
@@ -67,7 +67,7 @@ WHERE is_active = TRUE
 ORDER BY name ASC;
 
 /*
-Related chapters:
+Related Chapters:
 - ../03_joins/07_join_multiple_tables.sql
 - 06_indexes_for_django_filters.sql
 - ../13_performance/04_avoid_n_plus_one.sql

@@ -25,3 +25,7 @@ Who would benefit most from this example?
 ## Related Chapter
 
 Which chapter should this belong to, if known?
+
+## Validation Notes
+
+If you already have a working query, mention which cookbook tables it uses and whether it runs against the sample database.

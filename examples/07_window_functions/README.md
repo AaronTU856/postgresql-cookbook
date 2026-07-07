@@ -1,5 +1,7 @@
 # Chapter 7: Window Functions
 
+## Overview
+
 ## What Are Window Functions?
 
 Window functions calculate values across a set of related rows while keeping each original row visible. They are useful when you need row-level detail and summary-style context in the same result.

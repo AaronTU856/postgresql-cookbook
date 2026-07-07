@@ -2,20 +2,20 @@
 Title: Docker & PostgreSQL Chapter Summary
 Difficulty: Beginner
 
-Learning objectives:
+Learning Objectives:
 - Review Docker PostgreSQL verification queries.
 - Confirm connection, readiness, and initialization.
 - Gather safe troubleshooting data.
 
-Problem statement:
+Problem Statement:
 Summarise a reliable post-startup checklist for the cookbook PostgreSQL
 container.
 
-Business scenario:
+Business Scenario:
 New contributors should be able to prove their local database is ready before
 running examples or tests.
 
-SQL solution:
+SQL Solution:
 */
 
 SELECT
@@ -38,22 +38,22 @@ Explanation:
 The summary confirms identity, seed data, and session visibility from inside the
 PostgreSQL server.
 
-Expected output:
+Expected Output:
 The queries return connection details, seed counts, and current session count.
 
-Performance considerations:
+Performance Notes:
 This is safe for local and CI checks. Production readiness requires deeper
 backup, monitoring, and security checks.
 
-Common mistakes:
+Common Mistakes:
 - Skipping database verification after container startup.
 - Resetting containers but not volumes.
 - Treating Docker local performance as production performance.
 
-Challenge:
+Challenge Exercise:
 Check the table list in the public schema.
 
-Challenge solution:
+Challenge Solution:
 */
 
 SELECT
@@ -63,7 +63,7 @@ WHERE table_schema = 'public'
 ORDER BY table_name ASC;
 
 /*
-Related chapters:
+Related Chapters:
 - ../16_administration/chapter_summary.sql
 - ../13_performance/chapter_summary.sql
 - ../18_django_examples/README.md

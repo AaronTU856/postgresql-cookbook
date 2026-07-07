@@ -7,15 +7,15 @@ Concepts:
 - IS NULL
 - IS NOT NULL
 
-Learning objectives:
+Learning Objectives:
 - Find missing values with IS NULL.
 - Find present values with IS NOT NULL.
 - Avoid invalid NULL comparisons.
 
-Problem statement:
+Problem Statement:
 The finance team wants payments that do not yet have a payment timestamp.
 
-SQL solution:
+SQL Solution:
 */
 
 SELECT
@@ -33,26 +33,26 @@ Explanation:
 NULL means the value is unknown or absent. Use IS NULL to find rows where a
 column has no stored value.
 
-Expected results:
+Expected Output:
 The query returns the pending bank transfer payment with no paid_at timestamp.
 
-Real-world example:
+Business Scenario:
 Finance dashboards often need to identify payments that have been created but
 not completed.
 
-Performance notes:
+Performance Notes:
 IS NULL filters can use indexes in PostgreSQL in some cases. For this small
 dataset, the important point is correct NULL handling.
 
-Common mistakes:
+Common Mistakes:
 - Writing paid_at = NULL.
 - Treating NULL like an empty string or zero.
 - Forgetting that NOT IN behaves unexpectedly when a list contains NULL.
 
-Challenge exercise:
+Challenge Exercise:
 Find payments that do have a payment timestamp.
 
-Challenge solution:
+Challenge Solution:
 */
 
 SELECT
@@ -66,7 +66,7 @@ WHERE paid_at IS NOT NULL
 ORDER BY paid_at ASC;
 
 /*
-Related examples:
+Related Chapters:
 - ../01_basic_queries/11_null_values.sql
 - 10_nulls_first_last.sql
 - 07_in_and_not_in.sql

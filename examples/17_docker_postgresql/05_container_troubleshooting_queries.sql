@@ -2,20 +2,20 @@
 Title: Container Troubleshooting Queries
 Difficulty: Intermediate
 
-Learning objectives:
+Learning Objectives:
 - Inspect active sessions.
 - Check relevant server settings.
 - Gather safe troubleshooting evidence.
 
-Problem statement:
+Problem Statement:
 The API cannot connect reliably, and the team wants database-side evidence from
 inside the PostgreSQL container.
 
-Business scenario:
+Business Scenario:
 Docker issues can come from connection limits, wrong database names, startup
 timing, or application connection pool behaviour.
 
-SQL solution:
+SQL Solution:
 */
 
 SELECT
@@ -36,22 +36,22 @@ Explanation:
 The first query counts sessions to the current database. The second query shows
 connection-related settings visible from SQL.
 
-Expected output:
+Expected Output:
 Session count and selected connection settings are returned.
 
-Performance considerations:
+Performance Notes:
 These diagnostics are safe, but avoid exposing full query text from production
 without redaction.
 
-Common mistakes:
+Common Mistakes:
 - Debugging application code before checking database readiness.
 - Ignoring connection pool size versus max_connections.
 - Forgetting Docker port mapping can differ from PostgreSQL's internal port.
 
-Challenge:
+Challenge Exercise:
 List session states for the current database.
 
-Challenge solution:
+Challenge Solution:
 */
 
 SELECT
@@ -63,7 +63,7 @@ GROUP BY state
 ORDER BY state ASC;
 
 /*
-Related chapters:
+Related Chapters:
 - ../16_administration/03_activity_monitoring.sql
 - ../13_performance/02_explain_analyze.sql
 - 02_healthcheck_query.sql

@@ -2,15 +2,15 @@
 Title: Match Text With LIKE
 Difficulty: Beginner
 
-Learning objectives:
+Learning Objectives:
 - Use LIKE-style matching for text columns.
 - Use ILIKE for case-insensitive matching in PostgreSQL.
 - Understand wildcard placement.
 
-Problem statement:
+Problem Statement:
 The store team wants to find products whose names contain the word guide.
 
-SQL solution:
+SQL Solution:
 */
 
 SELECT
@@ -22,7 +22,7 @@ WHERE name ILIKE '%guide%'
 ORDER BY name;
 
 /*
-Expected result description:
+Expected Output:
 The query returns PostgreSQL Pocket Guide because its product name contains the
 word guide, regardless of case.
 
@@ -30,23 +30,23 @@ Explanation:
 ILIKE is PostgreSQL's case-insensitive version of LIKE. The % wildcard means
 "any number of characters", so '%guide%' matches text containing guide anywhere.
 
-Real-world example:
+Business Scenario:
 A basic search box might use text matching to find products by partial name.
 
-Performance considerations:
+Performance Notes:
 Patterns that start with %, such as '%guide%', usually cannot use a normal
 B-tree index efficiently. Larger search features often need trigram indexes or
 full-text search.
 
-Common mistakes:
+Common Mistakes:
 - Forgetting wildcards and writing ILIKE 'guide', which only matches the exact
   word guide.
 - Using LIKE when case-insensitive matching is required.
 
-Challenge exercise:
+Challenge Exercise:
 Find users whose email address ends with example.com.
 
-Challenge solution:
+Challenge Solution:
 */
 
 SELECT
@@ -58,7 +58,7 @@ WHERE email LIKE '%@example.com'
 ORDER BY email;
 
 /*
-Related examples:
+Related Chapters:
 - 04_where_clause.sql
 - 10_in.sql
 */

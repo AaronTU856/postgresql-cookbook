@@ -2,16 +2,16 @@
 Title: Common Subquery Mistakes
 Difficulty: Intermediate
 
-Learning objectives:
+Learning Objectives:
 - Avoid using = with multi-row subqueries.
 - Use EXISTS for relationship checks.
 - Keep subquery output aligned with the outer query.
 
-Problem statement:
+Problem Statement:
 The analytics team wants customers who have completed payments, without
 overcomplicating the query.
 
-SQL solution:
+SQL Solution:
 */
 
 SELECT
@@ -34,26 +34,26 @@ Explanation:
 EXISTS is a clear way to ask whether a user has at least one completed payment.
 The subquery returns 1 because the actual selected value does not matter.
 
-Expected results:
+Expected Output:
 The query returns users with at least one completed payment.
 
-Real-world example:
+Business Scenario:
 Marketing teams may segment customers who have completed purchases.
 
-Performance notes:
+Performance Notes:
 EXISTS can stop after finding the first matching related row. This is usually
 better than counting all matching rows when only existence matters.
 
-Common mistakes:
+Common Mistakes:
 - Writing user_id = (SELECT user_id FROM orders), which fails if the subquery
   returns multiple rows.
 - Returning several columns from a subquery used in a single-value comparison.
 - Counting rows when EXISTS would express the business question better.
 
-Challenge exercise:
+Challenge Exercise:
 Find products that have order items using EXISTS.
 
-Challenge solution:
+Challenge Solution:
 */
 
 SELECT
@@ -69,7 +69,7 @@ WHERE EXISTS (
 ORDER BY products.name ASC;
 
 /*
-Related examples:
+Related Chapters:
 - 05_exists.sql
 - 06_not_exists.sql
 - 10_subquery_vs_join.sql

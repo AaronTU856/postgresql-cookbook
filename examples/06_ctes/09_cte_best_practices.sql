@@ -2,15 +2,15 @@
 Title: CTE Best Practices
 Difficulty: Intermediate
 
-Learning objectives:
+Learning Objectives:
 - Name CTEs after business meaning.
 - Keep each CTE focused.
 - Select only columns needed by later steps.
 
-Problem statement:
+Problem Statement:
 Finance wants a readable query for completed card payments with customer email.
 
-SQL solution:
+SQL Solution:
 */
 
 WITH completed_card_payments AS (
@@ -38,26 +38,26 @@ Explanation:
 The CTE name describes the business set: completed card payments. It exposes
 only the columns the outer query needs.
 
-Expected results:
+Expected Output:
 The query returns completed card payments with customer email and amount.
 
-Real-world example:
+Business Scenario:
 Readable CTE names make finance and operations reports easier to review with
 non-database stakeholders.
 
-Performance notes:
+Performance Notes:
 Selecting only needed columns keeps intermediate results easier to reason about.
 PostgreSQL may still optimise the query internally.
 
-Common mistakes:
+Common Mistakes:
 - Naming CTEs cte1 or temp_data.
 - Selecting every column from the source table.
 - Packing unrelated business rules into one large CTE.
 
-Challenge exercise:
+Challenge Exercise:
 Create a focused CTE for shipped or delivered orders and join it to users.
 
-Challenge solution:
+Challenge Solution:
 */
 
 WITH fulfilled_orders AS (
@@ -80,7 +80,7 @@ INNER JOIN users
 ORDER BY fulfilled_orders.order_date DESC;
 
 /*
-Related examples:
+Related Chapters:
 - ../02_filtering_sorting/07_in_and_not_in.sql
 - ../03_joins/10_join_best_practices.sql
 - 10_common_cte_mistakes.sql

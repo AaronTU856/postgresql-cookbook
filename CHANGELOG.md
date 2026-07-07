@@ -6,34 +6,26 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ## [Unreleased]
 
+No unreleased changes.
+
+## [1.0.0] - 2026-07-07
+
+### Release Notes
+
+`v1.0.0` completes the core PostgreSQL Cookbook roadmap from beginner SQL through advanced backend, PostGIS, and real-world project examples.
+
 ### Added
 
-- Chapter 2: Filtering & Sorting, with examples for `AND`, `OR`, `NOT`, comparison operators, `LIKE`, `ILIKE`, `BETWEEN`, `IN`, `NOT IN`, `NULL` handling, multi-column sorting, `NULLS FIRST`, `NULLS LAST`, `LIMIT`, `OFFSET`, and simple pagination.
-- Chapter 3: Joins, with examples for `INNER JOIN`, `LEFT JOIN`, `RIGHT JOIN`, `FULL OUTER JOIN`, `CROSS JOIN`, self joins, multi-table joins, joins with aggregation, join filtering, join best practices, common join mistakes, and real-world reporting.
-- Chapter 4: Aggregation, with examples for `COUNT`, `SUM`, `AVG`, `MIN`, `MAX`, `GROUP BY`, `HAVING`, distinct aggregates, joins with aggregates, and business reporting queries.
-- Chapter 5: Subqueries, with examples for scalar subqueries, single-row and multiple-row subqueries, correlated subqueries, `EXISTS`, `NOT EXISTS`, `ANY`, `ALL`, subqueries in `SELECT`, subqueries in `FROM`, and subquery versus join tradeoffs.
-- Chapter 6: Common Table Expressions, with examples for basic `WITH` clauses, multiple CTEs, joins, aggregation, recursive CTEs, hierarchy traversal, reporting queries, best practices, and CTE performance considerations.
-- Chapter 7: Window Functions, with examples for `ROW_NUMBER`, `RANK`, `DENSE_RANK`, `NTILE`, `LAG`, `LEAD`, `FIRST_VALUE`, `LAST_VALUE`, running totals, moving averages, partitioned calculations, best practices, and business reporting.
-- Chapter 8: Transactions & ACID, with examples for `BEGIN`, `COMMIT`, `ROLLBACK`, savepoints, isolation levels, row locks, deadlock avoidance, ACID properties, and e-commerce transaction workflows.
-- Chapter 9: Views, with examples for simple views, complex views, join views, aggregate views, updatable views, materialized views, refresh workflows, security-focused views, reporting views, and common view mistakes.
-- Chapter 10: Functions, with examples for SQL functions, PL/pgSQL functions, parameters, table-returning functions, volatility, error handling, business calculations, reporting functions, best practices, common mistakes, and interview preparation.
-- Chapter 11: Triggers, with examples for audit triggers, `BEFORE` triggers, validation triggers, status auditing, common trigger mistakes, and interview preparation.
-- Chapter 12: Indexes, with examples for B-tree indexes, composite indexes, partial indexes, expression indexes, covering indexes, index inspection, and interview preparation.
-- Chapter 13: Performance, with examples for `EXPLAIN`, `EXPLAIN ANALYZE`, avoiding `SELECT *`, avoiding N+1 queries, keyset pagination, report measurement, and interview preparation.
-- Chapter 14: JSONB, with examples for JSONB payloads, field extraction, containment queries, JSON response building, GIN indexing, and interview preparation.
-- Chapter 15: Full Text Search, with examples for `tsvector`, `tsquery`, ranking, headlines, GIN indexes, catalogue search, and interview preparation.
-- Chapter 16: PostgreSQL Administration, with examples for health checks, size monitoring, activity monitoring, permission checks, safe maintenance, and interview preparation.
-- Chapter 17: Docker & PostgreSQL, with examples for connection verification, health checks, initialization checks, persistence checks, troubleshooting queries, and interview preparation.
-- Chapter 18: Django Integration, with examples for QuerySet SQL shapes, `select_related`, avoiding N+1 queries, annotations, transaction patterns, indexes for Django filters, and interview preparation.
+- Twenty completed chapter folders with runnable SQL examples, chapter README files, challenge exercises, and interview preparation where appropriate.
+- Chapters 2-18 covering filtering, joins, aggregation, subqueries, CTEs, window functions, transactions, views, functions, triggers, indexes, performance, JSONB, full text search, administration, Docker workflows, and Django integration.
+- Flagship PostGIS chapter covering spatial modelling, nearest-neighbour search, spatial indexing, GeoJSON, Leaflet, Django GIS, and REST API patterns.
+- Real World Projects chapter covering analytics dashboards, mapping APIs, Django reporting APIs, performance review, operational runbooks, and portfolio-ready JSON responses.
+- v1.0.0 release notes.
 
 ### Changed
 
-- Updated README, learning path, roadmap, and validation workflow for Chapters 2, 3, 4, 5, 6, 7, and 8.
-- Updated README, learning path, roadmap, and validation workflow for Chapter 9.
-- Updated README, learning path, and roadmap for Chapter 10.
-- Updated README, learning path, roadmap, and validation workflow for Chapters 10, 11, 12, 13, 14, and 15.
-- Updated README, learning path, roadmap, and validation workflow for Chapters 16, 17, and 18.
-- Normalised chapter folder numbering to one folder per planned chapter and aligned future placeholder folders with the roadmap.
+- Updated root README, learning path, roadmap, and GitHub Actions validation for the completed chapter set.
+- Normalised chapter folder numbering to one folder per planned chapter and aligned chapter navigation with the roadmap.
 
 ## [0.2.0] - 2026-07-03
 

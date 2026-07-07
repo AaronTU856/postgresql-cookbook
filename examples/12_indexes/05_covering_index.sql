@@ -2,19 +2,19 @@
 Title: Covering Index
 Difficulty: Advanced
 
-Learning objectives:
+Learning Objectives:
 - Create an index with included columns.
 - Understand read-heavy lookup support.
 - Avoid overusing covering indexes.
 
-Problem statement:
+Problem Statement:
 Support frequently lists recent orders for a customer and needs status and
 shipping city.
 
-Business scenario:
+Business Scenario:
 Customer profile pages often load recent orders repeatedly.
 
-SQL solution:
+SQL Solution:
 */
 
 CREATE INDEX IF NOT EXISTS idx_cookbook_orders_user_date_include_status
@@ -36,23 +36,23 @@ Explanation:
 The index keys support filtering by user and ordering by date. Included columns
 can help satisfy selected output without making them part of the search key.
 
-Expected output:
+Expected Output:
 EXPLAIN returns a plan for recent orders for user 1.
 
-Performance considerations:
+Performance Notes:
 Included columns make indexes larger. Use them only for important read-heavy
 queries.
 
-Common mistakes:
+Common Mistakes:
 - Including too many columns.
 - Treating INCLUDE columns as useful for filtering order.
 - Adding covering indexes before checking whether the query is important.
 
-Challenge:
+Challenge Exercise:
 Create a covering index for completed payment reports by paid_at including
 amount and payment_method.
 
-Challenge solution:
+Challenge Solution:
 */
 
 CREATE INDEX IF NOT EXISTS idx_cookbook_payments_completed_paid_at_include_amount
@@ -70,7 +70,7 @@ WHERE status = 'completed'
 ORDER BY paid_at DESC;
 
 /*
-Related chapters:
+Related Chapters:
 - ../07_window_functions/09_running_totals.sql
 - ../09_views/10_business_reporting_view.sql
 - 03_partial_index.sql

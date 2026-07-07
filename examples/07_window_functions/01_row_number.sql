@@ -2,15 +2,15 @@
 Title: ROW_NUMBER
 Difficulty: Beginner
 
-Learning objectives:
+Learning Objectives:
 - Use ROW_NUMBER() to assign a unique sequence.
 - Order rows inside a window.
 - Build a numbered order list for reporting.
 
-Problem statement:
+Problem Statement:
 Customer support wants every order numbered from newest to oldest.
 
-SQL solution:
+SQL Solution:
 */
 
 SELECT
@@ -28,26 +28,26 @@ Explanation:
 ROW_NUMBER() assigns a unique number to each row based on the order inside
 OVER(). The final ORDER BY displays the rows in that numbered order.
 
-Expected results:
+Expected Output:
 The query returns seven orders numbered from newest to oldest.
 
-Real-world example:
+Business Scenario:
 Support dashboards often number recent orders so agents can scan activity in a
 stable sequence.
 
-Performance notes:
+Performance Notes:
 ROW_NUMBER() requires PostgreSQL to sort rows according to the window ORDER BY.
 Indexes on common ordering columns can help larger datasets.
 
-Common mistakes:
+Common Mistakes:
 - Forgetting ORDER BY inside OVER().
 - Expecting ROW_NUMBER() to handle ties like RANK().
 - Omitting a tie-breaker when stable ordering matters.
 
-Challenge exercise:
+Challenge Exercise:
 Number products from most expensive to cheapest.
 
-Challenge solution:
+Challenge Solution:
 */
 
 SELECT
@@ -60,7 +60,7 @@ FROM products
 ORDER BY price_position ASC;
 
 /*
-Related examples:
+Related Chapters:
 - ../02_filtering_sorting/05_order_by.sql
 - 02_rank.sql
 - 12_window_best_practices.sql

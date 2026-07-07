@@ -25,6 +25,10 @@ After completing this chapter, you should be able to:
 - Limit the number of rows returned.
 - Use aliases to make query output easier to read.
 
+## Difficulty
+
+Beginner
+
 ## Recommended Learning Order
 
 1. [Select all columns](01_select_all.sql)
@@ -43,7 +47,7 @@ After completing this chapter, you should be able to:
 
 Allow 60 to 90 minutes if you read each explanation, run each query, and complete each challenge exercise.
 
-## Links to Related Chapters
+## Related Chapters
 
 - [Filtering and Sorting](../02_filtering_sorting/)
 - [Joins](../03_joins/)

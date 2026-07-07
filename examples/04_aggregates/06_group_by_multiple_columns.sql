@@ -2,15 +2,15 @@
 Title: Group by Multiple Columns
 Difficulty: Beginner
 
-Learning objectives:
+Learning Objectives:
 - Group results by more than one column.
 - Count combinations of business values.
 - Read multi-column grouped reports.
 
-Problem statement:
+Problem Statement:
 Operations wants order counts by status and shipping city.
 
-SQL solution:
+SQL Solution:
 */
 
 SELECT
@@ -28,26 +28,26 @@ Explanation:
 GROUP BY status, shipping_city creates a separate group for each unique
 combination of status and shipping city.
 
-Expected results:
+Expected Output:
 The query returns one row for each status-city combination in the sample orders.
 
-Real-world example:
+Business Scenario:
 Regional operations teams often need counts grouped by workflow status and
 location.
 
-Performance notes:
+Performance Notes:
 Grouping by multiple columns creates more groups than grouping by one column.
 Keep grouped columns aligned with the report question.
 
-Common mistakes:
+Common Mistakes:
 - Forgetting to include every non-aggregated selected column in GROUP BY.
 - Grouping by too many columns and producing overly detailed reports.
 - Assuming grouped output is sorted without ORDER BY.
 
-Challenge exercise:
+Challenge Exercise:
 Count payments by payment method and status.
 
-Challenge solution:
+Challenge Solution:
 */
 
 SELECT
@@ -61,7 +61,7 @@ GROUP BY
 ORDER BY payment_method ASC, status ASC;
 
 /*
-Related examples:
+Related Chapters:
 - 05_group_by.sql
 - ../02_filtering_sorting/09_order_by_multiple_columns.sql
 - 07_having.sql

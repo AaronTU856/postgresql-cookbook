@@ -2,19 +2,19 @@
 Title: Create Function
 Difficulty: Beginner
 
-Learning objectives:
+Learning Objectives:
 - Create a simple PostgreSQL function.
 - Reuse a line-total calculation.
 - Call a function from a SELECT query.
 
-Problem statement:
+Problem Statement:
 The store repeatedly calculates line totals from quantity and unit price.
 
-Business scenario:
+Business Scenario:
 Order screens, invoices, and reports all need the same quantity multiplied by
 unit price calculation.
 
-SQL solution:
+SQL Solution:
 */
 
 DROP FUNCTION IF EXISTS cookbook_line_total(INTEGER, NUMERIC);
@@ -46,22 +46,22 @@ The function wraps a simple calculation in one reusable name. IMMUTABLE is
 appropriate because the same inputs always produce the same output and the
 function does not read database tables.
 
-Expected output:
+Expected Output:
 Each order item row includes a calculated line_total value.
 
-Performance considerations:
+Performance Notes:
 Small immutable SQL functions are usually inexpensive. Do not wrap very simple
 expressions unless reuse or clarity justifies it.
 
-Common mistakes:
+Common Mistakes:
 - Marking table-reading functions as IMMUTABLE.
 - Using vague parameter names such as x and y.
 - Creating functions for logic that is only used once.
 
-Challenge:
+Challenge Exercise:
 Create a function that adds VAT to an amount using a supplied tax rate.
 
-Challenge solution:
+Challenge Solution:
 */
 
 DROP FUNCTION IF EXISTS cookbook_add_tax(NUMERIC, NUMERIC);
@@ -86,7 +86,7 @@ WHERE status = 'completed'
 ORDER BY paid_at ASC;
 
 /*
-Related chapters:
+Related Chapters:
 - ../04_aggregates/02_sum.sql
 - ../08_transactions/10_acid_properties.sql
 - ../09_views/05_aggregate_view.sql

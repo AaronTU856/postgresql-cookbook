@@ -2,15 +2,15 @@
 Title: Materialized Views
 Difficulty: Intermediate
 
-Learning objectives:
+Learning Objectives:
 - Create a materialized view.
 - Understand stored query results.
 - Use materialized views for reusable summaries.
 
-Problem statement:
+Problem Statement:
 Leadership wants a stored snapshot of category revenue for faster report reads.
 
-SQL solution:
+SQL Solution:
 */
 
 DROP MATERIALIZED VIEW IF EXISTS category_revenue_snapshot;
@@ -37,27 +37,27 @@ Explanation:
 A materialized view stores the result of the query at creation time. It is useful
 when the report is expensive enough that reading a stored snapshot is helpful.
 
-Expected results:
+Expected Output:
 The materialized view returns category revenue based on seeded order items.
 
-Real-world example:
+Business Scenario:
 Executive dashboards often read from refreshed materialized views instead of
 running expensive reports on every page load.
 
-Performance notes:
+Performance Notes:
 Materialized views can speed up reads, but source data changes are not visible
 until the materialized view is refreshed.
 
-Common mistakes:
+Common Mistakes:
 - Assuming materialized views update automatically.
 - Forgetting to plan refresh timing.
 - Using a materialized view where fresh data is required.
 
-Challenge exercise:
+Challenge Exercise:
 Create a materialized view that stores completed payment totals by payment
 method.
 
-Challenge solution:
+Challenge Solution:
 */
 
 DROP MATERIALIZED VIEW IF EXISTS payment_method_snapshot;
@@ -79,7 +79,7 @@ FROM payment_method_snapshot
 ORDER BY payment_method ASC;
 
 /*
-Related examples:
+Related Chapters:
 - 05_aggregate_view.sql
 - 08_refresh_materialized_view.sql
 - ../04_aggregates/10_business_reports.sql

@@ -2,16 +2,16 @@
 Title: Create View
 Difficulty: Beginner
 
-Learning objectives:
+Learning Objectives:
 - Create a reusable view.
 - Query a view like a table.
 - Drop and recreate a view safely while practising.
 
-Problem statement:
+Problem Statement:
 The catalogue team frequently needs a list of active products with their current
 prices and stock levels.
 
-SQL solution:
+SQL Solution:
 */
 
 DROP VIEW IF EXISTS active_product_catalog;
@@ -38,25 +38,25 @@ Explanation:
 CREATE VIEW stores the SELECT statement under a name. Querying the view runs the
 saved query and returns active products from the products table.
 
-Expected results:
+Expected Output:
 The view returns active products with product id, name, price, and stock level.
 
-Real-world example:
+Business Scenario:
 Application screens often use views to keep common read queries consistent.
 
-Performance notes:
+Performance Notes:
 A regular view does not store data or automatically improve performance. The
 underlying SELECT still runs when the view is queried.
 
-Common mistakes:
+Common Mistakes:
 - Assuming a regular view stores a copy of the rows.
 - Forgetting that changing the base table affects the view result.
 - Creating view names that do not describe the business purpose.
 
-Challenge exercise:
+Challenge Exercise:
 Create a view that lists products with fewer than 20 units in stock.
 
-Challenge solution:
+Challenge Solution:
 */
 
 DROP VIEW IF EXISTS low_stock_products;
@@ -77,7 +77,7 @@ FROM low_stock_products
 ORDER BY stock_quantity ASC, name ASC;
 
 /*
-Related examples:
+Related Chapters:
 - 02_simple_view.sql
 - ../02_filtering_sorting/04_comparison_operators.sql
 - ../08_transactions/09_locking.sql

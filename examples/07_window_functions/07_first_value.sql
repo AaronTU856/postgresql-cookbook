@@ -2,16 +2,16 @@
 Title: FIRST_VALUE
 Difficulty: Intermediate
 
-Learning objectives:
+Learning Objectives:
 - Use FIRST_VALUE() to read the first row in a window.
 - Find the most expensive product per category.
 - Combine FIRST_VALUE() with PARTITION BY.
 
-Problem statement:
+Problem Statement:
 The merchandising team wants each product shown with the most expensive product
 in its category.
 
-SQL solution:
+SQL Solution:
 */
 
 SELECT
@@ -30,26 +30,26 @@ Explanation:
 FIRST_VALUE(name) reads the first product name in each category partition after
 ordering by price descending.
 
-Expected results:
+Expected Output:
 Each product row includes the name of the highest-priced product in its category.
 
-Real-world example:
+Business Scenario:
 Merchandising reports can show each product compared with the premium product in
 the same category.
 
-Performance notes:
+Performance Notes:
 FIRST_VALUE() uses the window ordering. Large partitions require sorting and may
 benefit from indexes aligned with the partition and order columns.
 
-Common mistakes:
+Common Mistakes:
 - Forgetting PARTITION BY and getting the first value across all products.
 - Ordering in the wrong direction.
 - Expecting FIRST_VALUE() to reduce rows like GROUP BY.
 
-Challenge exercise:
+Challenge Exercise:
 Show each user order with the first order date for that user.
 
-Challenge solution:
+Challenge Solution:
 */
 
 SELECT
@@ -64,7 +64,7 @@ FROM orders
 ORDER BY user_id ASC, order_date ASC;
 
 /*
-Related examples:
+Related Chapters:
 - 08_last_value.sql
 - 11_partition_by.sql
 - ../04_aggregates/04_min_max.sql

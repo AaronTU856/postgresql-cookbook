@@ -2,16 +2,16 @@
 Title: CTE Chapter Summary
 Difficulty: Intermediate
 
-Learning objectives:
+Learning Objectives:
 - Combine multiple CTE patterns in one report.
 - Build a readable customer summary.
 - Review filtering, joining, and aggregation with CTEs.
 
-Problem statement:
+Problem Statement:
 Customer success wants a summary of each customer's orders and completed payment
 value.
 
-SQL solution:
+SQL Solution:
 */
 
 WITH customer_orders AS (
@@ -60,27 +60,27 @@ The query uses three CTEs. The first creates customer-order rows, the second
 summarises completed payments by user, and the third creates the final customer
 summary.
 
-Expected results:
+Expected Output:
 The query returns one row per customer with order count and completed payment
 total.
 
-Real-world example:
+Business Scenario:
 Customer success dashboards often combine account, order, and payment metrics in
 one readable report.
 
-Performance notes:
+Performance Notes:
 Pre-aggregating completed payments by user avoids multiplying payment totals
 when a customer has multiple orders.
 
-Common mistakes:
+Common Mistakes:
 - Assuming readable CTEs automatically prevent row multiplication.
 - Forgetting COALESCE for customers with no completed payments.
 - Grouping at the wrong level of detail.
 
-Challenge exercise:
+Challenge Exercise:
 Build a product summary using CTEs for product order quantities.
 
-Challenge solution:
+Challenge Solution:
 */
 
 WITH product_order_totals AS (
@@ -99,7 +99,7 @@ LEFT JOIN product_order_totals
 ORDER BY total_quantity_sold DESC, products.name ASC;
 
 /*
-Related examples:
+Related Chapters:
 - 02_multiple_ctes.sql
 - 08_cte_for_reporting.sql
 - ../05_subqueries/12_chapter_summary.sql

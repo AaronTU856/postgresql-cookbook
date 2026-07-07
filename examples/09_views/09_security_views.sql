@@ -2,16 +2,16 @@
 Title: Security Views
 Difficulty: Intermediate
 
-Learning objectives:
+Learning Objectives:
 - Use views to expose safer column sets.
 - Hide sensitive or unnecessary fields.
 - Understand security_barrier as a defensive option.
 
-Problem statement:
+Problem Statement:
 Analytics users need customer location and signup date, but not full customer
 details.
 
-SQL solution:
+SQL Solution:
 */
 
 DROP VIEW IF EXISTS analytics_customer_view;
@@ -39,27 +39,27 @@ The view exposes only selected customer columns. The security_barrier option can
 help prevent certain query-planning behaviours from pushing user-supplied
 conditions past the view boundary.
 
-Expected results:
+Expected Output:
 The query returns customer ids, locations, countries, and creation timestamps.
 
-Real-world example:
+Business Scenario:
 Analytics teams often need customer geography without full customer contact
 details.
 
-Performance notes:
+Performance Notes:
 Security-oriented options can reduce planner flexibility. Use them where the
 security boundary matters and test important queries.
 
-Common mistakes:
+Common Mistakes:
 - Treating a view as a complete permission model.
 - Exposing email or personal data when only geography is needed.
 - Forgetting to grant permissions on the view instead of the base table.
 
-Challenge exercise:
+Challenge Exercise:
 Create a security-focused view exposing order id, status, and shipping country
 without customer names or email addresses.
 
-Challenge solution:
+Challenge Solution:
 */
 
 DROP VIEW IF EXISTS analytics_order_view;
@@ -82,7 +82,7 @@ FROM analytics_order_view
 ORDER BY order_date ASC;
 
 /*
-Related examples:
+Related Chapters:
 - 02_simple_view.sql
 - 04_join_view.sql
 - ../01_basic_queries/02_select_columns.sql

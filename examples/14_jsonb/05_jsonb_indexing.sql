@@ -2,18 +2,18 @@
 Title: JSONB Indexing
 Difficulty: Advanced
 
-Learning objectives:
+Learning Objectives:
 - Create a GIN index on JSONB.
 - Explain JSONB containment performance.
 - Use EXPLAIN with a JSONB query.
 
-Problem statement:
+Problem Statement:
 The event log will grow, and support needs faster lookup by payload attributes.
 
-Business scenario:
+Business Scenario:
 Payment event logs can become large because every provider callback is stored.
 
-SQL solution:
+SQL Solution:
 */
 
 CREATE TEMP TABLE cookbook_payment_events (
@@ -48,22 +48,22 @@ Explanation:
 GIN indexes can support containment queries on JSONB payloads. The seed data is
 tiny, so PostgreSQL may still choose a sequential scan.
 
-Expected output:
+Expected Output:
 EXPLAIN returns a plan for the JSONB containment query.
 
-Performance considerations:
+Performance Notes:
 GIN indexes can be large. Add them for important JSONB access patterns, not for
 every JSONB column by default.
 
-Common mistakes:
+Common Mistakes:
 - Expecting a GIN index to help every JSONB operation.
 - Ignoring index size and write overhead.
 - Using JSONB when typed columns would be faster and safer.
 
-Challenge:
+Challenge Exercise:
 Run EXPLAIN for a payment_method containment query.
 
-Challenge solution:
+Challenge Solution:
 */
 
 EXPLAIN
@@ -74,7 +74,7 @@ FROM cookbook_payment_events
 WHERE payload @> '{"payment_method": "card"}'::JSONB;
 
 /*
-Related chapters:
+Related Chapters:
 - ../12_indexes/01_basic_index.sql
 - ../13_performance/01_explain_basics.sql
 - 03_jsonb_containment.sql

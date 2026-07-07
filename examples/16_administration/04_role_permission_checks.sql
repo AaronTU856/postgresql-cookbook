@@ -2,20 +2,20 @@
 Title: Role and Permission Checks
 Difficulty: Intermediate
 
-Learning objectives:
+Learning Objectives:
 - Check current role information.
 - Use privilege helper functions.
 - Debug table access safely.
 
-Problem statement:
+Problem Statement:
 A reporting query fails in one environment, and the team needs to verify table
 permissions.
 
-Business scenario:
+Business Scenario:
 Permission mismatches often appear during deployments, reporting access setup,
 or local development onboarding.
 
-SQL solution:
+SQL Solution:
 */
 
 SELECT
@@ -34,22 +34,22 @@ Explanation:
 The first query shows role context. The second query checks table privileges
 without attempting a write.
 
-Expected output:
+Expected Output:
 The current role names and boolean privilege checks are returned.
 
-Performance considerations:
+Performance Notes:
 Privilege checks are lightweight. Use them before broad grants or risky access
 changes.
 
-Common mistakes:
+Common Mistakes:
 - Granting broad permissions before identifying the missing privilege.
 - Confusing current_user and session_user.
 - Testing permissions only with a superuser account.
 
-Challenge:
+Challenge Exercise:
 Check whether the current user can SELECT from payments.
 
-Challenge solution:
+Challenge Solution:
 */
 
 SELECT
@@ -57,7 +57,7 @@ SELECT
     has_table_privilege(current_user, 'payments', 'SELECT') AS can_select;
 
 /*
-Related chapters:
+Related Chapters:
 - ../09_views/09_security_views.sql
 - ../18_django_examples/README.md
 - 03_activity_monitoring.sql

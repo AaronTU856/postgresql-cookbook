@@ -46,7 +46,7 @@ SELECT
     orders.id,
     users.email
 FROM orders
-JOIN users
+INNER JOIN users
     ON users.id = orders.user_id;
 ```
 
@@ -84,26 +84,33 @@ Use comments to explain learning intent or non-obvious decisions. Avoid comments
 
 ## Example File Headers
 
-Beginner example files should use a consistent teaching header inside a SQL block comment:
+Example files should use a consistent teaching header inside a SQL block comment:
 
 ```sql
 /*
 Title: Short Example Title
 Difficulty: Beginner
 
-Concepts:
-- First concept.
-- Second concept.
-
-Learning objectives:
+Learning Objectives:
 - First objective.
 - Second objective.
 
-Problem statement:
+Problem Statement:
 Describe the realistic problem the query solves.
 
-SQL solution:
+Business Scenario:
+Explain where this query appears in a real application or workflow.
+
+SQL Solution:
 */
 ```
 
-After the query, include the expected result description, explanation, real-world example, performance notes, common mistakes, challenge exercise, challenge solution, and related examples.
+After the query, include `Explanation`, `Expected Output`, `Performance Notes`, `Common Mistakes`, `Challenge Exercise`, `Challenge Solution`, and `Related Chapters`.
+
+## PostgreSQL-Specific Notes
+
+- Prefer `TIMESTAMPTZ` for event timestamps that represent real points in time.
+- Use `NUMERIC` for money-like examples where exact decimal arithmetic matters.
+- Use `EXPLAIN` or `EXPLAIN (ANALYZE, BUFFERS)` when teaching performance behaviour.
+- Use `jsonb_build_object` and `jsonb_agg` when shaping JSON responses in PostgreSQL.
+- Use PostGIS functions only in guarded examples unless the runtime environment installs PostGIS.

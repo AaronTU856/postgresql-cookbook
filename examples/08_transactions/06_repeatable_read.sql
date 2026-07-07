@@ -2,16 +2,16 @@
 Title: REPEATABLE READ
 Difficulty: Intermediate
 
-Learning objectives:
+Learning Objectives:
 - Start a REPEATABLE READ transaction.
 - Understand transaction-level snapshots.
 - Use stable reads for reporting-style checks.
 
-Problem statement:
+Problem Statement:
 Finance wants a stable snapshot while checking completed payments and matching
 orders.
 
-SQL solution:
+SQL Solution:
 */
 
 BEGIN ISOLATION LEVEL REPEATABLE READ;
@@ -40,26 +40,26 @@ Explanation:
 REPEATABLE READ keeps a stable snapshot for the transaction. Re-running the same
 SELECT statements in this transaction would see the same committed snapshot.
 
-Expected results:
+Expected Output:
 The transaction returns completed payment totals and the orders attached to
 completed payments.
 
-Real-world example:
+Business Scenario:
 Month-end reporting can use a stable snapshot while calculating related totals.
 
-Performance notes:
+Performance Notes:
 REPEATABLE READ can be useful for consistency, but long-running transactions can
 delay database cleanup.
 
-Common mistakes:
+Common Mistakes:
 - Holding repeatable-read transactions open for too long.
 - Assuming it prevents all write conflicts.
 - Forgetting that application retry logic may still be needed.
 
-Challenge exercise:
+Challenge Exercise:
 Use REPEATABLE READ to list paid or delivered orders with their payments.
 
-Challenge solution:
+Challenge Solution:
 */
 
 BEGIN ISOLATION LEVEL REPEATABLE READ;
@@ -78,7 +78,7 @@ ORDER BY orders.id ASC;
 COMMIT;
 
 /*
-Related examples:
+Related Chapters:
 - 04_transaction_isolation.sql
 - 05_read_committed.sql
 - ../03_joins/07_join_multiple_tables.sql

@@ -2,19 +2,19 @@
 Title: Query JSONB Fields
 Difficulty: Beginner
 
-Learning objectives:
+Learning Objectives:
 - Extract JSONB values with -> and ->>.
 - Filter by JSONB text values.
 - Understand text extraction.
 
-Problem statement:
+Problem Statement:
 Support needs to find payment events by payment method inside the JSON payload.
 
-Business scenario:
+Business Scenario:
 Event payloads often include provider-specific details that support teams need
 to inspect during payment investigations.
 
-SQL solution:
+SQL Solution:
 */
 
 CREATE TEMP TABLE cookbook_payment_events (
@@ -47,23 +47,23 @@ Explanation:
 The ->> operator extracts a JSON value as text. Numeric values can be cast when
 calculation is needed.
 
-Expected output:
+Expected Output:
 Card payment events are returned with method, status, and amount values extracted
 from JSONB.
 
-Performance considerations:
+Performance Notes:
 Casting JSONB text repeatedly can be expensive. Store frequently calculated
 values in typed columns when possible.
 
-Common mistakes:
+Common Mistakes:
 - Using -> when text is needed.
 - Comparing numeric JSON values as text.
 - Filtering heavily used fields only inside JSONB.
 
-Challenge:
+Challenge Exercise:
 Extract event_type and amount from all completed payment events.
 
-Challenge solution:
+Challenge Solution:
 */
 
 SELECT
@@ -75,7 +75,7 @@ WHERE payload ->> 'payment_status' = 'completed'
 ORDER BY amount DESC;
 
 /*
-Related chapters:
+Related Chapters:
 - ../02_filtering_sorting/04_comparison_operators.sql
 - 01_create_jsonb_data.sql
 - 03_jsonb_containment.sql

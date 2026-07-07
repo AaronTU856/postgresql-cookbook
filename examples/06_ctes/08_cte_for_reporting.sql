@@ -2,15 +2,15 @@
 Title: CTE for Reporting
 Difficulty: Intermediate
 
-Learning objectives:
+Learning Objectives:
 - Build a report from staged CTEs.
 - Filter completed payments before aggregating revenue.
 - Produce category-level reporting output.
 
-Problem statement:
+Problem Statement:
 Leadership wants completed revenue and units sold by category.
 
-SQL solution:
+SQL Solution:
 */
 
 WITH completed_order_items AS (
@@ -49,26 +49,26 @@ Explanation:
 The first CTE defines completed order items. The second CTE aggregates revenue
 by category_id. The final query joins category names for readable reporting.
 
-Expected results:
+Expected Output:
 The query returns completed revenue and units sold by category.
 
-Real-world example:
+Business Scenario:
 Business reporting queries often become easier to review when each stage has a
 clear name.
 
-Performance notes:
+Performance Notes:
 Reporting CTEs can improve readability. For frequent reports over large data,
 consider query plans, indexes, and whether a summary table is appropriate.
 
-Common mistakes:
+Common Mistakes:
 - Including pending or refunded payments in completed revenue.
 - Aggregating current product prices instead of order item unit prices.
 - Creating too many CTEs with unclear boundaries.
 
-Challenge exercise:
+Challenge Exercise:
 Create a customer payment report with completed payment totals by user.
 
-Challenge solution:
+Challenge Solution:
 */
 
 WITH completed_payments AS (
@@ -96,7 +96,7 @@ INNER JOIN users
 ORDER BY customer_totals.completed_payment_total DESC;
 
 /*
-Related examples:
+Related Chapters:
 - ../04_aggregates/10_business_reports.sql
 - ../03_joins/12_real_world_reporting.sql
 - 04_cte_with_aggregation.sql

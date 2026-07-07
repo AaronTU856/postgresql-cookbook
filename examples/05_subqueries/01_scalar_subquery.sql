@@ -2,15 +2,15 @@
 Title: Scalar Subquery
 Difficulty: Beginner
 
-Learning objectives:
+Learning Objectives:
 - Use a subquery that returns one value.
 - Compare product prices with the overall average price.
 - Understand where scalar subqueries fit in filtering logic.
 
-Problem statement:
+Problem Statement:
 The merchandising team wants products priced above the average product price.
 
-SQL solution:
+SQL Solution:
 */
 
 SELECT
@@ -29,27 +29,27 @@ Explanation:
 The subquery calculates one value: the average product price. The outer query
 then returns products whose price is greater than that value.
 
-Expected results:
+Expected Output:
 The query returns products priced above the overall average product price.
 
-Real-world example:
+Business Scenario:
 A merchandising dashboard may highlight premium products priced above the
 catalogue average.
 
-Performance notes:
+Performance Notes:
 PostgreSQL can calculate a non-correlated scalar subquery once and reuse the
 value. For larger datasets, indexes and summary tables may help recurring price
 reports.
 
-Common mistakes:
+Common Mistakes:
 - Writing a scalar subquery that accidentally returns more than one row.
 - Forgetting parentheses around the subquery.
 - Comparing incompatible data types.
 
-Challenge exercise:
+Challenge Exercise:
 Find payments larger than the average payment amount.
 
-Challenge solution:
+Challenge Solution:
 */
 
 SELECT
@@ -66,7 +66,7 @@ WHERE amount > (
 ORDER BY amount DESC;
 
 /*
-Related examples:
+Related Chapters:
 - ../04_aggregates/03_avg.sql
 - ../02_filtering_sorting/04_comparison_operators.sql
 - 04_correlated_subquery.sql

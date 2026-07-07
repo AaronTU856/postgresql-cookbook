@@ -2,19 +2,19 @@
 Title: Join and Filter Rows
 Difficulty: Intermediate
 
-Learning objectives:
+Learning Objectives:
 - Combine joins with WHERE filters.
 - Filter joined reports by payment and order status.
 - Keep filtering logic clear and close to the business question.
 
-Problem statement:
+Problem Statement:
 The fulfilment team wants paid orders with completed payments.
 
-Business scenario:
+Business Scenario:
 Warehouses often need a queue of orders that are financially complete and ready
 for fulfilment.
 
-SQL solution:
+SQL Solution:
 */
 
 SELECT
@@ -37,24 +37,24 @@ Explanation:
 The joins add customer and payment context to each order. The WHERE clause keeps
 orders in workable statuses and only completed payments.
 
-Expected output:
+Expected Output:
 The query returns paid, shipped, and delivered orders whose payment status is
 completed.
 
-Performance notes:
+Performance Notes:
 Filtering before returning results reduces unnecessary rows. Indexes on join and
 filter columns can help as data grows.
 
-Common mistakes:
+Common Mistakes:
 - Filtering the wrong status column. orders.status and payments.status mean
   different things.
 - Putting filters in the wrong place when using outer joins.
 - Forgetting that refunded payments may need separate business handling.
 
-Challenge exercise:
+Challenge Exercise:
 Find completed card payments with customer email and order date.
 
-Challenge solution:
+Challenge Solution:
 */
 
 SELECT
@@ -72,7 +72,7 @@ WHERE payments.status = 'completed'
 ORDER BY orders.order_date ASC;
 
 /*
-Related chapters:
+Related Chapters:
 - ../01_basic_queries/README.md
 - ../02_filtering_sorting/README.md
 - README.md

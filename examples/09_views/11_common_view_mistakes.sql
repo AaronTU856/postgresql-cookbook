@@ -2,16 +2,16 @@
 Title: Common View Mistakes
 Difficulty: Intermediate
 
-Learning objectives:
+Learning Objectives:
 - Avoid hiding unclear logic inside views.
 - Use stable aliases and explicit columns.
 - Choose regular or materialized views deliberately.
 
-Problem statement:
+Problem Statement:
 The team wants a safe order summary view that avoids ambiguous column names and
 unnecessary nested logic.
 
-SQL solution:
+SQL Solution:
 */
 
 DROP VIEW IF EXISTS clear_order_summary;
@@ -44,27 +44,27 @@ Explanation:
 The view avoids SELECT *, ambiguous status columns, and unnecessary nested views.
 Clear aliases make the result easier to use from reports and application code.
 
-Expected results:
+Expected Output:
 The query returns order summaries with separate order and payment status columns.
 
-Real-world example:
+Business Scenario:
 Clean reporting views reduce confusion when several tables contain similarly
 named columns.
 
-Performance notes:
+Performance Notes:
 Simple, direct views are easier for PostgreSQL to plan. Deeply nested views can
 make slow queries harder to diagnose.
 
-Common mistakes:
+Common Mistakes:
 - Using SELECT * in a view that application code depends on.
 - Returning duplicate column names.
 - Nesting views until the real query is hard to understand.
 - Choosing a materialized view without a refresh plan.
 
-Challenge exercise:
+Challenge Exercise:
 Create a clear payment review view with explicit payment and order aliases.
 
-Challenge solution:
+Challenge Solution:
 */
 
 DROP VIEW IF EXISTS clear_payment_review;
@@ -90,7 +90,7 @@ FROM clear_payment_review
 ORDER BY payment_id ASC;
 
 /*
-Related examples:
+Related Chapters:
 - 04_join_view.sql
 - 09_security_views.sql
 - ../03_joins/11_common_join_mistakes.sql

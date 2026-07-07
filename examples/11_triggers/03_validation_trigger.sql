@@ -2,20 +2,20 @@
 Title: Validation Trigger
 Difficulty: Intermediate
 
-Learning objectives:
+Learning Objectives:
 - Reject invalid writes with a BEFORE trigger.
 - Raise clear business exceptions.
 - Protect inventory rules in the database.
 
-Problem statement:
+Problem Statement:
 The warehouse wants to block unusually large stock quantities that probably come
 from data entry mistakes.
 
-Business scenario:
+Business Scenario:
 Operational tools sometimes receive bad input. A database trigger can provide a
 last line of defence.
 
-SQL solution:
+SQL Solution:
 */
 
 DROP TRIGGER IF EXISTS trg_products_validate_stock_limit ON products;
@@ -54,22 +54,22 @@ Explanation:
 The trigger checks NEW.stock_quantity before the row is stored. The example uses
 a valid value so the file executes successfully.
 
-Expected output:
+Expected Output:
 The temporary update returns product 5 with stock_quantity 100, then rolls back.
 
-Performance considerations:
+Performance Notes:
 Validation triggers should be fast and deterministic. Prefer CHECK constraints
 for simple rules when they are expressive enough.
 
-Common mistakes:
+Common Mistakes:
 - Using triggers instead of simple CHECK constraints.
 - Raising vague errors.
 - Performing slow queries inside validation triggers.
 
-Challenge:
+Challenge Exercise:
 Explain what would happen if an update tried to set stock_quantity to 2000.
 
-Challenge solution:
+Challenge Solution:
 */
 
 SELECT
@@ -77,7 +77,7 @@ SELECT
         AS challenge_answer;
 
 /*
-Related chapters:
+Related Chapters:
 - ../08_transactions/10_acid_properties.sql
 - ../10_functions/06_error_handling.sql
 - 01_audit_trigger.sql

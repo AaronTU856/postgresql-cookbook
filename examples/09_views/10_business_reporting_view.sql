@@ -2,16 +2,16 @@
 Title: Business Reporting View
 Difficulty: Intermediate
 
-Learning objectives:
+Learning Objectives:
 - Build a reusable reporting view.
 - Combine joins and aggregates in a business query.
 - Present customer order value clearly.
 
-Problem statement:
+Problem Statement:
 Leadership wants a reusable customer value report showing order count,
 completed payment total, and most recent order date.
 
-SQL solution:
+SQL Solution:
 */
 
 DROP VIEW IF EXISTS customer_value_report;
@@ -52,27 +52,27 @@ Explanation:
 The view combines users, orders, and payments into a reusable business report.
 COALESCE returns zero for customers without completed payments.
 
-Expected results:
+Expected Output:
 The query returns one row per customer with order count, completed payment total,
 and latest order date.
 
-Real-world example:
+Business Scenario:
 Customer success teams use value reports to prioritise outreach and account
 review work.
 
-Performance notes:
+Performance Notes:
 Reporting views with joins and aggregates can be expensive on large datasets.
 Consider indexes, materialized views, or summary tables for frequent reports.
 
-Common mistakes:
+Common Mistakes:
 - Counting duplicate orders after joining to payment or item tables.
 - Forgetting COALESCE when outer joins may return NULL totals.
 - Mixing business definitions of paid, refunded, and pending values.
 
-Challenge exercise:
+Challenge Exercise:
 Create a reporting view that shows revenue by product category.
 
-Challenge solution:
+Challenge Solution:
 */
 
 DROP VIEW IF EXISTS category_revenue_report;
@@ -99,7 +99,7 @@ FROM category_revenue_report
 ORDER BY gross_revenue DESC;
 
 /*
-Related examples:
+Related Chapters:
 - 04_join_view.sql
 - 05_aggregate_view.sql
 - ../07_window_functions/14_business_reporting.sql

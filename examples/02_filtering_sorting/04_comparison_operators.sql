@@ -7,16 +7,16 @@ Concepts:
 - Less than or equal to
 - Numeric comparisons
 
-Learning objectives:
+Learning Objectives:
 - Use comparison operators in WHERE clauses.
 - Combine price and stock filters.
 - Read business rules expressed as numeric conditions.
 
-Problem statement:
+Problem Statement:
 The merchandising team wants products priced above 25.00 where stock is 30 or
 lower.
 
-SQL solution:
+SQL Solution:
 */
 
 SELECT
@@ -33,27 +33,27 @@ Explanation:
 The > operator keeps products priced above 25.00. The <= operator keeps
 products where stock_quantity is less than or equal to 30.
 
-Expected results:
+Expected Output:
 The query returns Mechanical Keyboard, USB-C Dock, Laptop Stand, and Django APIs
 Handbook.
 
-Real-world example:
+Business Scenario:
 A shop manager might use this filter to review higher-value items with limited
 stock.
 
-Performance notes:
+Performance Notes:
 Range comparisons can use indexes when suitable indexes exist. Avoid adding
 indexes until query patterns and table size justify them.
 
-Common mistakes:
+Common Mistakes:
 - Confusing > with >=.
 - Comparing numbers as quoted text.
 - Forgetting to test boundary values such as exactly 25.00 or exactly 30.
 
-Challenge exercise:
+Challenge Exercise:
 Find payments with an amount greater than or equal to 50.00.
 
-Challenge solution:
+Challenge Solution:
 */
 
 SELECT
@@ -67,7 +67,7 @@ WHERE amount >= 50.00
 ORDER BY amount DESC;
 
 /*
-Related examples:
+Related Chapters:
 - 01_where_and.sql
 - 06_between.sql
 - ../01_basic_queries/09_between.sql

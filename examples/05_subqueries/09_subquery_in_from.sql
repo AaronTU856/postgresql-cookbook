@@ -2,16 +2,16 @@
 Title: Subquery in FROM
 Difficulty: Intermediate
 
-Learning objectives:
+Learning Objectives:
 - Use a subquery as a derived table.
 - Aggregate order item totals before joining.
 - Keep reporting logic in clear steps.
 
-Problem statement:
+Problem Statement:
 Operations wants order totals calculated from order items, shown with order
 status and date.
 
-SQL solution:
+SQL Solution:
 */
 
 SELECT
@@ -35,28 +35,28 @@ Explanation:
 The subquery in FROM calculates one row per order_id. The outer query joins
 those derived totals back to orders.
 
-Expected results:
+Expected Output:
 The query returns each order with a calculated order_total.
 
-Real-world example:
+Business Scenario:
 Reporting queries often aggregate line items first, then join the summary back
 to orders or customers.
 
-Performance notes:
+Performance Notes:
 Derived tables are useful for readability. PostgreSQL may inline or optimise
 them depending on the query, but large reports should still be checked with
 EXPLAIN.
 
-Common mistakes:
+Common Mistakes:
 - Forgetting to alias the derived table.
 - Selecting columns from the subquery that were not produced by it.
 - Aggregating at the wrong level of detail.
 
-Challenge exercise:
+Challenge Exercise:
 Create a derived table of total quantity sold per product and join it to
 products.
 
-Challenge solution:
+Challenge Solution:
 */
 
 SELECT
@@ -75,7 +75,7 @@ INNER JOIN (
 ORDER BY product_totals.total_quantity_sold DESC, products.name ASC;
 
 /*
-Related examples:
+Related Chapters:
 - ../04_aggregates/09_aggregate_with_join.sql
 - ../03_joins/08_join_with_aggregation.sql
 - 08_subquery_in_select.sql

@@ -2,19 +2,19 @@
 Title: Django Model Query Shape
 Difficulty: Beginner
 
-Learning objectives:
+Learning Objectives:
 - Map a simple QuerySet to SQL.
 - Understand filtering and ordering.
 - Select only fields needed by an API.
 
-Problem statement:
+Problem Statement:
 A Django API endpoint lists paid orders ordered newest first.
 
-Business scenario:
+Business Scenario:
 Order list endpoints should return only fields the client needs and use indexes
 that match common filters.
 
-SQL solution:
+SQL Solution:
 */
 
 SELECT
@@ -31,22 +31,22 @@ Explanation:
 This is the SQL shape behind a Django QuerySet such as
 Order.objects.filter(status="paid").order_by("-order_date").
 
-Expected output:
+Expected Output:
 Paid orders are returned newest first with selected API fields.
 
-Performance considerations:
+Performance Notes:
 Frequent filters such as status and ordering by order_date may need a composite
 index as the table grows.
 
-Common mistakes:
+Common Mistakes:
 - Returning every model field by default.
 - Forgetting ordering is part of the query cost.
 - Assuming the ORM removes the need to understand SQL.
 
-Challenge:
+Challenge Exercise:
 Write the SQL shape for active products ordered by name.
 
-Challenge solution:
+Challenge Solution:
 */
 
 SELECT
@@ -58,7 +58,7 @@ WHERE is_active = TRUE
 ORDER BY name ASC;
 
 /*
-Related chapters:
+Related Chapters:
 - ../02_filtering_sorting/05_order_by.sql
 - ../12_indexes/02_composite_index.sql
 - 06_indexes_for_django_filters.sql

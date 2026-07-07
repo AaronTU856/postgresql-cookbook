@@ -1,5 +1,7 @@
 # Chapter 3: Joins
 
+## Overview
+
 ## What Joins Are
 
 Joins let SQL queries combine related rows from two or more tables. Instead of storing every piece of information in one large table, relational databases split data into focused tables and connect them with keys.

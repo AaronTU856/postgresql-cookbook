@@ -2,20 +2,20 @@
 Title: CROSS JOIN Reporting Combinations
 Difficulty: Intermediate
 
-Learning objectives:
+Learning Objectives:
 - Use CROSS JOIN to create every combination of two result sets.
 - Recognise when a Cartesian product is intentional.
 - Keep cross joins small and controlled.
 
-Problem statement:
+Problem Statement:
 The reporting team wants a planning grid of every product category and every
 payment method currently used.
 
-Business scenario:
+Business Scenario:
 Before building a category-by-payment-method report, analysts may create a grid
 of all possible combinations so missing combinations are easy to spot later.
 
-SQL solution:
+SQL Solution:
 */
 
 SELECT
@@ -34,23 +34,23 @@ Explanation:
 CROSS JOIN combines every category with every distinct payment method. With four
 categories and four payment methods, the result contains sixteen rows.
 
-Expected output:
+Expected Output:
 The query returns every category-payment method pair.
 
-Performance notes:
+Performance Notes:
 CROSS JOIN multiplies row counts. A cross join between two large tables can
 produce a very large result, so use it deliberately.
 
-Common mistakes:
+Common Mistakes:
 - Creating a CROSS JOIN accidentally by forgetting an ON clause.
 - Cross joining large tables without estimating the result size.
 - Using CROSS JOIN when a normal relationship join is needed.
 
-Challenge exercise:
+Challenge Exercise:
 Create every combination of shipping city and order status currently present in
 the orders table.
 
-Challenge solution:
+Challenge Solution:
 */
 
 SELECT
@@ -69,7 +69,7 @@ CROSS JOIN (
 ORDER BY cities.shipping_city ASC, statuses.status ASC;
 
 /*
-Related chapters:
+Related Chapters:
 - ../01_basic_queries/README.md
 - ../02_filtering_sorting/README.md
 - README.md

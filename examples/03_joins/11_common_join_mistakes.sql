@@ -2,20 +2,20 @@
 Title: Common Join Mistakes
 Difficulty: Beginner
 
-Learning objectives:
+Learning Objectives:
 - Avoid accidental row multiplication.
 - Join through the correct relationship table.
 - Use aliases to make join intent visible.
 
-Problem statement:
+Problem Statement:
 The reporting team wants order line details without accidentally joining orders
 to unrelated products.
 
-Business scenario:
+Business Scenario:
 Incorrect joins can produce reports that look plausible but contain inflated or
 incorrect rows. This is especially risky in revenue and fulfilment reports.
 
-SQL solution:
+SQL Solution:
 */
 
 SELECT
@@ -36,24 +36,24 @@ Orders do not connect directly to products. The correct path is orders to
 order_items, then order_items to products. This avoids accidentally pairing
 orders with products that were not purchased in that order.
 
-Expected output:
+Expected Output:
 The query returns twelve order-item rows with the correct product for each
 order line.
 
-Performance notes:
+Performance Notes:
 Correct join paths are a correctness issue before they are a performance issue.
 Indexes help only after the query represents the right relationship.
 
-Common mistakes:
+Common Mistakes:
 - Joining tables only because they both have an id column.
 - Forgetting the bridge table in many-to-many style relationships.
 - Trusting row counts without checking whether rows were duplicated.
 
-Challenge exercise:
+Challenge Exercise:
 Return order IDs, customer email, and payment amount using the correct join
 path.
 
-Challenge solution:
+Challenge Solution:
 */
 
 SELECT
@@ -68,7 +68,7 @@ INNER JOIN payments AS p
 ORDER BY o.id ASC;
 
 /*
-Related chapters:
+Related Chapters:
 - ../01_basic_queries/README.md
 - ../02_filtering_sorting/README.md
 - README.md

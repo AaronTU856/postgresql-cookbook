@@ -2,20 +2,20 @@
 Title: Reporting Function
 Difficulty: Advanced
 
-Learning objectives:
+Learning Objectives:
 - Return report-shaped data from a function.
 - Use parameters to filter reporting results.
 - Combine joins and aggregation inside RETURNS TABLE.
 
-Problem statement:
+Problem Statement:
 Leadership wants a reusable category revenue report with a minimum revenue
 filter.
 
-Business scenario:
+Business Scenario:
 Dashboards often need the same report with different thresholds for summary and
 detailed views.
 
-SQL solution:
+SQL Solution:
 */
 
 DROP FUNCTION IF EXISTS cookbook_category_revenue_report(NUMERIC);
@@ -58,24 +58,24 @@ Explanation:
 The function returns a report table and lets callers provide a minimum revenue
 threshold. The default value allows callers to omit the filter when needed.
 
-Expected output:
+Expected Output:
 Categories with gross revenue of at least 40 are returned with order count and
 gross revenue.
 
-Performance considerations:
+Performance Notes:
 Reporting functions can hide expensive joins and aggregates. For frequent heavy
 reports, compare this with a view or materialized view.
 
-Common mistakes:
+Common Mistakes:
 - Returning report columns without stable aliases.
 - Forgetting that default parameters should still produce useful results.
 - Using reporting functions where permissions or freshness require a view.
 
-Challenge:
+Challenge Exercise:
 Create a reporting function that returns completed payments by payment method
 above a minimum total.
 
-Challenge solution:
+Challenge Solution:
 */
 
 DROP FUNCTION IF EXISTS cookbook_payment_method_report(NUMERIC);
@@ -109,7 +109,7 @@ SELECT
 FROM cookbook_payment_method_report(40);
 
 /*
-Related chapters:
+Related Chapters:
 - ../04_aggregates/07_having.sql
 - ../09_views/10_business_reporting_view.sql
 - 03_return_table.sql

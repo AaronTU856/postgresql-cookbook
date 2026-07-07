@@ -2,20 +2,20 @@
 Title: BEFORE Trigger
 Difficulty: Intermediate
 
-Learning objectives:
+Learning Objectives:
 - Use a BEFORE trigger to adjust NEW values.
 - Maintain updated timestamps.
 - Practise trigger logic on a temporary table.
 
-Problem statement:
+Problem Statement:
 Merchandising wants a product review table that updates its timestamp whenever a
 review note changes.
 
-Business scenario:
+Business Scenario:
 Operational tables often need updated_at maintained consistently no matter which
 application edits the row.
 
-SQL solution:
+SQL Solution:
 */
 
 CREATE TEMP TABLE cookbook_product_reviews (
@@ -59,23 +59,23 @@ Explanation:
 The BEFORE trigger modifies NEW.updated_at before PostgreSQL stores the updated
 row.
 
-Expected output:
+Expected Output:
 The product review row shows the updated review note and a maintained timestamp.
 
-Performance considerations:
+Performance Notes:
 Simple timestamp triggers are usually cheap, but they still run once per updated
 row.
 
-Common mistakes:
+Common Mistakes:
 - Forgetting to return NEW from a BEFORE UPDATE trigger.
 - Updating timestamps in application code inconsistently.
 - Using a trigger when a generated column would be clearer.
 
-Challenge:
+Challenge Exercise:
 Add a BEFORE INSERT trigger pattern that sets a default review note when one is
 missing.
 
-Challenge solution:
+Challenge Solution:
 */
 
 SELECT
@@ -83,7 +83,7 @@ SELECT
         AS suggested_solution;
 
 /*
-Related chapters:
+Related Chapters:
 - ../10_functions/04_sql_vs_plpgsql.sql
 - 01_audit_trigger.sql
 - 05_common_trigger_mistakes.sql

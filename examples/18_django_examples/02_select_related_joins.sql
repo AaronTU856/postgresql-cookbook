@@ -2,19 +2,19 @@
 Title: select_related Joins
 Difficulty: Intermediate
 
-Learning objectives:
+Learning Objectives:
 - Map select_related to SQL joins.
 - Fetch foreign-key data in one query.
 - Avoid extra customer lookups for orders.
 
-Problem statement:
+Problem Statement:
 The orders API needs order fields and customer email.
 
-Business scenario:
+Business Scenario:
 Django views often need related user data beside orders. `select_related`
 fetches single-valued relationships with joins.
 
-SQL solution:
+SQL Solution:
 */
 
 SELECT
@@ -32,22 +32,22 @@ Explanation:
 This is the SQL shape of Order.objects.select_related("user"). The join returns
 order and customer data in one query.
 
-Expected output:
+Expected Output:
 Each order appears with customer email.
 
-Performance considerations:
+Performance Notes:
 select_related is useful for foreign keys and one-to-one relationships. It is
 not the right tool for many-row collections.
 
-Common mistakes:
+Common Mistakes:
 - Not using select_related and causing one customer query per order.
 - Using select_related for reverse or many-to-many relationships.
 - Selecting more related columns than the endpoint needs.
 
-Challenge:
+Challenge Exercise:
 Write the SQL shape for payments with their order status.
 
-Challenge solution:
+Challenge Solution:
 */
 
 SELECT
@@ -61,7 +61,7 @@ INNER JOIN orders
 ORDER BY payments.id ASC;
 
 /*
-Related chapters:
+Related Chapters:
 - ../03_joins/01_inner_join.sql
 - ../13_performance/04_avoid_n_plus_one.sql
 - 03_avoid_n_plus_one_django.sql

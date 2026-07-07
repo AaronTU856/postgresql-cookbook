@@ -2,19 +2,19 @@
 Title: Indexes Chapter Summary
 Difficulty: Intermediate
 
-Learning objectives:
+Learning Objectives:
 - Review practical index patterns.
 - Match indexes to production queries.
 - Inspect indexes created for the cookbook schema.
 
-Problem statement:
+Problem Statement:
 Summarise index design by listing cookbook indexes and explaining which business
 queries they support.
 
-Business scenario:
+Business Scenario:
 Before adding more indexes, engineers should inspect what already exists.
 
-SQL solution:
+SQL Solution:
 */
 
 SELECT
@@ -31,23 +31,23 @@ Explanation:
 pg_indexes lists index definitions. Reviewing existing indexes helps prevent
 duplicates and encourages query-driven index design.
 
-Expected output:
+Expected Output:
 The query returns primary key indexes, schema indexes, and any cookbook indexes
 created by this chapter.
 
-Performance considerations:
+Performance Notes:
 Too many indexes can slow writes and increase storage. Keep indexes tied to
 measured query needs.
 
-Common mistakes:
+Common Mistakes:
 - Adding indexes without checking existing ones.
 - Keeping duplicate or unused indexes.
 - Forgetting that indexes need maintenance.
 
-Challenge:
+Challenge Exercise:
 Find indexes on the payments table.
 
-Challenge solution:
+Challenge Solution:
 */
 
 SELECT
@@ -59,7 +59,7 @@ WHERE schemaname = 'public'
 ORDER BY indexname ASC;
 
 /*
-Related chapters:
+Related Chapters:
 - ../13_performance/README.md
 - ../02_filtering_sorting/05_order_by.sql
 - ../03_joins/10_join_best_practices.sql

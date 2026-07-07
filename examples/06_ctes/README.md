@@ -1,5 +1,7 @@
 # Chapter 6: Common Table Expressions (CTEs)
 
+## Overview
+
 ## What Is a CTE?
 
 A Common Table Expression, or CTE, is a named temporary result set defined with `WITH` and used by the query that follows it.

@@ -58,8 +58,11 @@ The examples are ordered so learners can build confidence step by step. Start wi
 18. **Chapter 18: Django Integration**
     Learn how Django QuerySets map to joins, aggregates, transactions, indexes, and production PostgreSQL habits.
 
-19. **Chapters 19-20: Applied PostgreSQL**
-    Learn PostGIS and real-world project patterns.
+19. **Chapter 19: PostGIS**
+    Learn spatial data modelling, nearest-neighbour search, spatial indexing, GeoJSON, Leaflet-oriented responses, and Django GIS query shapes.
+
+20. **Chapter 20: Real World Projects**
+    Learn how to combine reporting, JSON APIs, performance review, operational checks, Django integration, and mapping patterns into portfolio-ready backend project examples.
 
 ## Suggested Practice Routine
 

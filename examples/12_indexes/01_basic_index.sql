@@ -2,19 +2,19 @@
 Title: Basic Index
 Difficulty: Beginner
 
-Learning objectives:
+Learning Objectives:
 - Create a B-tree index.
 - Match an index to a common filter.
 - Use EXPLAIN to inspect a query plan.
 
-Problem statement:
+Problem Statement:
 Support frequently looks up orders by status.
 
-Business scenario:
+Business Scenario:
 Dashboards often filter orders by pending, paid, shipped, delivered, or
 cancelled status.
 
-SQL solution:
+SQL Solution:
 */
 
 CREATE INDEX IF NOT EXISTS idx_cookbook_orders_status
@@ -34,22 +34,22 @@ Explanation:
 The index supports queries that filter by status. On tiny seed data PostgreSQL
 may still choose a sequential scan, which is normal.
 
-Expected output:
+Expected Output:
 EXPLAIN returns a query plan for finding paid orders.
 
-Performance considerations:
+Performance Notes:
 Indexes help most when tables are large enough and the filter is selective
 enough. Small tables may scan faster than using an index.
 
-Common mistakes:
+Common Mistakes:
 - Assuming EXPLAIN must always show an index scan.
 - Indexing a column before checking whether the query is frequent.
 - Forgetting indexes add write overhead.
 
-Challenge:
+Challenge Exercise:
 Create an index for payment status lookups.
 
-Challenge solution:
+Challenge Solution:
 */
 
 CREATE INDEX IF NOT EXISTS idx_cookbook_payments_status
@@ -64,7 +64,7 @@ FROM payments
 WHERE status = 'completed';
 
 /*
-Related chapters:
+Related Chapters:
 - ../02_filtering_sorting/04_comparison_operators.sql
 - ../09_views/10_business_reporting_view.sql
 - ../13_performance/01_explain_basics.sql

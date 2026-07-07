@@ -2,16 +2,16 @@
 Title: LAST_VALUE
 Difficulty: Intermediate
 
-Learning objectives:
+Learning Objectives:
 - Use LAST_VALUE() safely with an explicit frame.
 - Find the cheapest product in each category.
 - Understand why window frames matter.
 
-Problem statement:
+Problem Statement:
 The merchandising team wants each product shown with the cheapest product in its
 category.
 
-SQL solution:
+SQL Solution:
 */
 
 SELECT
@@ -31,27 +31,27 @@ Explanation:
 LAST_VALUE() reads the last row in the window frame. The explicit frame tells
 PostgreSQL to look from the first row through the last row in each category.
 
-Expected results:
+Expected Output:
 Each product row includes the name of the lowest-priced product in its category.
 
-Real-world example:
+Business Scenario:
 Product reports can compare every item with the lowest-priced item in the same
 category.
 
-Performance notes:
+Performance Notes:
 LAST_VALUE() often needs an explicit frame. Without it, PostgreSQL's default
 frame can produce surprising results.
 
-Common mistakes:
+Common Mistakes:
 - Using LAST_VALUE() without ROWS BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED
   FOLLOWING.
 - Ordering in the wrong direction.
 - Confusing final query ordering with window ordering.
 
-Challenge exercise:
+Challenge Exercise:
 Show each user order with the latest order date for that user.
 
-Challenge solution:
+Challenge Solution:
 */
 
 SELECT
@@ -67,7 +67,7 @@ FROM orders
 ORDER BY user_id ASC, order_date ASC;
 
 /*
-Related examples:
+Related Chapters:
 - 07_first_value.sql
 - 13_common_window_mistakes.sql
 - ../06_ctes/10_common_cte_mistakes.sql

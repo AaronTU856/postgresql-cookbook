@@ -2,19 +2,19 @@
 Title: Audit Trigger
 Difficulty: Beginner
 
-Learning objectives:
+Learning Objectives:
 - Create an AFTER UPDATE trigger.
 - Store audit rows for important changes.
 - Use OLD and NEW values in a trigger function.
 
-Problem statement:
+Problem Statement:
 The warehouse team needs an audit trail when product stock changes.
 
-Business scenario:
+Business Scenario:
 Stock changes affect fulfilment and customer promises, so support teams need to
 see previous and new values.
 
-SQL solution:
+SQL Solution:
 */
 
 CREATE TABLE IF NOT EXISTS cookbook_product_stock_audit (
@@ -77,23 +77,23 @@ Explanation:
 The trigger fires after stock_quantity changes. OLD contains the previous row,
 and NEW contains the updated row.
 
-Expected output:
+Expected Output:
 The UPDATE returns product 1 with temporary stock, and the audit query shows the
 old and new stock values before the rollback.
 
-Performance considerations:
+Performance Notes:
 Audit triggers add write overhead. Keep audit rows narrow and index them only
 for real lookup patterns.
 
-Common mistakes:
+Common Mistakes:
 - Auditing every update even when the tracked value did not change.
 - Forgetting trigger changes roll back with the transaction.
 - Putting expensive reporting logic inside an audit trigger.
 
-Challenge:
+Challenge Exercise:
 Audit price changes for products using OLD.price and NEW.price.
 
-Challenge solution:
+Challenge Solution:
 */
 
 CREATE TABLE IF NOT EXISTS cookbook_product_price_audit (
@@ -105,7 +105,7 @@ CREATE TABLE IF NOT EXISTS cookbook_product_price_audit (
 );
 
 /*
-Related chapters:
+Related Chapters:
 - ../08_transactions/02_rollback.sql
 - ../10_functions/04_sql_vs_plpgsql.sql
 - 04_order_status_audit.sql

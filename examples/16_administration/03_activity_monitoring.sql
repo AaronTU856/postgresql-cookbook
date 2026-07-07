@@ -2,19 +2,19 @@
 Title: Activity Monitoring
 Difficulty: Intermediate
 
-Learning objectives:
+Learning Objectives:
 - Inspect current database sessions.
 - Distinguish active and idle connections.
 - Use pg_stat_activity safely.
 
-Problem statement:
+Problem Statement:
 The team needs to see current sessions connected to the cookbook database.
 
-Business scenario:
+Business Scenario:
 Connection pool issues and slow requests often start with understanding active
 database sessions.
 
-SQL solution:
+SQL Solution:
 */
 
 SELECT
@@ -33,22 +33,22 @@ Explanation:
 pg_stat_activity shows connected sessions. The query is filtered to the current
 database to keep output focused.
 
-Expected output:
+Expected Output:
 The current psql session and any other sessions for this database are listed.
 
-Performance considerations:
+Performance Notes:
 This is safe for incident triage. Avoid exposing full query text broadly because
 queries may contain sensitive values.
 
-Common mistakes:
+Common Mistakes:
 - Treating idle sessions as active work.
 - Ignoring wait events during lock investigations.
 - Sharing query text from production without redaction.
 
-Challenge:
+Challenge Exercise:
 Count sessions by state for the current database.
 
-Challenge solution:
+Challenge Solution:
 */
 
 SELECT
@@ -60,7 +60,7 @@ GROUP BY state
 ORDER BY state ASC;
 
 /*
-Related chapters:
+Related Chapters:
 - ../13_performance/02_explain_analyze.sql
 - ../17_docker_postgresql/05_container_troubleshooting_queries.sql
 - 01_database_health_checks.sql

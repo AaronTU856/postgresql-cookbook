@@ -2,16 +2,16 @@
 Title: Window Function Best Practices
 Difficulty: Intermediate
 
-Learning objectives:
+Learning Objectives:
 - Use clear window ordering.
 - Add stable tie-breakers.
 - Use named windows when repeated definitions improve readability.
 
-Problem statement:
+Problem Statement:
 Finance wants completed payments with both row number and running total using
 the same ordering.
 
-SQL solution:
+SQL Solution:
 */
 
 SELECT
@@ -33,27 +33,27 @@ Explanation:
 The named window payment_order keeps the repeated ordering and frame definition
 in one place. Both ROW_NUMBER() and SUM() use it.
 
-Expected results:
+Expected Output:
 Each completed payment has a sequence number and running total using the same
 stable order.
 
-Real-world example:
+Business Scenario:
 Finance reports often reuse the same time-based window for several calculations.
 
-Performance notes:
+Performance Notes:
 Named windows improve readability. They do not remove the need to check query
 plans for larger reports.
 
-Common mistakes:
+Common Mistakes:
 - Repeating slightly different window definitions by accident.
 - Forgetting a deterministic tie-breaker.
 - Adding unnecessary window functions that make reports harder to read.
 
-Challenge exercise:
+Challenge Exercise:
 Use a named window to show product row number and running average price by
 product creation date.
 
-Challenge solution:
+Challenge Solution:
 */
 
 SELECT
@@ -70,7 +70,7 @@ WINDOW product_order AS (
 ORDER BY created_at ASC, id ASC;
 
 /*
-Related examples:
+Related Chapters:
 - 01_row_number.sql
 - 09_running_totals.sql
 - 13_common_window_mistakes.sql

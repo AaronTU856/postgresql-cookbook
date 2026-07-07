@@ -20,3 +20,4 @@ Describe the change and why it is useful.
 - [ ] I updated documentation, if applicable.
 - [ ] I kept the change focused and beginner-friendly.
 - [ ] I checked links and related example references, if applicable.
+- [ ] I followed the SQL example section format from `docs/sql-style-guide.md`.

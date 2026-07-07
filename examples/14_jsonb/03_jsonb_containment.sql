@@ -2,19 +2,19 @@
 Title: JSONB Containment
 Difficulty: Intermediate
 
-Learning objectives:
+Learning Objectives:
 - Use @> for JSONB containment.
 - Filter rows by payload shape.
 - Match exact JSON key-value pairs.
 
-Problem statement:
+Problem Statement:
 Finance wants to find events where the payload says a payment was completed.
 
-Business scenario:
+Business Scenario:
 Containment queries are useful for event logs where payloads contain flexible
 provider metadata.
 
-SQL solution:
+SQL Solution:
 */
 
 CREATE TEMP TABLE cookbook_payment_events (
@@ -45,22 +45,22 @@ Explanation:
 The @> operator checks whether the left JSONB value contains the right JSONB
 structure.
 
-Expected output:
+Expected Output:
 Rows with payment_status completed in the payload are returned.
 
-Performance considerations:
+Performance Notes:
 Containment queries can benefit from GIN indexes on JSONB columns for larger
 event tables.
 
-Common mistakes:
+Common Mistakes:
 - Using invalid JSON syntax in containment values.
 - Expecting containment to behave like a text search.
 - Forgetting JSONB string values need double quotes.
 
-Challenge:
+Challenge Exercise:
 Find payloads for PayPal payments using containment.
 
-Challenge solution:
+Challenge Solution:
 */
 
 SELECT
@@ -70,7 +70,7 @@ FROM cookbook_payment_events
 WHERE payload @> '{"payment_method": "paypal"}'::JSONB;
 
 /*
-Related chapters:
+Related Chapters:
 - ../12_indexes/03_partial_index.sql
 - 05_jsonb_indexing.sql
 - 02_query_jsonb_fields.sql

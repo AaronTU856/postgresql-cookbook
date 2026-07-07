@@ -2,16 +2,16 @@
 Title: Complex View
 Difficulty: Intermediate
 
-Learning objectives:
+Learning Objectives:
 - Create a view with calculated columns.
 - Use CASE expressions inside a view.
 - Encapsulate business-friendly product status labels.
 
-Problem statement:
+Problem Statement:
 Merchandising wants products labelled as in stock, low stock, or out of stock
 without rewriting the CASE logic in every report.
 
-SQL solution:
+SQL Solution:
 */
 
 DROP VIEW IF EXISTS product_stock_status;
@@ -43,26 +43,26 @@ Explanation:
 The view centralises the CASE expression that converts numeric stock quantities
 into business-friendly stock status labels.
 
-Expected results:
+Expected Output:
 Active products are returned with a calculated stock_status value.
 
-Real-world example:
+Business Scenario:
 Product dashboards often reuse the same stock status logic across several
 screens and reports.
 
-Performance notes:
+Performance Notes:
 Calculated columns in regular views are evaluated when queried. Expensive
 expressions may need indexes, generated columns, or materialized views later.
 
-Common mistakes:
+Common Mistakes:
 - Duplicating business logic across many queries.
 - Hiding complicated logic in a view without documenting it.
 - Forgetting that filters on calculated columns may still evaluate the expression.
 
-Challenge exercise:
+Challenge Exercise:
 Create a view that labels products as budget, standard, or premium by price.
 
-Challenge solution:
+Challenge Solution:
 */
 
 DROP VIEW IF EXISTS product_price_bands;
@@ -89,7 +89,7 @@ FROM product_price_bands
 ORDER BY price ASC;
 
 /*
-Related examples:
+Related Chapters:
 - 02_simple_view.sql
 - ../02_filtering_sorting/04_comparison_operators.sql
 - ../04_aggregates/10_business_reports.sql

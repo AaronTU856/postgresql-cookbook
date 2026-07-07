@@ -2,18 +2,18 @@
 Title: Composite Index
 Difficulty: Intermediate
 
-Learning objectives:
+Learning Objectives:
 - Create a multi-column index.
 - Understand column order.
 - Support filtering and sorting together.
 
-Problem statement:
+Problem Statement:
 Operations often filters orders by status and sorts them by order date.
 
-Business scenario:
+Business Scenario:
 Fulfilment dashboards show recent paid or shipped orders first.
 
-SQL solution:
+SQL Solution:
 */
 
 CREATE INDEX IF NOT EXISTS idx_cookbook_orders_status_date
@@ -33,22 +33,22 @@ Explanation:
 The first index column matches the equality filter. The second column matches
 the desired order for rows with that status.
 
-Expected output:
+Expected Output:
 EXPLAIN returns a plan for filtering paid orders and ordering by newest first.
 
-Performance considerations:
+Performance Notes:
 Column order matters. An index on (order_date, status) would support different
 query patterns.
 
-Common mistakes:
+Common Mistakes:
 - Creating composite indexes without considering column order.
 - Creating separate indexes when one composite index fits the query better.
 - Expecting one composite index to support every filter combination.
 
-Challenge:
+Challenge Exercise:
 Create a composite index for payments by status and paid_at date.
 
-Challenge solution:
+Challenge Solution:
 */
 
 CREATE INDEX IF NOT EXISTS idx_cookbook_payments_status_paid_at
@@ -64,7 +64,7 @@ WHERE status = 'completed'
 ORDER BY paid_at DESC;
 
 /*
-Related chapters:
+Related Chapters:
 - ../02_filtering_sorting/09_order_by_multiple_columns.sql
 - ../08_transactions/05_read_committed.sql
 - 01_basic_index.sql

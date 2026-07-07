@@ -2,19 +2,19 @@
 Title: RIGHT JOIN Orders to Users
 Difficulty: Beginner
 
-Learning objectives:
+Learning Objectives:
 - Use RIGHT JOIN to keep all rows from the right table.
 - Recognise that RIGHT JOIN can often be rewritten as LEFT JOIN.
 - Read join direction carefully.
 
-Problem statement:
+Problem Statement:
 The support team wants all users shown, with any matching order information.
 
-Business scenario:
+Business Scenario:
 This produces the same kind of customer completeness report as a LEFT JOIN, but
 uses RIGHT JOIN to demonstrate join direction.
 
-SQL solution:
+SQL Solution:
 */
 
 SELECT
@@ -33,24 +33,24 @@ Explanation:
 RIGHT JOIN keeps every row from the table on the right side of the join. In this
 query, users is on the right side, so all users are returned.
 
-Expected output:
+Expected Output:
 The query returns all users with their orders. Amelia Clark appears twice because
 she has two orders.
 
-Performance notes:
+Performance Notes:
 RIGHT JOIN is valid SQL, but many teams prefer rewriting it as a LEFT JOIN by
 swapping table order. LEFT JOIN usually reads more naturally.
 
-Common mistakes:
+Common Mistakes:
 - Thinking RIGHT JOIN means "right answer" or "preferred join".
 - Losing track of which table is preserved.
 - Mixing RIGHT JOIN with several other joins in a query that becomes hard to
   read.
 
-Challenge exercise:
+Challenge Exercise:
 Rewrite the report as a LEFT JOIN.
 
-Challenge solution:
+Challenge Solution:
 */
 
 SELECT
@@ -65,7 +65,7 @@ LEFT JOIN orders
 ORDER BY users.id ASC, orders.order_date DESC;
 
 /*
-Related chapters:
+Related Chapters:
 - ../01_basic_queries/README.md
 - ../02_filtering_sorting/README.md
 - README.md

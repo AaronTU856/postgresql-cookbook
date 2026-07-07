@@ -2,16 +2,16 @@
 Title: Transactions Chapter Summary
 Difficulty: Intermediate
 
-Learning objectives:
+Learning Objectives:
 - Review transaction control commands.
 - Combine locking, updates, and rollback.
 - Recognise the safest pattern for practice queries.
 
-Problem statement:
+Problem Statement:
 Summarise the chapter by simulating a small stock reservation and payment review
 inside one rollback-safe transaction.
 
-SQL solution:
+SQL Solution:
 */
 
 BEGIN ISOLATION LEVEL READ COMMITTED;
@@ -50,28 +50,28 @@ The transaction sets an isolation level, locks a product row, performs a guarded
 stock update, reads related payment information, and rolls everything back. It
 pulls together transaction control, isolation, locking, and safe practice habits.
 
-Expected results:
+Expected Output:
 The product stock appears reduced inside the transaction, customer payment rows
 are returned, and ROLLBACK restores the original stock quantity.
 
-Real-world example:
+Business Scenario:
 Checkout and support workflows often combine row locks, guarded updates, and
 related reads inside a single transaction.
 
-Performance notes:
+Performance Notes:
 Short transactions with targeted locks scale better than broad transactions that
 touch more rows than needed.
 
-Common mistakes:
+Common Mistakes:
 - Forgetting which statements are inside the transaction.
 - Assuming reads and writes have the same locking behaviour.
 - Omitting business-rule filters from UPDATE statements.
 
-Challenge exercise:
+Challenge Exercise:
 Write a rollback-safe transaction that locks product 5, checks completed
 payments, and rolls back.
 
-Challenge solution:
+Challenge Solution:
 */
 
 BEGIN;
@@ -93,7 +93,7 @@ WHERE status = 'completed';
 ROLLBACK;
 
 /*
-Related examples:
+Related Chapters:
 - 04_transaction_isolation.sql
 - 09_locking.sql
 - 11_real_world_transaction.sql

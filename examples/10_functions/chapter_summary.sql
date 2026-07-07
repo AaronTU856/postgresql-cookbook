@@ -2,20 +2,20 @@
 Title: Functions Chapter Summary
 Difficulty: Intermediate
 
-Learning objectives:
+Learning Objectives:
 - Review SQL functions and PL/pgSQL functions.
 - Apply functions to business reporting.
 - Choose safe volatility and return types.
 
-Problem statement:
+Problem Statement:
 Summarise the chapter by creating reusable customer value and stock label
 functions.
 
-Business scenario:
+Business Scenario:
 Customer success wants customer lifetime value, while merchandising wants a
 clear stock label for product reports.
 
-SQL solution:
+SQL Solution:
 */
 
 DROP FUNCTION IF EXISTS cookbook_customer_lifetime_value(BIGINT);
@@ -77,23 +77,23 @@ The summary combines a STABLE SQL function that reads tables with an IMMUTABLE
 PL/pgSQL function that labels input values. Together they show the main design
 choices from the chapter.
 
-Expected output:
+Expected Output:
 The first query returns customer lifetime values. The second query returns
 products with stock labels.
 
-Performance considerations:
+Performance Notes:
 Use functions for clarity and reuse, but profile them in large reports. A
 function that reads tables once per row may be slower than a grouped query.
 
-Common mistakes:
+Common Mistakes:
 - Treating every function as a performance optimisation.
 - Marking database-reading functions as IMMUTABLE.
 - Hiding unclear business definitions inside function bodies.
 
-Challenge:
+Challenge Exercise:
 Create a final function that returns the number of orders for a given status.
 
-Challenge solution:
+Challenge Solution:
 */
 
 DROP FUNCTION IF EXISTS cookbook_order_count_by_status(VARCHAR);
@@ -115,7 +115,7 @@ SELECT
     cookbook_order_count_by_status('delivered') AS delivered_order_count;
 
 /*
-Related chapters:
+Related Chapters:
 - ../04_aggregates/10_business_reports.sql
 - ../08_transactions/10_acid_properties.sql
 - ../09_views/10_business_reporting_view.sql

@@ -2,15 +2,15 @@
 Title: CTE With Join
 Difficulty: Intermediate
 
-Learning objectives:
+Learning Objectives:
 - Use a CTE to define a filtered row set.
 - Join the CTE to another table.
 - Keep join queries readable.
 
-Problem statement:
+Problem Statement:
 Support wants completed payments with customer email and order date.
 
-SQL solution:
+SQL Solution:
 */
 
 WITH completed_payments AS (
@@ -40,28 +40,28 @@ Explanation:
 The CTE defines completed payments first. The outer query joins those payments
 to orders and users for customer context.
 
-Expected results:
+Expected Output:
 The query returns completed payments with the related customer email and order
 date.
 
-Real-world example:
+Business Scenario:
 Support and finance teams often need payment records enriched with customer
 details.
 
-Performance notes:
+Performance Notes:
 Filtering to completed payments first can make the business intent clear. Check
 query plans on larger datasets to confirm the best execution shape.
 
-Common mistakes:
+Common Mistakes:
 - Joining the CTE on the wrong key.
 - Selecting unqualified id columns in joined output.
 - Putting unrelated filtering logic in the outer query when it belongs in the
   CTE.
 
-Challenge exercise:
+Challenge Exercise:
 Create a CTE for active products and join it to categories.
 
-Challenge solution:
+Challenge Solution:
 */
 
 WITH active_products AS (
@@ -84,7 +84,7 @@ INNER JOIN categories
 ORDER BY categories.name ASC, active_products.name ASC;
 
 /*
-Related examples:
+Related Chapters:
 - ../03_joins/01_inner_join.sql
 - ../05_subqueries/09_subquery_in_from.sql
 - 04_cte_with_aggregation.sql

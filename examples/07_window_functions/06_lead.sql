@@ -2,15 +2,15 @@
 Title: LEAD
 Difficulty: Intermediate
 
-Learning objectives:
+Learning Objectives:
 - Use LEAD() to read a following row.
 - Compare each order with the next order.
 - Understand forward-looking event comparisons.
 
-Problem statement:
+Problem Statement:
 Operations wants to see the next order date beside each order.
 
-SQL solution:
+SQL Solution:
 */
 
 SELECT
@@ -27,27 +27,27 @@ Explanation:
 LEAD(order_date) reads the order_date from the next row in the ordered window.
 The final row has no next row, so next_order_date is NULL.
 
-Expected results:
+Expected Output:
 Each order row shows the following order date, except the latest order.
 
-Real-world example:
+Business Scenario:
 Event reports use LEAD() to compare current and next activity without a self
 join.
 
-Performance notes:
+Performance Notes:
 Like LAG(), LEAD() depends on ordered rows. Use stable ordering to make results
 deterministic.
 
-Common mistakes:
+Common Mistakes:
 - Forgetting that the last row has no next row.
 - Expecting LEAD() to look inside business groups without PARTITION BY.
 - Omitting tie-breakers in the window order.
 
-Challenge exercise:
+Challenge Exercise:
 Show each product price with the next higher product price when ordered from
 cheapest to most expensive.
 
-Challenge solution:
+Challenge Solution:
 */
 
 SELECT
@@ -60,7 +60,7 @@ FROM products
 ORDER BY price ASC, id ASC;
 
 /*
-Related examples:
+Related Chapters:
 - 05_lag.sql
 - 11_partition_by.sql
 - ../02_filtering_sorting/05_order_by.sql

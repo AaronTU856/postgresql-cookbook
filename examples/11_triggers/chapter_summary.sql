@@ -2,19 +2,19 @@
 Title: Triggers Chapter Summary
 Difficulty: Intermediate
 
-Learning objectives:
+Learning Objectives:
 - Review trigger functions and trigger registration.
 - Combine validation and audit ideas.
 - Inspect trigger metadata.
 
-Problem statement:
+Problem Statement:
 Summarise the chapter by creating a small audit trigger for payment status
 changes.
 
-Business scenario:
+Business Scenario:
 Payment status changes are important for finance, support, and refunds.
 
-SQL solution:
+SQL Solution:
 */
 
 CREATE TABLE IF NOT EXISTS cookbook_payment_status_audit (
@@ -77,23 +77,23 @@ Explanation:
 The summary creates a trigger function, attaches it to payments, performs a safe
 test update, inspects the audit row, and rolls back the data change.
 
-Expected output:
+Expected Output:
 The update shows a temporary refunded payment, and the audit query shows the
 completed-to-refunded transition.
 
-Performance considerations:
+Performance Notes:
 Audit triggers are useful, but audit tables need retention and indexing plans in
 production.
 
-Common mistakes:
+Common Mistakes:
 - Forgetting to test rollback behaviour.
 - Auditing every column change when only status matters.
 - Creating triggers without documenting them.
 
-Challenge:
+Challenge Exercise:
 Inspect all trigger names currently visible in the public schema.
 
-Challenge solution:
+Challenge Solution:
 */
 
 SELECT
@@ -105,7 +105,7 @@ WHERE trigger_schema = 'public'
 ORDER BY event_object_table ASC, trigger_name ASC;
 
 /*
-Related chapters:
+Related Chapters:
 - ../08_transactions/02_rollback.sql
 - ../10_functions/04_sql_vs_plpgsql.sql
 - ../12_indexes/README.md

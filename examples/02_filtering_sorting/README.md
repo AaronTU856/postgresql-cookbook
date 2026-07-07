@@ -6,7 +6,7 @@ Filtering and sorting are the everyday tools of SQL. Most backend features need 
 
 This chapter builds on Chapter 1 by combining `WHERE`, comparison operators, text matching, `NULL` handling, `ORDER BY`, `LIMIT`, `OFFSET`, and simple pagination patterns.
 
-## Learning Objectives
+## Learning Outcomes
 
 After completing this chapter, you should be able to:
 
@@ -39,6 +39,10 @@ After completing this chapter, you should be able to:
 
 Allow 90 to 120 minutes if you run every example, read the explanations, and complete the challenge exercises.
 
+## Difficulty
+
+Beginner
+
 ## Topics Covered
 
 1. [WHERE with AND](01_where_and.sql)
@@ -69,3 +73,9 @@ Allow 90 to 120 minutes if you run every example, read the explanations, and com
 Chapter 2 turns basic reads into practical application queries. These patterns are used constantly in list views, admin filters, search screens, reporting pages, and API endpoints.
 
 After this chapter, move to Chapter 3: Joins, where filters and sorting are applied across related tables.
+
+## Related Chapters
+
+- [Chapter 1: Basic Queries](../01_basic_queries/README.md)
+- [Chapter 3: Joins](../03_joins/README.md)
+- [Chapter 4: Aggregation](../04_aggregates/README.md)

@@ -2,18 +2,18 @@
 Title: Performance Chapter Summary
 Difficulty: Intermediate
 
-Learning objectives:
+Learning Objectives:
 - Combine measurement, indexing, and query shape.
 - Build a production-minded reporting query.
 - Review practical performance habits.
 
-Problem statement:
+Problem Statement:
 Summarise performance work by measuring a customer value report.
 
-Business scenario:
+Business Scenario:
 Leadership reports need correct results and predictable execution time.
 
-SQL solution:
+SQL Solution:
 */
 
 EXPLAIN (ANALYZE, BUFFERS)
@@ -37,22 +37,22 @@ Explanation:
 The query measures a realistic report using joins, aggregation, filtering inside
 an aggregate, and ordering.
 
-Expected output:
+Expected Output:
 PostgreSQL returns an execution plan with actual timing and buffer details.
 
-Performance considerations:
+Performance Notes:
 On production data, inspect row estimates, join type, sort cost, and whether
 indexes support the join keys.
 
-Common mistakes:
+Common Mistakes:
 - Tuning without measuring.
 - Ignoring join cardinality.
 - Adding indexes without retesting the query.
 
-Challenge:
+Challenge Exercise:
 Explain why this query should be tested with realistic data volume.
 
-Challenge solution:
+Challenge Solution:
 */
 
 SELECT
@@ -60,7 +60,7 @@ SELECT
         AS challenge_answer;
 
 /*
-Related chapters:
+Related Chapters:
 - ../04_aggregates/10_business_reports.sql
 - ../07_window_functions/14_business_reporting.sql
 - ../12_indexes/chapter_summary.sql

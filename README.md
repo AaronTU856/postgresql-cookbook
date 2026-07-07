@@ -138,20 +138,19 @@ Start with the docs, then work through examples in order:
 19. Operate PostgreSQL with [Chapter 16: PostgreSQL Administration](examples/16_administration/README.md)
 20. Run local PostgreSQL with [Chapter 17: Docker & PostgreSQL](examples/17_docker_postgresql/README.md)
 21. Connect SQL to Django with [Chapter 18: Django Integration](examples/18_django_examples/README.md)
-22. Use the [SQL Style Guide](docs/sql-style-guide.md) when writing your own queries
-23. Read the [Project Philosophy](docs/project-philosophy.md) if you plan to contribute
-24. Refer to the [PostgreSQL Cheatsheet](cheatsheets/postgresql-cheatsheet.md)
+22. Build map features with [Chapter 19: PostGIS](examples/19_postgis/README.md)
+23. Finish with [Chapter 20: Real World Projects](examples/20_real_world_projects/README.md)
+24. Use the [SQL Style Guide](docs/sql-style-guide.md) when writing your own queries
+25. Read the [Project Philosophy](docs/project-philosophy.md) if you plan to contribute
+26. Refer to the [PostgreSQL Cheatsheet](cheatsheets/postgresql-cheatsheet.md)
 
 The full planned book-style roadmap is tracked in [Repository Roadmap](docs/repository-roadmap.md).
 
-## Screenshots
+## Result Examples
 
-Screenshots and terminal captures will be added as the cookbook grows. Planned assets include:
+The repository is intentionally text-first so every example can be reviewed directly in GitHub and executed locally. Result sets are described inside each SQL file, and the best way to inspect output is to run examples against the seeded database.
 
-- Docker startup and healthcheck output
-- `psql` query examples
-- DBeaver connection setup
-- Example result sets for completed chapters
+For setup and connection screenshots, use your local Docker Desktop, terminal, or DBeaver interface alongside the [Docker Guide](docs/docker-guide.md).
 
 ## Contribution Guide
 
@@ -167,9 +166,13 @@ Before opening a pull request:
 
 ## Roadmap
 
-This repository is intentionally starting small. Future work will add focused examples for each topic area, Django-specific notes, and performance walkthroughs.
+The core chapter roadmap is complete through Chapter 20. Future work should focus on review, testing, polish, screenshots, and community contributions rather than expanding the chapter count.
 
 See [Repository Roadmap](docs/repository-roadmap.md) for the planned sections.
+
+## Release Notes
+
+- [v1.0.0 release notes](docs/release-notes-v1.0.md)
 
 ## License
 

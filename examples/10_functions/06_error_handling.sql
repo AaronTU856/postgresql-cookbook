@@ -2,19 +2,19 @@
 Title: Error Handling
 Difficulty: Advanced
 
-Learning objectives:
+Learning Objectives:
 - Raise useful exceptions in PL/pgSQL.
 - Validate business rules inside a function.
 - Avoid silent failures in checkout logic.
 
-Problem statement:
+Problem Statement:
 Checkout needs a reusable stock availability check before accepting an order.
 
-Business scenario:
+Business Scenario:
 An e-commerce system should fail clearly when a customer tries to buy more stock
 than is available.
 
-SQL solution:
+SQL Solution:
 */
 
 DROP FUNCTION IF EXISTS cookbook_require_available_stock(BIGINT, INTEGER);
@@ -68,22 +68,22 @@ The function validates quantity, checks the product exists, and raises clear
 exceptions for invalid checkout conditions. The example calls it with available
 stock so validation succeeds.
 
-Expected output:
+Expected Output:
 Product 3 is returned with has_required_stock set to true.
 
-Performance considerations:
+Performance Notes:
 Error handling improves correctness, but exceptions should represent exceptional
 cases rather than normal control flow in high-volume queries.
 
-Common mistakes:
+Common Mistakes:
 - Returning false without explaining why checkout failed.
 - Raising vague exceptions that are hard to debug.
 - Calling exception-heavy functions across large reports.
 
-Challenge:
+Challenge Exercise:
 Use the function to validate one unit of product 7.
 
-Challenge solution:
+Challenge Solution:
 */
 
 SELECT
@@ -95,7 +95,7 @@ FROM products
 WHERE id = 7;
 
 /*
-Related chapters:
+Related Chapters:
 - ../08_transactions/09_locking.sql
 - ../08_transactions/11_real_world_transaction.sql
 - 04_sql_vs_plpgsql.sql

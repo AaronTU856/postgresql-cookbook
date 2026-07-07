@@ -2,19 +2,19 @@
 Title: Annotate And Aggregate
 Difficulty: Intermediate
 
-Learning objectives:
+Learning Objectives:
 - Map Django annotate to GROUP BY SQL.
 - Calculate customer value.
 - Use filtered aggregates.
 
-Problem statement:
+Problem Statement:
 The customer admin page needs completed payment totals per customer.
 
-Business scenario:
+Business Scenario:
 Django admin and reporting pages often use annotate to display counts and totals
 beside model rows.
 
-SQL solution:
+SQL Solution:
 */
 
 SELECT
@@ -40,22 +40,22 @@ Explanation:
 This mirrors a Django annotate query that adds order_count and completed payment
 total to each user row.
 
-Expected output:
+Expected Output:
 Each customer appears with order count and completed payment total.
 
-Performance considerations:
+Performance Notes:
 Annotated QuerySets can generate complex SQL. Inspect generated SQL and indexes
 for admin pages that grow slow.
 
-Common mistakes:
+Common Mistakes:
 - Counting duplicate rows after joins.
 - Forgetting COALESCE for customers without payments.
 - Adding annotations to every admin page without checking cost.
 
-Challenge:
+Challenge Exercise:
 Annotate categories with active product count.
 
-Challenge solution:
+Challenge Solution:
 */
 
 SELECT
@@ -68,7 +68,7 @@ GROUP BY categories.name
 ORDER BY category_name ASC;
 
 /*
-Related chapters:
+Related Chapters:
 - ../04_aggregates/10_business_reports.sql
 - ../09_views/10_business_reporting_view.sql
 - 03_avoid_n_plus_one_django.sql

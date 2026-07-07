@@ -16,6 +16,7 @@ Use this checklist before tagging a public release.
 - [ ] Seed data loads successfully.
 - [ ] Examples tested against the supplied schema and seed data.
 - [ ] SQL formatting follows `docs/sql-style-guide.md`.
+- [ ] Optional extension examples degrade clearly when the extension is unavailable.
 
 ## Docker
 
@@ -37,3 +38,13 @@ Use this checklist before tagging a public release.
 - [ ] Release commit pushed.
 - [ ] Release tagged.
 - [ ] Tag pushed to GitHub.
+
+## Suggested Validation Commands
+
+```bash
+docker compose config
+docker compose up -d
+docker compose ps
+```
+
+Run SQL validation against a local database or the Docker database before tagging.

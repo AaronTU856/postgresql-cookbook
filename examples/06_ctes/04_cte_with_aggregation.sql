@@ -2,15 +2,15 @@
 Title: CTE With Aggregation
 Difficulty: Intermediate
 
-Learning objectives:
+Learning Objectives:
 - Aggregate data inside a CTE.
 - Join aggregated results to descriptive tables.
 - Build category-level summaries.
 
-Problem statement:
+Problem Statement:
 The merchandising team wants product counts and average price by category.
 
-SQL solution:
+SQL Solution:
 */
 
 WITH category_product_summary AS (
@@ -35,26 +35,26 @@ Explanation:
 The CTE calculates one row per category_id. The outer query joins those summary
 rows to categories so the report can show readable category names.
 
-Expected results:
+Expected Output:
 The query returns one summary row per category with product count and average
 price.
 
-Real-world example:
+Business Scenario:
 Category managers may use this pattern to compare product coverage and pricing.
 
-Performance notes:
+Performance Notes:
 Aggregating before joining can reduce the number of rows joined later. This is
 often helpful for reporting queries.
 
-Common mistakes:
+Common Mistakes:
 - Grouping by category name before joining categories.
 - Selecting non-aggregated columns that are not in GROUP BY.
 - Forgetting to join summary rows back to descriptive data.
 
-Challenge exercise:
+Challenge Exercise:
 Summarise order count by user_id in a CTE and join it to users.
 
-Challenge solution:
+Challenge Solution:
 */
 
 WITH user_order_summary AS (
@@ -73,7 +73,7 @@ INNER JOIN users
 ORDER BY user_order_summary.order_count DESC, users.email ASC;
 
 /*
-Related examples:
+Related Chapters:
 - ../04_aggregates/09_aggregate_with_join.sql
 - ../03_joins/08_join_with_aggregation.sql
 - 08_cte_for_reporting.sql

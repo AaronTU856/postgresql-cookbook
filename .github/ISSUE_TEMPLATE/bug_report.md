@@ -30,3 +30,11 @@ Describe what actually happened, including any error output.
 - Docker version:
 - PostgreSQL client version, if relevant:
 - Repository version or commit:
+
+## Affected Area
+
+- [ ] Docker setup
+- [ ] Database schema or seed data
+- [ ] SQL example
+- [ ] Documentation
+- [ ] GitHub Actions

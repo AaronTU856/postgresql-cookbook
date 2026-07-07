@@ -1,5 +1,7 @@
 # Chapter 8: Transactions & ACID
 
+## Overview
+
 ## What Is a Transaction?
 
 A transaction is a group of database statements treated as one unit of work.

@@ -2,15 +2,15 @@
 Title: Build Business Reports With Aggregates
 Difficulty: Intermediate
 
-Learning objectives:
+Learning Objectives:
 - Build a practical revenue report.
 - Combine joins, filters, and grouped aggregates.
 - Use order item prices for historical revenue.
 
-Problem statement:
+Problem Statement:
 Leadership wants completed revenue, units sold, and order count by category.
 
-SQL solution:
+SQL Solution:
 */
 
 SELECT
@@ -36,26 +36,26 @@ Explanation:
 The query joins categories through products and order items to orders and
 payments. It filters to completed payments, then groups revenue by category.
 
-Expected results:
+Expected Output:
 The query returns category-level completed revenue, units sold, and order count.
 
-Real-world example:
+Business Scenario:
 This is the shape of a small revenue report for an ecommerce dashboard.
 
-Performance notes:
+Performance Notes:
 Reports with multiple joins and aggregations should be tested with realistic
 data volumes. Frequent reports may later use summary tables or materialized
 views.
 
-Common mistakes:
+Common Mistakes:
 - Using current products.price instead of historical order_items.unit_price.
 - Counting orders without DISTINCT after joining order items.
 - Including pending or refunded payments in completed revenue.
 
-Challenge exercise:
+Challenge Exercise:
 Build a completed payment report by payment method.
 
-Challenge solution:
+Challenge Solution:
 */
 
 SELECT
@@ -68,7 +68,7 @@ GROUP BY payment_method
 ORDER BY completed_payment_total DESC;
 
 /*
-Related examples:
+Related Chapters:
 - ../03_joins/12_real_world_reporting.sql
 - 09_aggregate_with_join.sql
 - 11_common_aggregate_mistakes.sql

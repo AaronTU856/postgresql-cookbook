@@ -2,16 +2,16 @@
 Title: Common CTE Mistakes
 Difficulty: Intermediate
 
-Learning objectives:
+Learning Objectives:
 - Avoid treating CTEs as permanent tables.
 - Keep final ordering in the outer query.
 - Use clear CTE boundaries.
 
-Problem statement:
+Problem Statement:
 Operations wants a clean recent orders report without relying on ordering inside
 the CTE.
 
-SQL solution:
+SQL Solution:
 */
 
 WITH recent_orders AS (
@@ -38,27 +38,27 @@ Explanation:
 The CTE defines which orders are considered recent. The final ORDER BY belongs
 in the outer query because that is the result being returned.
 
-Expected results:
+Expected Output:
 The query returns orders on or after 12 February 2026 with customer email,
 ordered newest first.
 
-Real-world example:
+Business Scenario:
 Recent activity reports often use a named filtered set before joining customer
 details.
 
-Performance notes:
+Performance Notes:
 Filtering inside the CTE can reduce the rows used by later joins. Keep filters
 aligned with the report question.
 
-Common mistakes:
+Common Mistakes:
 - Assuming a CTE can be queried again later like a permanent table.
 - Depending on ORDER BY inside a CTE for final output order.
 - Creating a CTE that simply hides a one-line filter.
 
-Challenge exercise:
+Challenge Exercise:
 Create a CTE for pending payments and order the final result by amount.
 
-Challenge solution:
+Challenge Solution:
 */
 
 WITH pending_payments AS (
@@ -77,7 +77,7 @@ FROM pending_payments
 ORDER BY amount DESC;
 
 /*
-Related examples:
+Related Chapters:
 - 01_basic_cte.sql
 - 09_cte_best_practices.sql
 - 11_performance_considerations.sql

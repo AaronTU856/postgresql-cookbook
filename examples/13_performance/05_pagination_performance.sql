@@ -2,18 +2,18 @@
 Title: Pagination Performance
 Difficulty: Intermediate
 
-Learning objectives:
+Learning Objectives:
 - Understand offset pagination.
 - Use keyset-style pagination for stable scrolling.
 - Order by deterministic columns.
 
-Problem statement:
+Problem Statement:
 The order history page needs stable pagination.
 
-Business scenario:
+Business Scenario:
 Offset pagination is simple, but deep pages become expensive as tables grow.
 
-SQL solution:
+SQL Solution:
 */
 
 SELECT
@@ -38,22 +38,22 @@ Explanation:
 The first query fetches the first page. The second query uses the last seen
 order_date and id as a cursor for the next page.
 
-Expected output:
+Expected Output:
 Both queries return small, stable pages of orders.
 
-Performance considerations:
+Performance Notes:
 Keyset pagination avoids skipping large numbers of rows, but it requires stable
 ordering and cursor values.
 
-Common mistakes:
+Common Mistakes:
 - Ordering by a non-unique column only.
 - Using high OFFSET values for deep pages.
 - Returning unstable pages when rows share the same timestamp.
 
-Challenge:
+Challenge Exercise:
 Build a keyset-style page for completed payments ordered by paid_at and id.
 
-Challenge solution:
+Challenge Solution:
 */
 
 SELECT
@@ -67,7 +67,7 @@ ORDER BY paid_at DESC, id DESC
 LIMIT 3;
 
 /*
-Related chapters:
+Related Chapters:
 - ../02_filtering_sorting/12_simple_pagination.sql
 - ../12_indexes/05_covering_index.sql
 - 01_explain_basics.sql

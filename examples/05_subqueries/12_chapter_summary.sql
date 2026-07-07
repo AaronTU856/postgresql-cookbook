@@ -2,16 +2,16 @@
 Title: Subqueries Chapter Summary
 Difficulty: Intermediate
 
-Learning objectives:
+Learning Objectives:
 - Combine derived tables with joins.
 - Summarise customer order and payment activity.
 - Review practical subquery patterns from this chapter.
 
-Problem statement:
+Problem Statement:
 Customer success wants a customer summary with order count and completed payment
 total.
 
-SQL solution:
+SQL Solution:
 */
 
 SELECT
@@ -46,27 +46,27 @@ The query uses two subqueries in FROM. One summarises order counts by user. The
 other summarises completed payment totals by user. The outer query joins both
 summaries back to users.
 
-Expected results:
+Expected Output:
 The query returns every user with an order count and completed payment total.
 
-Real-world example:
+Business Scenario:
 Customer dashboards often combine account details with calculated summary
 metrics.
 
-Performance notes:
+Performance Notes:
 Pre-aggregating in derived tables can make reports easier to reason about and
 can avoid row multiplication. Check query plans for larger datasets.
 
-Common mistakes:
+Common Mistakes:
 - Joining raw orders and payments directly to users and accidentally multiplying
   totals.
 - Forgetting COALESCE when a left-joined summary may be missing.
 - Grouping by the wrong key inside the summary subquery.
 
-Challenge exercise:
+Challenge Exercise:
 Build a product summary with total quantity sold using a subquery in FROM.
 
-Challenge solution:
+Challenge Solution:
 */
 
 SELECT
@@ -84,7 +84,7 @@ LEFT JOIN (
 ORDER BY total_quantity_sold DESC, products.name ASC;
 
 /*
-Related examples:
+Related Chapters:
 - 08_subquery_in_select.sql
 - 09_subquery_in_from.sql
 - ../04_aggregates/10_business_reports.sql

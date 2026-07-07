@@ -2,16 +2,16 @@
 Title: Views Chapter Summary
 Difficulty: Intermediate
 
-Learning objectives:
+Learning Objectives:
 - Review regular views, joins, and aggregates.
 - Understand when materialized views are useful.
 - Build a complete reporting view from the sample schema.
 
-Problem statement:
+Problem Statement:
 Summarise the chapter by creating a reusable order fulfilment report for support
 and operations.
 
-SQL solution:
+SQL Solution:
 */
 
 DROP VIEW IF EXISTS order_fulfilment_report;
@@ -58,29 +58,29 @@ The summary view combines joined data and aggregate values into a clear
 fulfilment report. It demonstrates how views can make repeated business queries
 easier to read.
 
-Expected results:
+Expected Output:
 The query returns one row per order with customer email, payment details, and
 item counts.
 
-Real-world example:
+Business Scenario:
 Operations teams often use fulfilment views to monitor order status, payment
 state, and item volume in one place.
 
-Performance notes:
+Performance Notes:
 This regular view recalculates joins and aggregates when queried. If the report
 becomes expensive and can tolerate stale data, a materialized view may be a
 better fit.
 
-Common mistakes:
+Common Mistakes:
 - Treating a summary view as stored data.
 - Forgetting to group by all non-aggregated columns.
 - Building reports without clear business definitions.
 
-Challenge exercise:
+Challenge Exercise:
 Create a materialized snapshot of the same fulfilment report for faster repeated
 reads.
 
-Challenge solution:
+Challenge Solution:
 */
 
 DROP MATERIALIZED VIEW IF EXISTS order_fulfilment_snapshot;
@@ -117,7 +117,7 @@ FROM order_fulfilment_snapshot
 ORDER BY order_id ASC;
 
 /*
-Related examples:
+Related Chapters:
 - 04_join_view.sql
 - 05_aggregate_view.sql
 - 07_materialized_views.sql

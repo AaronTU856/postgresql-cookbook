@@ -2,19 +2,19 @@
 Title: Function Best Practices
 Difficulty: Intermediate
 
-Learning objectives:
+Learning Objectives:
 - Write small and focused functions.
 - Use accurate volatility and parameter names.
 - Keep reporting functions side-effect free.
 
-Problem statement:
+Problem Statement:
 The team wants a safe customer payment total function suitable for reports.
 
-Business scenario:
+Business Scenario:
 Customer success needs a repeatable customer value calculation without modifying
 data or hiding broad workflow logic.
 
-SQL solution:
+SQL Solution:
 */
 
 DROP FUNCTION IF EXISTS cookbook_completed_payment_total_for_user(BIGINT);
@@ -49,22 +49,22 @@ Explanation:
 The function has one clear purpose, uses a descriptive name, has explicit
 parameters, and is marked STABLE because it reads database tables.
 
-Expected output:
+Expected Output:
 Each customer appears with their completed payment total.
 
-Performance considerations:
+Performance Notes:
 This pattern is readable. For large customer lists, a grouped join may be more
 efficient than calling the function once per user.
 
-Common mistakes:
+Common Mistakes:
 - Combining unrelated business rules into one function.
 - Using unclear names such as get_total.
 - Writing functions with side effects and then using them in reports.
 
-Challenge:
+Challenge Exercise:
 Create a focused function that returns active product count for a category.
 
-Challenge solution:
+Challenge Solution:
 */
 
 DROP FUNCTION IF EXISTS cookbook_active_product_count_for_category(BIGINT);
@@ -89,7 +89,7 @@ FROM categories
 ORDER BY categories.name ASC;
 
 /*
-Related chapters:
+Related Chapters:
 - ../04_aggregates/01_count.sql
 - ../09_views/05_aggregate_view.sql
 - 05_function_volatility.sql

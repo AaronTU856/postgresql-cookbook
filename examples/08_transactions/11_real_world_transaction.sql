@@ -2,16 +2,16 @@
 Title: Real-World Transaction
 Difficulty: Advanced
 
-Learning objectives:
+Learning Objectives:
 - Combine order, order item, payment, and stock changes.
 - Use a transaction for an e-commerce checkout workflow.
 - Roll back a full workflow safely during practice.
 
-Problem statement:
+Problem Statement:
 Build a checkout transaction that creates an order, adds an item, records a
 payment, and reduces stock as one unit of work.
 
-SQL solution:
+SQL Solution:
 */
 
 BEGIN;
@@ -97,27 +97,27 @@ The transaction locks the product, creates the order, creates the order item,
 reduces stock, and records payment. If any step fails, the transaction can be
 rolled back so no partial order remains.
 
-Expected results:
+Expected Output:
 The query returns a new order id, payment amount, completed status, and remaining
 stock inside the transaction. ROLLBACK removes the practice checkout.
 
-Real-world example:
+Business Scenario:
 E-commerce checkout must keep order, payment, and inventory data consistent.
 
-Performance notes:
+Performance Notes:
 Keep payment provider calls outside long database transactions where possible.
 Lock inventory only for the shortest safe period.
 
-Common mistakes:
+Common Mistakes:
 - Creating the payment but not the order item.
 - Reducing stock before checking availability.
 - Leaving a transaction open while waiting on an external payment service.
 
-Challenge exercise:
+Challenge Exercise:
 Create a rollback-safe checkout transaction for user 2 buying one unit of
 product 7.
 
-Challenge solution:
+Challenge Solution:
 */
 
 BEGIN;
@@ -175,7 +175,7 @@ CROSS JOIN stock_update;
 ROLLBACK;
 
 /*
-Related examples:
+Related Chapters:
 - 03_savepoints.sql
 - 09_locking.sql
 - ../06_ctes/08_cte_for_reporting.sql

@@ -2,21 +2,21 @@
 Title: FULL OUTER JOIN Orders and Payments
 Difficulty: Intermediate
 
-Learning objectives:
+Learning Objectives:
 - Use FULL OUTER JOIN to preserve rows from both tables.
 - Identify matched and unmatched records.
 - Understand why full joins are useful for reconciliation.
 
-Problem statement:
+Problem Statement:
 Finance wants to reconcile orders and payments so unmatched records would be
 visible on either side.
 
-Business scenario:
+Business Scenario:
 Payment reconciliation needs to find orders without payments and payments that
 do not map cleanly to orders. The current sample data is clean, but the query
 shows the auditing pattern.
 
-SQL solution:
+SQL Solution:
 */
 
 SELECT
@@ -36,23 +36,23 @@ FULL OUTER JOIN returns matched rows plus unmatched rows from both tables. If an
 order had no payment, payment columns would be NULL. If a payment had no order,
 order columns would be NULL.
 
-Expected output:
+Expected Output:
 The sample data returns seven matched order-payment rows because every order has
 one payment.
 
-Performance notes:
+Performance Notes:
 FULL OUTER JOIN can be more expensive than INNER JOIN or LEFT JOIN. Use it when
 the business question genuinely needs unmatched rows from both sides.
 
-Common mistakes:
+Common Mistakes:
 - Using FULL OUTER JOIN when INNER JOIN is enough.
 - Forgetting to check for NULLs to find unmatched records.
 - Sorting nullable join outputs without specifying NULL placement.
 
-Challenge exercise:
+Challenge Exercise:
 Use FULL OUTER JOIN to compare categories and products.
 
-Challenge solution:
+Challenge Solution:
 */
 
 SELECT
@@ -66,7 +66,7 @@ FULL OUTER JOIN products
 ORDER BY categories.id NULLS LAST, products.id NULLS LAST;
 
 /*
-Related chapters:
+Related Chapters:
 - ../01_basic_queries/README.md
 - ../02_filtering_sorting/README.md
 - README.md

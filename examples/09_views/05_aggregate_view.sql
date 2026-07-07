@@ -2,15 +2,15 @@
 Title: Aggregate View
 Difficulty: Intermediate
 
-Learning objectives:
+Learning Objectives:
 - Create a view with GROUP BY.
 - Summarise payment totals by status.
 - Understand why aggregate views are read-only by default.
 
-Problem statement:
+Problem Statement:
 Finance wants a reusable summary of payment counts and totals by payment status.
 
-SQL solution:
+SQL Solution:
 */
 
 DROP VIEW IF EXISTS payment_status_summary;
@@ -37,27 +37,27 @@ Explanation:
 The view stores an aggregate query that groups payments by status. Readers can
 query the summary without rewriting COUNT, SUM, AVG, or GROUP BY.
 
-Expected results:
+Expected Output:
 The query returns one row per payment status with count, total, and average
 amount.
 
-Real-world example:
+Business Scenario:
 Finance teams often use aggregate views for payment dashboards and monthly
 report checks.
 
-Performance notes:
+Performance Notes:
 Aggregate views calculate results when queried. For expensive summaries that can
 be slightly stale, consider a materialized view.
 
-Common mistakes:
+Common Mistakes:
 - Expecting aggregate views to be updatable.
 - Forgetting GROUP BY for non-aggregated columns.
 - Hiding slow reports behind views without checking execution plans.
 
-Challenge exercise:
+Challenge Exercise:
 Create an aggregate view showing product count and average price by category.
 
-Challenge solution:
+Challenge Solution:
 */
 
 DROP VIEW IF EXISTS category_product_summary;
@@ -80,7 +80,7 @@ FROM category_product_summary
 ORDER BY category_name ASC;
 
 /*
-Related examples:
+Related Chapters:
 - 04_join_view.sql
 - 07_materialized_views.sql
 - ../04_aggregates/05_group_by.sql

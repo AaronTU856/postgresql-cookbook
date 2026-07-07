@@ -2,15 +2,15 @@
 Title: Aggregate With Joins
 Difficulty: Intermediate
 
-Learning objectives:
+Learning Objectives:
 - Combine joins with aggregate functions.
 - Summarise products by category.
 - Use GROUP BY with columns from joined tables.
 
-Problem statement:
+Problem Statement:
 The merchandising team wants product counts and average price by category.
 
-SQL solution:
+SQL Solution:
 */
 
 SELECT
@@ -28,26 +28,26 @@ Explanation:
 The join adds category names to product rows. GROUP BY categories.name creates
 one group per category, then COUNT and AVG summarise products in each group.
 
-Expected results:
+Expected Output:
 The query returns four categories with two products in each category.
 
-Real-world example:
+Business Scenario:
 Category managers may use this report to compare catalogue size and pricing by
 category.
 
-Performance notes:
+Performance Notes:
 Join before aggregation only when the grouped report needs columns from both
 tables. Indexes on join keys help as the dataset grows.
 
-Common mistakes:
+Common Mistakes:
 - Grouping by product name instead of category name.
 - Using LEFT JOIN without deciding how empty categories should be handled.
 - Forgetting that joined rows are aggregated after the join.
 
-Challenge exercise:
+Challenge Exercise:
 Calculate total quantity sold by category.
 
-Challenge solution:
+Challenge Solution:
 */
 
 SELECT
@@ -62,7 +62,7 @@ GROUP BY categories.name
 ORDER BY total_quantity_sold DESC;
 
 /*
-Related examples:
+Related Chapters:
 - ../03_joins/08_join_with_aggregation.sql
 - 05_group_by.sql
 - 10_business_reports.sql

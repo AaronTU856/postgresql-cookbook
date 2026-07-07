@@ -2,20 +2,20 @@
 Title: INNER JOIN Orders to Users
 Difficulty: Beginner
 
-Learning objectives:
+Learning Objectives:
 - Use INNER JOIN to combine matching rows from two tables.
 - Join orders to the users who placed them.
 - Select qualified columns from related tables.
 
-Problem statement:
+Problem Statement:
 Customer support needs a list of orders with the customer name and email for
 each order.
 
-Business scenario:
+Business Scenario:
 Support agents should not see only order IDs. They need customer context so they
 can contact the right person about each order.
 
-SQL solution:
+SQL Solution:
 */
 
 SELECT
@@ -36,22 +36,22 @@ INNER JOIN returns only rows where the join condition matches. Here, each order
 has a user_id that matches users.id, so the query returns order rows with their
 customer details.
 
-Expected output:
+Expected Output:
 The query returns seven orders, each with the matching customer's name and email.
 
-Performance notes:
+Performance Notes:
 The schema indexes orders.user_id, which helps PostgreSQL join orders back to
 users efficiently as the table grows.
 
-Common mistakes:
+Common Mistakes:
 - Joining users.id to orders.id instead of orders.user_id.
 - Using SELECT * and getting duplicate id column names.
 - Forgetting the ON clause.
 
-Challenge exercise:
+Challenge Exercise:
 List payments with their order status and order date.
 
-Challenge solution:
+Challenge Solution:
 */
 
 SELECT
@@ -66,7 +66,7 @@ INNER JOIN orders
 ORDER BY orders.order_date DESC;
 
 /*
-Related chapters:
+Related Chapters:
 - ../01_basic_queries/README.md
 - ../02_filtering_sorting/README.md
 - README.md

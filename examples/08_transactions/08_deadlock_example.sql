@@ -2,16 +2,16 @@
 Title: Deadlock Example
 Difficulty: Advanced
 
-Learning objectives:
+Learning Objectives:
 - Understand how deadlocks happen.
 - Avoid deadlocks with consistent lock ordering.
 - Practise the safe version of a deadlock-prone workflow.
 
-Problem statement:
+Problem Statement:
 Two checkout workers need to update product stock. The team wants to understand
 why locking products in different orders can deadlock.
 
-SQL solution:
+SQL Solution:
 */
 
 BEGIN;
@@ -34,28 +34,28 @@ happen if session A locks product 1 then waits for product 2, while session B
 locks product 2 then waits for product 1. PostgreSQL detects that cycle and
 cancels one transaction.
 
-Expected results:
+Expected Output:
 The query locks products 1 and 2 in a stable order, returns their stock values,
 and then rolls back.
 
-Real-world example:
+Business Scenario:
 Checkout workers that reserve multiple products should lock product rows in the
 same order every time.
 
-Performance notes:
+Performance Notes:
 Deadlocks waste work because one transaction must be cancelled and retried.
 Consistent lock ordering is cheaper than relying on deadlock recovery.
 
-Common mistakes:
+Common Mistakes:
 - Locking the same set of rows in different orders.
 - Holding locks while waiting for external services.
 - Treating deadlock errors as unrecoverable instead of retryable.
 
-Challenge exercise:
+Challenge Exercise:
 Lock products 5 and 6 in a consistent order for a multi-item order, then roll
 back.
 
-Challenge solution:
+Challenge Solution:
 */
 
 BEGIN;
@@ -72,7 +72,7 @@ FOR UPDATE;
 ROLLBACK;
 
 /*
-Related examples:
+Related Chapters:
 - 07_serializable.sql
 - 09_locking.sql
 - 12_common_transaction_mistakes.sql

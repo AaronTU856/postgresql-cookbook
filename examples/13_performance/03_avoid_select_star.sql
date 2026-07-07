@@ -2,19 +2,19 @@
 Title: Avoid SELECT Star
 Difficulty: Beginner
 
-Learning objectives:
+Learning Objectives:
 - Select only columns the caller needs.
 - Reduce unnecessary data transfer.
 - Make query intent clearer.
 
-Problem statement:
+Problem Statement:
 The product catalogue page only needs product names, prices, and stock labels.
 
-Business scenario:
+Business Scenario:
 APIs often become slower when they return full rows instead of screen-specific
 fields.
 
-SQL solution:
+SQL Solution:
 */
 
 SELECT
@@ -30,22 +30,22 @@ Explanation:
 The query names the required columns directly. This is clearer and avoids
 returning unused data.
 
-Expected output:
+Expected Output:
 Active products are returned with only name, price, and stock quantity.
 
-Performance considerations:
+Performance Notes:
 Selecting fewer columns can reduce I/O, memory, and network transfer,
 especially on wide tables.
 
-Common mistakes:
+Common Mistakes:
 - Using SELECT * in application endpoints.
 - Returning sensitive columns by accident.
 - Making clients depend on implicit column order.
 
-Challenge:
+Challenge Exercise:
 Rewrite a customer directory query to return only email, city, and created_at.
 
-Challenge solution:
+Challenge Solution:
 */
 
 SELECT
@@ -56,7 +56,7 @@ FROM users
 ORDER BY created_at DESC;
 
 /*
-Related chapters:
+Related Chapters:
 - ../01_basic_queries/02_select_columns.sql
 - ../09_views/02_simple_view.sql
 - 04_avoid_n_plus_one.sql

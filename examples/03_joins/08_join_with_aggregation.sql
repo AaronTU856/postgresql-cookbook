@@ -2,20 +2,20 @@
 Title: Join With Aggregation
 Difficulty: Intermediate
 
-Learning objectives:
+Learning Objectives:
 - Aggregate values after joining tables.
 - Calculate customer order counts and payment totals.
 - Group by selected customer columns.
 
-Problem statement:
+Problem Statement:
 The business team wants a customer summary showing order count and total payment
 amount.
 
-Business scenario:
+Business Scenario:
 Customer value reports often combine customer records, orders, and payments to
 understand activity and revenue.
 
-SQL solution:
+SQL Solution:
 */
 
 SELECT
@@ -38,24 +38,24 @@ Explanation:
 The joins connect users to orders and payments. GROUP BY returns one row per
 customer, while COUNT and SUM calculate summary values for each customer.
 
-Expected output:
+Expected Output:
 The query returns six customers. Amelia Clark has two orders; other customers
 have one order each.
 
-Performance notes:
+Performance Notes:
 Aggregation after joins can be expensive on large datasets. Index join columns
 and check whether the report should filter rows before grouping.
 
-Common mistakes:
+Common Mistakes:
 - Forgetting GROUP BY for non-aggregated selected columns.
 - Summing after joining extra one-to-many tables and accidentally multiplying
   totals.
 - Treating refunded payments as completed revenue without a business rule.
 
-Challenge exercise:
+Challenge Exercise:
 Calculate total quantity sold per product.
 
-Challenge solution:
+Challenge Solution:
 */
 
 SELECT
@@ -71,7 +71,7 @@ GROUP BY
 ORDER BY total_quantity_sold DESC, product_name ASC;
 
 /*
-Related chapters:
+Related Chapters:
 - ../01_basic_queries/README.md
 - ../02_filtering_sorting/README.md
 - README.md

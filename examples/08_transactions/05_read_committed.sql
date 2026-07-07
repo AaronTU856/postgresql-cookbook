@@ -2,15 +2,15 @@
 Title: READ COMMITTED
 Difficulty: Intermediate
 
-Learning objectives:
+Learning Objectives:
 - Use PostgreSQL's default isolation level.
 - Understand statement-level snapshots.
 - Read current committed data inside a transaction.
 
-Problem statement:
+Problem Statement:
 Support wants the latest committed order statuses while reviewing active orders.
 
-SQL solution:
+SQL Solution:
 */
 
 BEGIN ISOLATION LEVEL READ COMMITTED;
@@ -30,26 +30,26 @@ Explanation:
 READ COMMITTED is PostgreSQL's default isolation level. Each statement sees data
 that was committed before that statement began.
 
-Expected results:
+Expected Output:
 The query returns pending, paid, and shipped orders from the committed seed data.
 
-Real-world example:
+Business Scenario:
 Support dashboards often want the latest committed state rather than a frozen
 snapshot of data.
 
-Performance notes:
+Performance Notes:
 READ COMMITTED is usually a good default for transactional applications, but it
 does not guarantee repeated SELECT statements see identical results.
 
-Common mistakes:
+Common Mistakes:
 - Expecting repeated reads to be stable inside READ COMMITTED.
 - Assuming uncommitted changes from other sessions are visible.
 - Using READ COMMITTED for workflows that require serial business decisions.
 
-Challenge exercise:
+Challenge Exercise:
 In a READ COMMITTED transaction, count completed payments by payment method.
 
-Challenge solution:
+Challenge Solution:
 */
 
 BEGIN ISOLATION LEVEL READ COMMITTED;
@@ -65,7 +65,7 @@ ORDER BY payment_method ASC;
 COMMIT;
 
 /*
-Related examples:
+Related Chapters:
 - 04_transaction_isolation.sql
 - 06_repeatable_read.sql
 - ../04_aggregates/05_group_by.sql

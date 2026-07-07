@@ -2,15 +2,15 @@
 Title: LAG
 Difficulty: Intermediate
 
-Learning objectives:
+Learning Objectives:
 - Use LAG() to read a previous row.
 - Compare each order with the prior order.
 - Calculate time between events.
 
-Problem statement:
+Problem Statement:
 Operations wants to compare each order date with the previous order date.
 
-SQL solution:
+SQL Solution:
 */
 
 SELECT
@@ -30,27 +30,27 @@ Explanation:
 LAG(order_date) reads the order_date from the previous row in the ordered
 window. The subtraction calculates the interval between orders.
 
-Expected results:
+Expected Output:
 The first order has no previous_order_date. Later rows show the prior order date
 and time since that order.
 
-Real-world example:
+Business Scenario:
 Operations teams may use this pattern to understand gaps between customer or
 order activity.
 
-Performance notes:
+Performance Notes:
 LAG() requires ordered rows. Keep the input filtered when comparing a specific
 subset of events.
 
-Common mistakes:
+Common Mistakes:
 - Forgetting that the first row has no previous row.
 - Using final query ORDER BY instead of ORDER BY inside OVER().
 - Repeating complex LAG() expressions without considering a CTE for readability.
 
-Challenge exercise:
+Challenge Exercise:
 Compare each payment amount with the previous payment amount by paid_at.
 
-Challenge solution:
+Challenge Solution:
 */
 
 SELECT
@@ -64,7 +64,7 @@ FROM payments
 ORDER BY paid_at ASC NULLS LAST, id ASC;
 
 /*
-Related examples:
+Related Chapters:
 - 06_lead.sql
 - ../02_filtering_sorting/10_nulls_first_last.sql
 - ../06_ctes/01_basic_cte.sql

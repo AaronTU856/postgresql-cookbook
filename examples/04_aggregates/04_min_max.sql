@@ -2,15 +2,15 @@
 Title: Find Ranges With MIN and MAX
 Difficulty: Beginner
 
-Learning objectives:
+Learning Objectives:
 - Use MIN() to find the smallest value.
 - Use MAX() to find the largest value.
 - Summarise product price ranges.
 
-Problem statement:
+Problem Statement:
 The merchandising team wants the lowest and highest product price.
 
-SQL solution:
+SQL Solution:
 */
 
 SELECT
@@ -24,26 +24,26 @@ Explanation:
 MIN(price) returns the smallest active product price. MAX(price) returns the
 largest active product price.
 
-Expected results:
+Expected Output:
 The query returns one row showing the active product price range.
 
-Real-world example:
+Business Scenario:
 An ecommerce team may use price ranges to check catalogue spread or validate
 frontend filters.
 
-Performance notes:
+Performance Notes:
 MIN and MAX can benefit from suitable indexes on large tables. The sample data is
 small, so readability matters most here.
 
-Common mistakes:
+Common Mistakes:
 - Forgetting filters such as is_active = TRUE.
 - Assuming MIN and MAX return the whole row that contains the value.
 - Using text columns for numeric comparisons.
 
-Challenge exercise:
+Challenge Exercise:
 Find the first and latest order dates.
 
-Challenge solution:
+Challenge Solution:
 */
 
 SELECT
@@ -52,7 +52,7 @@ SELECT
 FROM orders;
 
 /*
-Related examples:
+Related Chapters:
 - ../02_filtering_sorting/06_between.sql
 - 03_avg.sql
 - 05_group_by.sql

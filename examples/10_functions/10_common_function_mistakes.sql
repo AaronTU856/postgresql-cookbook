@@ -2,20 +2,20 @@
 Title: Common Function Mistakes
 Difficulty: Intermediate
 
-Learning objectives:
+Learning Objectives:
 - Avoid ambiguous parameters and columns.
 - Handle missing data deliberately.
 - Keep functions predictable for callers.
 
-Problem statement:
+Problem Statement:
 The team wants a safe function for displaying payment status without returning
 NULL surprises.
 
-Business scenario:
+Business Scenario:
 Support screens should show a clear payment status for known payments and a
 clear fallback when a payment id is not found.
 
-SQL solution:
+SQL Solution:
 */
 
 DROP FUNCTION IF EXISTS cookbook_safe_payment_status(BIGINT);
@@ -48,24 +48,24 @@ Explanation:
 The function uses a clear parameter name, qualifies the table column, and returns
 a predictable fallback if no payment exists.
 
-Expected output:
+Expected Output:
 Each seeded payment appears with its status.
 
-Performance considerations:
+Performance Notes:
 This function performs a lookup. Avoid calling lookup functions row by row over
 large datasets when a join would be clearer and faster.
 
-Common mistakes:
+Common Mistakes:
 - Naming a parameter the same as a column and creating ambiguity.
 - Returning NULL when callers expect a status label.
 - Hiding data access in a function without checking performance.
 - Marking lookup functions as IMMUTABLE.
 
-Challenge:
+Challenge Exercise:
 Create a safe customer name function that returns customer_not_found when the
 user id does not exist.
 
-Challenge solution:
+Challenge Solution:
 */
 
 DROP FUNCTION IF EXISTS cookbook_safe_customer_name(BIGINT);
@@ -94,7 +94,7 @@ FROM users
 ORDER BY id ASC;
 
 /*
-Related chapters:
+Related Chapters:
 - ../01_basic_queries/11_null_values.sql
 - ../03_joins/11_common_join_mistakes.sql
 - 09_function_best_practices.sql

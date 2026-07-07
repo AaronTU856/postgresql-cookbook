@@ -2,19 +2,19 @@
 Title: Search Multiple Columns
 Difficulty: Intermediate
 
-Learning objectives:
+Learning Objectives:
 - Combine product name and description.
 - Use COALESCE for nullable text.
 - Improve catalogue search coverage.
 
-Problem statement:
+Problem Statement:
 Customers expect searches to match both product names and descriptions.
 
-Business scenario:
+Business Scenario:
 Searching for "Django" should find a product even if the term appears in the
 name more prominently than the description.
 
-SQL solution:
+SQL Solution:
 */
 
 SELECT
@@ -33,21 +33,21 @@ Explanation:
 The query combines name and description into one searchable document. COALESCE
 protects the expression from NULL descriptions.
 
-Expected output:
+Expected Output:
 Products matching Django APIs across name or description are returned.
 
-Performance considerations:
+Performance Notes:
 Expression-based search should be indexed when used frequently.
 
-Common mistakes:
+Common Mistakes:
 - Forgetting COALESCE and losing rows when a nullable text column is NULL.
 - Searching only descriptions when names matter more.
 - Ignoring which fields users expect search to cover.
 
-Challenge:
+Challenge Exercise:
 Search name and description for laptop accessories.
 
-Challenge solution:
+Challenge Solution:
 */
 
 SELECT
@@ -62,7 +62,7 @@ WHERE to_tsvector(
 ORDER BY name ASC;
 
 /*
-Related chapters:
+Related Chapters:
 - ../01_basic_queries/11_null_values.sql
 - ../14_jsonb/04_build_json_response.sql
 - 03_rank_search_results.sql
